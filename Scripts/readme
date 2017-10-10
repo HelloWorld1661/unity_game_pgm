@@ -1,0 +1,3 @@
+Parallaxing and Tiling scripts enhance the game's background movement.
+Parallaxing creates a sudo 3D-Depth effect.
+Tiling automatically extends background / foreground so Player in platformer can keep moving without abrupt bg changes.  It smooths the seams.
