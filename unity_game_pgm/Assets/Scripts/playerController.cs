@@ -12,15 +12,17 @@ public class playerController : MonoBehaviour {
 	private float groundRadius = 0.5f;
 
 	public LayerMask whatIsGround;
-	public bool grounded = true;
+	public bool grounded = false; 
 
 	public bool jumpPressed = false;
-	public float jumpForce = 500.0f;
+	public float jumpForce = 100.0f;
+	Animator anim;
 
 	void Start () {
 		if (rigid == null) {
 			rigid = GetComponent<Rigidbody2D> (); 
 		}
+		anim = GetComponent<Animator> ();
 	}
 		
 	void Update () {
@@ -32,12 +34,17 @@ public class playerController : MonoBehaviour {
 		
 	void FixedUpdate(){
 		rigid.velocity = new Vector2 (speed * movement, rigid.velocity.y);
+		grounded = isGrounded ();  
+
+		anim.SetBool ("Ground", grounded); 
 		if((movement<0 && isFaceRight)||(movement>0 && !isFaceRight)){
 			flip ();
 		}
 		if (jumpPressed && isGrounded ()) {
 			Jump ();
 		}
+		anim.SetFloat ("Speed", Mathf.Abs (movement));
+		anim.SetFloat("vSpeed", rigid.velocity.y);
 	}
 
 	void Jump(){
