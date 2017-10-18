@@ -51,8 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
+     <Compile Include="Assets\Scripts\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\playerController.cs" />
+     <Compile Include="Assets\Scripts\Tiling.cs" />
      <None Include="Assets\Sprites\GUI\Fantasy_Game_GUI\README.txt" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>

@@ -1,7 +1,14 @@
 (DS_Store)
 =$
 
++/Assets/Sprites/Coin/starCoinBlink
+
+=$/Assets/Sprites/Coin/starCoinRotate
+
+=$/Assets/Sprites/Coin/starCoinShine
+
 (csproj)
+=$
 Assembly-CSharp
 (sln)
 unity_game_pgm
@@ -11,8 +18,11 @@ FileManager
 (backup)
 +/__Backupscenes
 0
+(physicsMaterial2D)
+=$/Assets
+PlayerPhysMat2D
 (unitytheme)
-=$/Assets/@Themes
++/@Themes
 Classy
 Default
 Simplicity
@@ -1475,6 +1485,23 @@ Slide (4)
 Slide (5)
 =$/Assets/Sprites/Coin
 Coins
++/starCoinBlink
+star coin normal
+star coin white light
+=$/Assets/Sprites/Coin/starCoinRotate
+star coin rotate 1
+star coin rotate 2
+star coin rotate 3
+star coin rotate 4
+star coin rotate 5
+star coin rotate 6
+=$/Assets/Sprites/Coin/starCoinShine
+star coin 1
+star coin 2
+star coin 3
+star coin 4
+star coin 5
+star coin 6
 =$/Assets/Sprites/GUI
 Bubble_Game_GUI
 Fantasy_Game_GUI
@@ -1691,11 +1718,24 @@ jump6
 jump7
 jump8
 jump9
+=$/Assets/Sprites/Coin/starCoinBlink
+starCoinBlink
+=$/Assets/Sprites/Coin/starCoinRotate
+starCoinRotate
+=$/Assets/Sprites/Coin/starCoinShine
+starCoinShine
 (controller)
 =$/Assets/Animations
 Coins_0
 =$/Assets/Animators
+2dCharacterAnimator
 playerAnimatorController
+=$/Assets/Sprites/Coin/starCoinBlink
+star coin normal
+=$/Assets/Sprites/Coin/starCoinRotate
+star coin rotate 6
+=$/Assets/Sprites/Coin/starCoinShine
+star coin 2
 (ogg)
 =$/Assets/Audios
 Sour Sweet Filmy edited
@@ -1709,5 +1749,8 @@ Coins
 scene_1
 (cs)
 =$/Assets/Scripts
+Camera2DFollow
 Coin
+Parallaxing
+Tiling
 playerController
