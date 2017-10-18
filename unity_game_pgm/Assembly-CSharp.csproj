@@ -78,6 +78,9 @@
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
+ <Reference Include="ZiosThemes">
+ <HintPath>/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm/Assets/@Themes/ZiosThemes.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
