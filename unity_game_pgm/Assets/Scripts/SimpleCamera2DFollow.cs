@@ -1,14 +1,17 @@
-﻿using System;
+﻿/*
+ * RP
+ * 10/18/17
+ */
+
+using System;
 using UnityEngine;
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
 
 // require / call for component - if not there, unity will create it
 //[RequireComponent (typeof(SpriteRenderer))]
 
 public class SimpleCamera2DFollow : MonoBehaviour
 {
+	// drag target sprite for cam to follow in inspector
 	public Transform target;
 
 	void Update ()

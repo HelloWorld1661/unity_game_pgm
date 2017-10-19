@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class Coin : MonoBehaviour {
-	public AudioSource audio;	//audio object 
+	public AudioSource coinAudio;	//audio object 
 //	public GameObject controller;  //GameController object 
 
 	// Use this for initialization
@@ -14,8 +14,8 @@ public class Coin : MonoBehaviour {
 //			controller = GameObject.FindWithTag ("GameController"); 
 //		}
 
-		if (audio == null) {
-			audio = GetComponent<AudioSource> ();
+		if (coinAudio == null) {
+			coinAudio = GetComponent<AudioSource> ();
 		}
 	}
 
@@ -27,7 +27,7 @@ public class Coin : MonoBehaviour {
 	{
 		Debug.Log ("Collided!");
 
-		audio.Play (); // play the audio 
+		coinAudio.Play (); // play the audio 
 
 		GetComponent<SpriteRenderer> ().enabled = false; //make the sprite unvisible.
 		GetComponent<BoxCollider2D> ().enabled = false;
