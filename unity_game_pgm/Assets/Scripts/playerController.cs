@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour {
 	public float jumpForce = 500.0f;
 	Animator anim;
 
-	float jumpDuration;
+	private float jumpDuration = 0f;
 
 	void Start () {
 		if (rigid == null) {
@@ -44,7 +44,7 @@ public class playerController : MonoBehaviour {
 
 		// RP 10/19/17 see <http://answers.unity3d.com/questions/300452/how-to-do-a-jump-relative-to-the-time-the-key-spen.html>
 		if (Input.GetButtonDown ("Jump")){
-			jumpDuration = 0.2f; 				// start the timer when the key goes down
+			jumpDuration = 0.18f; 				// start the timer when the key goes down
 		}
 		if (jumpDuration > 0){ 					// if timer is running...
 			if (Input.GetButtonUp ("Jump")){ 	// and key goes up...
@@ -53,8 +53,7 @@ public class playerController : MonoBehaviour {
 			} else { 							// but if key still pressed...
 				jumpDuration -= Time.deltaTime; // decrement the timer
 				if (jumpDuration <= 0){ 		// if time elapsed...
-												// jump anyway with increased jumpForce:
-					jumpForce *= 1.8f;
+					jumpForce *= 1.8f;			// jump anyway with increased jumpForce:
 					jumpPressed = true;
 				}
 			}

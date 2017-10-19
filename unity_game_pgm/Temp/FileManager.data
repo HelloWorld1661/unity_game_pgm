@@ -1791,6 +1791,7 @@ scene_1
 (cs)
 =$/Assets/Scripts
 Coin
+CoinText
 Parallaxing
 SimpleCamera2DFollow
 Tiling
