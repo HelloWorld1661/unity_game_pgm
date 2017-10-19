@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1573
     height: 1038
-  m_MinSize: {x: 479, y: 61}
-  m_MaxSize: {x: 12004, y: 8021}
+  m_MinSize: {x: 483, y: 71}
+  m_MaxSize: {x: 12008, y: 8021}
   vertical: 0
-  controlID: 1317
+  controlID: 8117
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 1038
-  m_MinSize: {x: 100, y: 20}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 41}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 4}
   m_Panes:
   - {fileID: 4}
@@ -154,9 +154,9 @@ MonoBehaviour:
     height: 1017
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e23c0000
-    m_LastClickedID: 15586
-    m_ExpandedIDs: 14fcffff00000000
+    m_SelectedIDs: ba3c0000
+    m_LastClickedID: 15546
+    m_ExpandedIDs: 14fcffff00000000ba3a0000143b0000ba3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_MinSize: {x: 104, y: 61}
   m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 1345
+  controlID: 8145
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -261,9 +261,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.1579197, y: 0.84986633, z: 0.10546875}
+    m_Target: {x: -1.713095, y: -0.15572274, z: 0.046875}
     speed: 2
-    m_Value: {x: 0.1579197, y: 0.84986633, z: 0.10546875}
+    m_Value: {x: -1.713095, y: -0.15572274, z: 0.046875}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -290,9 +290,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 28.620373
+    m_Target: 26.176
     speed: 2
-    m_Value: 28.620373
+    m_Value: 26.176
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -339,10 +339,11 @@ MonoBehaviour:
     - {x: 635, y: 406.6}
     - {x: 533.80005, y: 294.40002}
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 5270cbf6317ff40eea6ac5eef3ab3833,
+  m_AnimatorController: {fileID: 9100000, guid: c29958a2856af4a82abdffdf12278477,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 110700000, guid: 5270cbf6317ff40eea6ac5eef3ab3833, type: 2}
+  - m_Target: {fileID: 1107808819362821916, guid: c29958a2856af4a82abdffdf12278477,
+      type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -420,19 +421,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Audios
+    - Assets/Sprites/Scenes/Scene_jungle/Tiles
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Audios
+  - Assets/Sprites/Scenes/Scene_jungle/Tiles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 962e0000
-    m_LastClickedID: 11926
-    m_ExpandedIDs: 0000000054260000722600004a2d0000963500007c380000ac3e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 41}
+    m_SelectedIDs: 22380000
+    m_LastClickedID: 14370
+    m_ExpandedIDs: 0000000054260000722600004a2d0000462e0000963500007c380000ac3e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -460,7 +461,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000054260000722600004a2d0000963500007c380000ac3e000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000054260000722600004a2d0000462e0000963500007c380000ac3e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -485,8 +486,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e23c0000
-    m_LastClickedInstanceID: 15586
+    m_SelectedInstanceIDs: ba3c0000
+    m_LastClickedInstanceID: 15546
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: cc21000000000000282c0000702900007a37000016960000
     m_RenameOverlay:
@@ -514,7 +515,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
-  m_DirectoriesAreaWidth: 110
+  m_DirectoriesAreaWidth: 265
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -587,8 +588,8 @@ MonoBehaviour:
     y: 0
     width: 394
     height: 1038
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
