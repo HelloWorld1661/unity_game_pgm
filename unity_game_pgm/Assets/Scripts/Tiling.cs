@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+ * RP
+ * 10/18/17
+ * NOTE for tiling script to work correctly:
+ * 		set size of sprite with pixel-density
+ * 		instead of scaling w/ the tranform tool
+ * 		(default = 100 use smaller vals to make larger) 
+ */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

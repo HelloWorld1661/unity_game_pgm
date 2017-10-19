@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Coin : MonoBehaviour {
 	public AudioSource audio;	//audio object 
 //	public GameObject controller;  //GameController object 
