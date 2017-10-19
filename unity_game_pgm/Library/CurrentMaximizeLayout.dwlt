@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1573
     height: 1038
-  m_MinSize: {x: 483, y: 71}
-  m_MaxSize: {x: 12008, y: 8021}
+  m_MinSize: {x: 481, y: 71}
+  m_MaxSize: {x: 12006, y: 8021}
   vertical: 0
-  controlID: 8117
+  controlID: 8551
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 1038
-  m_MinSize: {x: 102, y: 41}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 20}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 4}
   m_Panes:
   - {fileID: 4}
@@ -154,9 +154,9 @@ MonoBehaviour:
     height: 1017
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ba3c0000
-    m_LastClickedID: 15546
-    m_ExpandedIDs: 14fcffff00000000ba3a0000143b0000ba3c0000
+    m_SelectedIDs: e83b0000
+    m_LastClickedID: 15336
+    m_ExpandedIDs: 14fcffff00000000ba3a0000143b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_MinSize: {x: 104, y: 61}
   m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 8145
+  controlID: 8552
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 100, y: 20}
+  m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
@@ -421,18 +421,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Sprites/Scenes/Scene_jungle/Tiles
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Scenes/Scene_jungle/Tiles
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 41}
-    m_SelectedIDs: 22380000
-    m_LastClickedID: 14370
+    m_SelectedIDs: 1a2b0000
+    m_LastClickedID: 11034
     m_ExpandedIDs: 0000000054260000722600004a2d0000462e0000963500007c380000ac3e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -486,9 +486,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ba3c0000
-    m_LastClickedInstanceID: 15546
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: e83b0000
+    m_LastClickedInstanceID: 15336
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: cc21000000000000282c0000702900007a37000016960000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
     y: 616
     width: 392
     height: 1017
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 281.39844}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 172
