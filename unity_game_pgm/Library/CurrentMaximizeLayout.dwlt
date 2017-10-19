@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1573
     height: 1038
-  m_MinSize: {x: 481, y: 82}
-  m_MaxSize: {x: 12006, y: 8042}
+  m_MinSize: {x: 481, y: 71}
+  m_MaxSize: {x: 12006, y: 8021}
   vertical: 0
-  controlID: 12091
+  controlID: 2715
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,7 +156,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 14fcffff00000000ba3a0000143b0000
+    m_ExpandedIDs: 14fcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -199,10 +199,10 @@ MonoBehaviour:
     y: 0
     width: 977
     height: 1038
-  m_MinSize: {x: 104, y: 82}
-  m_MaxSize: {x: 4004, y: 8042}
+  m_MinSize: {x: 104, y: 61}
+  m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 12119
+  controlID: 2716
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,8 +221,8 @@ MonoBehaviour:
     y: 0
     width: 977
     height: 573
-  m_MinSize: {x: 104, y: 41}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 100, y: 20}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -339,11 +339,8 @@ MonoBehaviour:
     - {x: 635, y: 406.6}
     - {x: 533.80005, y: 294.40002}
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 5270cbf6317ff40eea6ac5eef3ab3833,
-    type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: 110700000, guid: 5270cbf6317ff40eea6ac5eef3ab3833, type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
+  m_AnimatorController: {fileID: 0}
+  m_BreadCrumbs: []
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -420,19 +417,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Sprites/Scenes/Scene_mountains
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Scenes/Scene_mountains
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 25}
-    m_SelectedIDs: 68110100
-    m_LastClickedID: 69992
-    m_ExpandedIDs: 0000000054260000722600004a2d0000963500007c380000ac3e000000ca9a3bffffff7f
+    m_SelectedIDs: 242b0000
+    m_LastClickedID: 11044
+    m_ExpandedIDs: 000000005426000072260000542d0000a63500008c3800009a3e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -448,7 +445,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 9}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -460,7 +457,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000054260000722600004a2d0000462e0000963500007c380000ac3e000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000005426000072260000542d0000a63500008c3800009a3e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

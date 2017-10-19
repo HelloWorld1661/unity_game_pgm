@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * TODO - works!
+ * RP 10/19/17
+ * add timer like Time.deltaTime to calc how much player jumps
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +21,10 @@ public class playerController : MonoBehaviour {
 	public bool grounded = false; 
 
 	public bool jumpPressed = false;
-	public float jumpForce = 100.0f;
+	public float jumpForce = 500.0f;
 	Animator anim;
+
+	float jumpDuration;
 
 	void Start () {
 		if (rigid == null) {
@@ -26,9 +34,30 @@ public class playerController : MonoBehaviour {
 	}
 		
 	void Update () {
-		movement = Input.GetAxis ("Horizontal"); 
-		if(Input.GetButtonDown("Jump")){
-			jumpPressed = true;
+		movement = Input.GetAxis ("Horizontal");
+
+		// original code start
+//		if(Input.GetButtonDown("Jump")){
+//			jumpPressed = true;
+//		}
+		// end
+
+		// RP 10/19/17 see <http://answers.unity3d.com/questions/300452/how-to-do-a-jump-relative-to-the-time-the-key-spen.html>
+		if (Input.GetButtonDown ("Jump")){
+			jumpDuration = 0.2f; 				// start the timer when the key goes down
+		}
+		if (jumpDuration > 0){ 					// if timer is running...
+			if (Input.GetButtonUp ("Jump")){ 	// and key goes up...
+				jumpDuration = 0; 				// deactivate the timer...
+				jumpPressed = true;
+			} else { 							// but if key still pressed...
+				jumpDuration -= Time.deltaTime; // decrement the timer
+				if (jumpDuration <= 0){ 		// if time elapsed...
+												// jump anyway with increased jumpForce:
+					jumpForce *= 1.8f;
+					jumpPressed = true;
+				}
+			}
 		}
 	}
 		
@@ -51,6 +80,8 @@ public class playerController : MonoBehaviour {
 		rigid.velocity = new Vector2 (rigid.velocity.x, 0);
 		rigid.AddForce (new Vector2 (0, jumpForce));
 		jumpPressed = false;
+		// reset jumpForce for correct updates
+		jumpForce = 500.0f;
 	}
 
 	bool isGrounded(){
