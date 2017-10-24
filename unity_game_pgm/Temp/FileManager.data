@@ -1785,8 +1785,11 @@ coins
 (prefab)
 =$/Assets/Prefabs
 Coins
-(unity)
+(js)
 =$/Assets/Scenes
+MainMenu
+(unity)
+main_menu
 scene_1
 (cs)
 =$/Assets/Scripts

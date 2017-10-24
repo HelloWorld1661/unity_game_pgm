@@ -59,7 +59,7 @@
      <Compile Include="Assets\Scripts\Tiling.cs" />
      <None Include="Assets\Sprites\GUI\Fantasy_Game_GUI\README.txt" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>/Users/christianbutron/unity_game_pgm/unity_game_pgm/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
@@ -83,7 +83,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="ZiosThemes">
- <HintPath>/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/unity_game_pgm/Assets/@Themes/ZiosThemes.dll</HintPath>
+ <HintPath>/Users/christianbutron/unity_game_pgm/unity_game_pgm/Assets/@Themes/ZiosThemes.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
