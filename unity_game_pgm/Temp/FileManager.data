@@ -1785,10 +1785,8 @@ coins
 (prefab)
 =$/Assets/Prefabs
 Coins
-(js)
-=$/Assets/Scenes
-MainMenu
 (unity)
+=$/Assets/Scenes
 main_menu
 scene_1
 (cs)
@@ -1799,3 +1797,5 @@ Parallaxing
 SimpleCamera2DFollow
 Tiling
 playerController
+(js)
+MainMenu

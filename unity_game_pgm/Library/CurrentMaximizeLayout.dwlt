@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 714
-  m_MinSize: {x: 479, y: 61}
-  m_MaxSize: {x: 12004, y: 8021}
+  m_MinSize: {x: 481, y: 82}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 12236
+  controlID: 13194
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,23 +154,23 @@ MonoBehaviour:
     height: 693
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f0930000
-    m_LastClickedID: 37872
+    m_SelectedIDs: 50830000
+    m_LastClickedID: 0
     m_ExpandedIDs: c052fdff2e86fdff64a0fdfffe46feff20ccfeff36ccfeffececfeff90f0feff2efffeff4408ffff26fbffff00000000f84700002c490000bc490000244a00009a4a0000fa4a0000007e00000a7e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Main Camera
-      m_OriginalName: Main Camera
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 37872
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 3}
     m_SearchString: 
@@ -199,10 +199,10 @@ MonoBehaviour:
     y: 0
     width: 894
     height: 714
-  m_MinSize: {x: 104, y: 61}
-  m_MaxSize: {x: 4004, y: 8021}
+  m_MinSize: {x: 104, y: 82}
+  m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 12237
+  controlID: 13195
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,8 +221,8 @@ MonoBehaviour:
     y: 0
     width: 894
     height: 394
-  m_MinSize: {x: 100, y: 20}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 104, y: 41}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -423,18 +423,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Audios
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Audios
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/christianbutron/unity_game_pgm/unity_game_pgm
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 63.021835}
-    m_SelectedIDs: a83b0000
-    m_LastClickedID: 15272
+    m_SelectedIDs: 5c330000
+    m_LastClickedID: 13148
     m_ExpandedIDs: 000000005c3300007a3300005c3a0000ae42000094450000c04b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -488,8 +488,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f0930000
-    m_LastClickedInstanceID: 37872
+    m_SelectedInstanceIDs: 50830000
+    m_LastClickedInstanceID: 33616
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: cc21000000000000282c0000702900007a370000169600009a050000
     m_RenameOverlay:
@@ -590,8 +590,8 @@ MonoBehaviour:
     y: 0
     width: 361
     height: 714
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
