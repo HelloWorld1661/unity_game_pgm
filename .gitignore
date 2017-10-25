@@ -4,6 +4,7 @@ unity_game_pgm/.DS_Store
 unity_game_pgm/Assets/.DS_Store
 unity_game_pgm/Assets/Sprites/.DS_Store
 unity_game_pgm/Assets/*.meta
+<<<<<<< HEAD
 unity_game_pgm/Assets/@Themes.meta
 unity_game_pgm/Assets/Animations.meta
 unity_game_pgm/Assets/Animators.meta
@@ -14,4 +15,16 @@ unity_game_pgm/Assets/Prefabs.meta
 unity_game_pgm/Assets/Scenes.meta
 unity_game_pgm/Assets/Scripts.meta
 unity_game_pgm/Assets/Sprites.meta
+*.meta
+=======
+>>>>>>> 05aae19a0d4ef24b0d5fd5445a8f11a3d21ad02f
+*.meta
+*.meta
+*.meta
+*.meta
+*.meta
+*.meta
+*.meta
+*.meta
+*.meta
 *.meta
