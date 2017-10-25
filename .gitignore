@@ -3,3 +3,4 @@ unity_game_pgm/unity_game_pgm.userprefs
 unity_game_pgm/.DS_Store
 unity_game_pgm/Assets/.DS_Store
 unity_game_pgm/Assets/Sprites/.DS_Store
+unity_game_pgm/Assets/*.meta
