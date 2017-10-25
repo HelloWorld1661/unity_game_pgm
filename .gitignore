@@ -3,3 +3,15 @@ unity_game_pgm/unity_game_pgm.userprefs
 unity_game_pgm/.DS_Store
 unity_game_pgm/Assets/.DS_Store
 unity_game_pgm/Assets/Sprites/.DS_Store
+unity_game_pgm/Assets/*.meta
+unity_game_pgm/Assets/@Themes.meta
+unity_game_pgm/Assets/Animations.meta
+unity_game_pgm/Assets/Animators.meta
+unity_game_pgm/Assets/Audios.meta
+unity_game_pgm/Assets/Images.meta
+unity_game_pgm/Assets/PlayerPhysMat2D.physicsMaterial2D.meta
+unity_game_pgm/Assets/Prefabs.meta
+unity_game_pgm/Assets/Scenes.meta
+unity_game_pgm/Assets/Scripts.meta
+unity_game_pgm/Assets/Sprites.meta
+*.meta

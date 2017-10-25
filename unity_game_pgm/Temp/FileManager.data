@@ -5,7 +5,11 @@
 
 +/Sprites
 
-+/Coin
++/Characters
+
++/Cat&Dog
+
+=$/Assets/Sprites/Coin
 
 +/starCoinBlink
 
@@ -13,9 +17,23 @@
 
 =$/Assets/Sprites/Coin/starCoinShine
 
+=$/Assets/Sprites/GUI
+
++/Fantasy_Game_GUI
+
+=$/Assets/Sprites/Scenes
+
++/Scene_desert
+
+=$/Assets/Sprites/Scenes/Scene_graveyard
+
+=$/Assets/Sprites/Scenes/Scene_jungle
+
 (csproj)
 =$
 Assembly-CSharp
+(unityproj)
+Assembly-UnityScript
 (sln)
 unity_game_pgm
 (userprefs)
@@ -26,35 +44,6 @@ FileManager
 (backup)
 +/__Backupscenes
 0
-(dll)
-=$/Temp/bin/Debug
-Assembly-CSharp
-ExCSS.Unity
-Facebook.Unity.Settings
-Mono.Cecil.Mdb
-Mono.Cecil.Pdb
-Mono.Cecil
-Unity.CecilTools
-Unity.DataContract
-Unity.Legacy.NRefactory
-Unity.SerializationLogic
-Unity.UNetWeaver
-UnityEditor
-UnityEngine.Analytics
-UnityEngine.HoloLens
-UnityEngine.Networking
-UnityEngine.TestRunner
-UnityEngine.Timeline
-UnityEngine.UI
-UnityEngine
-ZiosThemes
-nunit.framework
-=$/Assets/@Themes
-ZiosThemes
-(mdb)
-=$/Temp/bin/Debug
-Assembly-CSharp.dll
-Unity.UNetWeaver.dll
 (physicsMaterial2D)
 =$/Assets
 PlayerPhysMat2D
@@ -65,6 +54,8 @@ Default
 Simplicity
 (asset)
 Undo
+(dll)
+ZiosThemes
 (ttf)
 +/Fonts/8bit Operator
 8bitOperatorPlus-Bold
@@ -1539,7 +1530,12 @@ star coin 5
 star coin 6
 =$/Assets/Sprites/GUI
 Bubble_Game_GUI
+Button
+Exit_Button
 Fantasy_Game_GUI
+Help_Button
+Start_Button
+main_menu
 +/Bubble_Game_GUI
 Button
 =$/Assets/Sprites/GUI/Fantasy_Game_GUI
@@ -1787,8 +1783,10 @@ coins
 Coins
 (unity)
 =$/Assets/Scenes
+Scene_desert
 main_menu
 scene_1
+scene_3
 (cs)
 =$/Assets/Scripts
 Coin
