@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Coin : MonoBehaviour {
@@ -25,6 +26,11 @@ public class Coin : MonoBehaviour {
 	//Sent when an incoming collider makes contact with this object's collider
 	void OnTriggerEnter2D()
 	{
+		var text = gameObject.GetComponentInChildren<Text> ();
+		// returns Right Answer if player collects right answer coin
+		if (text && text.tag == "Answer")
+			Debug.Log ("Right Answer!");
+		
 		Debug.Log ("Collided!");
 
 		coinAudio.Play (); // play the audio 
