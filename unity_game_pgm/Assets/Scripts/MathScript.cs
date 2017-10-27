@@ -21,10 +21,6 @@ public class MathScript : MonoBehaviour {
 		answer = "42";
 		pType = "Multiplication";
 
-		//sets text for problem tags
-		if (gameObject.tag == "Problem")
-			text.text = "Math " + pType + " Problem: " + problem + " = ?";
-
 		texts = gameObject.GetComponentsInChildren<Text>();
 		// randomly selects which object is to be the answer coin
 		System.Random rnd = new System.Random ();
@@ -32,16 +28,31 @@ public class MathScript : MonoBehaviour {
 		if (texts [num].tag != "Problem") {
 			texts [num].tag = "Answer";
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+		//sets text for problem tags
+		if (gameObject.tag == "Problem")
+			text.text = "Math " + pType + " Problem: " + problem + " = ?";
+
 		// sets the text for the coin objects
 		// if answer, gives the answer
-		texts = gameObject.GetComponentsInChildren<Text>();
 		foreach (Text t in texts) {
 			if (t.tag == "Answer")
 				t.text = answer;
 		}
 	}
+
+	/*
+	// Update is called once per frame
+	void Update () {
+		//sets text for problem tags
+		if (gameObject.tag == "Problem")
+			text.text = "Math " + pType + " Problem: " + problem + " = ?";
+
+		// sets the text for the coin objects
+		// if answer, gives the answer
+		foreach (Text t in texts) {
+			if (t.tag == "Answer")
+				t.text = answer;
+		}
+	}*/
 }
