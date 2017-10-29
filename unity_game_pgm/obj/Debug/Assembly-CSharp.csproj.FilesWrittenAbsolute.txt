@@ -70,3 +70,12 @@
 /Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Facebook.Unity.Settings.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/UnityEngine.Timeline.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/ZiosThemes.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/UnityEngine.Purchasing.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Unity.Cecil.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/ExCSS.Unity.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Unity.Legacy.NRefactory.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Unity.Cecil.Pdb.dll
+/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Unity.Cecil.Mdb.dll

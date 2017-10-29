@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unity_game_pgm", "Assembly-CSharp.csproj", "{01C793F5-C4A6-A4AD-EDEF-9FBCDB5834CB}"
 EndProject
+Project("{F327360B-70D0-C6D7-6C30-B9408AD7857A}") = "unity_game_pgm", "Assembly-UnityScript.unityproj", "{605C7BBF-1ECA-0AF2-6C87-06DE58359336}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{01C793F5-C4A6-A4AD-EDEF-9FBCDB5834CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01C793F5-C4A6-A4AD-EDEF-9FBCDB5834CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01C793F5-C4A6-A4AD-EDEF-9FBCDB5834CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{605C7BBF-1ECA-0AF2-6C87-06DE58359336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{605C7BBF-1ECA-0AF2-6C87-06DE58359336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{605C7BBF-1ECA-0AF2-6C87-06DE58359336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{605C7BBF-1ECA-0AF2-6C87-06DE58359336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ Data: 2017/10/09
+ Author: Jun
+*/
 
 public class Coin : MonoBehaviour {
 	public AudioSource coinAudio;	//audio object 
-//	public GameObject controller;  //GameController object 
+	public GameObject GameController;  //GameController object 
 
 	// Use this for initialization
 	void Start () {
-//		if (controller == null) {
-//			//To get GameController object through FindWithTag method.
-//			controller = GameObject.FindWithTag ("GameController"); 
-//		}
+		if (GameController == null) {
+			//To get GameController object through FindWithTag method.
+			GameController = GameObject.FindWithTag ("GameController"); 
+		}
 
 		if (coinAudio == null) {
 			coinAudio = GetComponent<AudioSource> ();
@@ -25,8 +28,7 @@ public class Coin : MonoBehaviour {
 	//Sent when an incoming collider makes contact with this object's collider
 	void OnTriggerEnter2D()
 	{
-		Debug.Log ("Collided!");
-
+		GameController.GetComponent<Score>().IncreaseScore ();
 		coinAudio.Play (); // play the audio 
 
 		GetComponent<SpriteRenderer> ().enabled = false; //make the sprite unvisible.
