@@ -2267,6 +2267,7 @@ Score
 SimpleCamera2DFollow
 Tiling
 WrongCoin
+pauseResume
 playerController
 sceneManager
 =$/Assets/Simple Formula Drawing/Scripts

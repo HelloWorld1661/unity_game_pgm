@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\ImageGallery.cs" />
      <Compile Include="Assets\Scripts\JumpBetter.cs" />
      <Compile Include="Assets\Scripts\Parallaxing.cs" />
+     <Compile Include="Assets\Scripts\pauseResume.cs" />
      <Compile Include="Assets\Scripts\playerController.cs" />
      <Compile Include="Assets\Scripts\QuestionAndAnswerKey.cs" />
      <Compile Include="Assets\Scripts\RightCoin.cs" />
