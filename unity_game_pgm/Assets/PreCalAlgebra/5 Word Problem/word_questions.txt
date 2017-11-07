@@ -1,0 +1,25 @@
+
+The larger of two integers is 5/2 the smaller.
+If twice the smaller is subtracted from twice the larger, the difference is 12.
+Find the two numbers.
+
+Answer:  4, 10
+
+
+
+
+
+The Computer Store has reduced the price of a computer by 15%.
+What is the original price of the computer if the sale price is $1275?
+
+Answer:  $1500
+
+
+
+
+
+Jerry bought a bottle of perfume for a gift for his wife.
+The perfume cost $92 before tax.
+If the total price including tax was $98.90, find the tax rate.
+
+Answer:  7.5% LOL

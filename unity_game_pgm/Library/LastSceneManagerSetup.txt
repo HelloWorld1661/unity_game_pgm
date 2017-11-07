@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Settings.unity
+- path: Assets/InAppBrowser/Example/ExampleScene.unity
   isLoaded: 1
   isActive: 1

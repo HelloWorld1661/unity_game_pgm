@@ -39,14 +39,14 @@ public class Score : MonoBehaviour {
 		score *= 2;
 		scoreText.text = "Score : " + score;
 		getRight += 1;
-		RightAnswerText.text = "Answer Right : " + getRight;
+		RightAnswerText.text = "Correct   : " + getRight;
 	}
 
 	public void LoseScore(){
 		score -= 2;
 		scoreText.text = "Score : " + score;
 		getWrong += 1;
-		WrongAnswerText.text = "Answer Wrong : " + getWrong;
+		WrongAnswerText.text = "Incorrect : " + getWrong;
 	}
 
 }

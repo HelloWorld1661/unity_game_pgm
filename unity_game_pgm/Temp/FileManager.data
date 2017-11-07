@@ -3,7 +3,9 @@
 
 +/Assets
 
-+/Sprites
++/PreCalAlgebra
+
+=$/Assets/Sprites
 
 +/Coin
 
@@ -20,350 +22,83 @@ Assembly-CSharp
 Assembly-UnityScript
 (sln)
 unity_game_pgm
+(userprefs)
+unity_game_pgm
 (data)
 +/Temp
 FileManager
-(backup)
-+/__Backupscenes
-0
-(dll)
-=$/Temp/bin/Debug
-Assembly-CSharp
-ExCSS.Unity
-Facebook.Unity.Settings
-Unity.Cecil.Mdb
-Unity.Cecil.Pdb
-Unity.Cecil
-Unity.CecilTools
-Unity.DataContract
-Unity.Legacy.NRefactory
-Unity.SerializationLogic
-Unity.UNetWeaver
-UnityEditor
-UnityEngine.Analytics
-UnityEngine.HoloLens
-UnityEngine.Networking
-UnityEngine.Purchasing
-UnityEngine.TestRunner
-UnityEngine.Timeline
-UnityEngine.UI
+(resp)
+emcc_arguments
+(bakert)
++/ProcessJobs
+e9a6970f79cd12d8b075e7d72f1b07cb
+(xml)
+=$/Temp/StagingArea/Data
 UnityEngine
-ZiosThemes
-nunit.framework
+methods_pointedto_by_uievents
+preserved_derived_types
++/Native/Data/etc/mono/mconfig
+config
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono/mconfig
+config
+(config)
+=$/Temp/StagingArea/Data
+boot
++/Managed/mono/2.0
+machine
+=$/Temp/StagingArea/Data/Native/Data/etc/mono
+
++/1.0
+machine
+=$/Temp/StagingArea/Data/Native/Data/etc/mono/2.0
+machine
+web
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono
+
++/1.0
+machine
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono/2.0
+machine
+web
+(unity3d)
+=$/Temp/StagingArea/Data
+data
+(dat)
++/Il2CppData/Metadata
+global-metadata
+=$/Temp/StagingArea/Data/Native/Data/Metadata
+global-metadata
+=$/Temp/StagingArea/Data/Native/Data/Resources
+mscorlib.dll-resources
+=$/Temp/StagingArea/Data/il2cppOutput/Data/Metadata
+global-metadata
+=$/Temp/StagingArea/Data/il2cppOutput/Data/Resources
+mscorlib.dll-resources
+(dll)
+=$/Temp/StagingArea/Data/Managed
+Assembly-CSharp
+Mono.Security
+System.Core
+System
+UnityEngine.AnimationModule
+UnityEngine.AudioModule
+UnityEngine.CoreModule
+UnityEngine.IMGUIModule
+UnityEngine.Physics2DModule
+UnityEngine.PhysicsModule
+UnityEngine.TextRenderingModule
+UnityEngine.TilemapModule
+UnityEngine.UI
+UnityEngine.UIModule
+UnityEngine.UnityConnectModule
+UnityEngine.UnityWebRequestModule
+UnityEngine
+mscorlib
 =$/Assets/@Themes
 ZiosThemes
-(mdb)
-=$/Temp/bin/Debug
-Assembly-CSharp.dll
-Unity.UNetWeaver.dll
-(physicsMaterial2D)
-=$/Assets
-PlayerPhysMat2D
-(unitytheme)
-+/@Themes
-Classy
-Default
-Simplicity
-(asset)
-Undo
-(ttf)
-+/Fonts/8bit Operator
-8bitOperatorPlus-Bold
-8bitOperatorPlus-Regular
-8bitOperatorPlus8-Bold
-8bitOperatorPlus8-Regular
-8bitOperatorPlusSC-Bold
-8bitOperatorPlusSC-Regular
-=$/Assets/@Themes/Fonts/Alegreya
-Alegreya-Black
-Alegreya-BlackItalic
-Alegreya-Bold
-Alegreya-BoldItalic
-Alegreya-Italic
-Alegreya-Regular
-=$/Assets/@Themes/Fonts/Arvo
-Arvo-Bold
-Arvo-BoldItalic
-Arvo-Italic
-Arvo-Regular
-=$/Assets/@Themes/Fonts/Aubrey
-Aubrey-Regular
-=$/Assets/@Themes/Fonts/Chela One
-ChelaOne-Regular
-=$/Assets/@Themes/Fonts/Chub Gothic
-ChubGothic
-=$/Assets/@Themes/Fonts/Comfortaa
-Comfortaa-Bold
-Comfortaa-Light
-Comfortaa-Regular
-=$/Assets/@Themes/Fonts/Crushed
-Crushed
-=$/Assets/@Themes/Fonts/Delius
-Delius-Regular
-+ Swash Caps
-DeliusSwashCaps-Regular
-=$/Assets/@Themes/Fonts/Delius Unicase
-DeliusUnicase-Bold
-DeliusUnicase-Regular
-=$/Assets/@Themes/Fonts/Droid Sans
-DroidSans-Bold
-DroidSans-Normal
-=$/Assets/@Themes/Fonts/Economica
-Economica-Bold
-Economica-BoldItalic
-Economica-Italic
-Economica-Regular
-=$/Assets/@Themes/Fonts/Greco Roman Lubed Wrestling
-GrecoRomanLubedWrestling
-=$/Assets/@Themes/Fonts/Homenaje
-Homenaje-Regular
-=$/Assets/@Themes/Fonts/Iceberg
-Iceberg-Regular
-=$/Assets/@Themes/Fonts/Iceland
-Iceland-Regular
-=$/Assets/@Themes/Fonts/Josefin Sans
-JosefinSans-Bold
-JosefinSans-BoldItalic
-JosefinSans-Italic
-JosefinSans-Light
-JosefinSans-LightItalic
-JosefinSans-Regular
-JosefinSans-SemiBold
-JosefinSans-SemiBoldItalic
-JosefinSans-Thin
-JosefinSans-ThinItalic
-=$/Assets/@Themes/Fonts/Laila
-Laila-Bold
-Laila-Light
-Laila-Medium
-Laila-Regular
-Laila-Semibold
-=$/Assets/@Themes/Fonts/Lato
-Lato-Black
-Lato-BlackItalic
-Lato-Bold
-Lato-BoldItalic
-Lato-Hairline
-Lato-HairlineItalic
-Lato-Italic
-Lato-Light
-Lato-LightItalic
-Lato-Regular
-=$/Assets/@Themes/Fonts/Liberation Mono
-LiberationMono-Bold
-LiberationMono-BoldItalic
-LiberationMono-Italic
-LiberationMono-Regular
-=$/Assets/@Themes/Fonts/Liberation Sans
-LiberationSans-Bold
-LiberationSans-BoldItalic
-LiberationSans-Italic
-LiberationSans-Regular
-=$/Assets/@Themes/Fonts/Merienda
-Merienda-Bold
-Merienda-Regular
-+ One
-MeriendaOne-Regular
-=$/Assets/@Themes/Fonts/Merriweather
-Merriweather-Black
-Merriweather-BlackItalic
-Merriweather-Bold
-Merriweather-BoldItalic
-Merriweather-Italic
-Merriweather-Light
-Merriweather-LightItalic
-Merriweather-Regular
-=$/Assets/@Themes/Fonts/Nobile
-Nobile-Bold
-Nobile-BoldItalic
-Nobile-Italic
-Nobile-Medium
-Nobile-MediumItalic
-Nobile-Regular
-=$/Assets/@Themes/Fonts/Nova
-NovaCut
-NovaFlat
-NovaMono
-NovaOval
-NovaRound
-NovaScript
-NovaSlim
-NovaSquare
-=$/Assets/@Themes/Fonts/Open Sans
-OpenSans-Bold
-OpenSans-BoldItalic
-OpenSans-ExtraBold
-OpenSans-ExtraBoldItalic
-OpenSans-Italic
-OpenSans-Light
-OpenSans-LightItalic
-OpenSans-Regular
-OpenSans-Semibold
-OpenSans-SemiboldItalic
-=$/Assets/@Themes/Fonts/Orbitron
-Orbitron-Black
-Orbitron-Bold
-Orbitron-Medium
-Orbitron-Regular
-=$/Assets/@Themes/Fonts/Orkney
-Orkney-Medium
-=$/Assets/@Themes/Fonts/Oswald
-Oswald-Bold
-Oswald-Light
-Oswald-Regular
-=$/Assets/@Themes/Fonts/PTSans
-PTSans-Web-Bold
-PTSans-Web-BoldItalic
-PTSans-Web-Italic
-PTSans-Web-Regular
-=$/Assets/@Themes/Fonts/Paprika
-Paprika-Regular
-=$/Assets/@Themes/Fonts/Passion One
-PassionOne-Black
-PassionOne-Bold
-PassionOne-Regular
-=$/Assets/@Themes/Fonts/PixAntiqua
-PixAntiqua
-=$/Assets/@Themes/Fonts/Pixel Operator
-PixelOperator-Bold
-PixelOperator
-PixelOperator8-Bold
-PixelOperator8
-PixelOperatorHB
-PixelOperatorHB8
-PixelOperatorHBSC
-PixelOperatorMono-Bold
-PixelOperatorMono
-PixelOperatorMono8-Bold
-PixelOperatorMono8
-PixelOperatorMonoHB
-PixelOperatorMonoHB8
-PixelOperatorSC-Bold
-PixelOperatorSC
-=$/Assets/@Themes/Fonts/Pointfree
-Pointfree
-=$/Assets/@Themes/Fonts/Raleway
-Raleway-Black
-Raleway-BlackItalic
-Raleway-Bold
-Raleway-BoldItalic
-Raleway-ExtraBold
-Raleway-ExtraBoldItalic
-Raleway-ExtraLight
-Raleway-ExtraLightItalic
-Raleway-Italic
-Raleway-Light
-Raleway-LightItalic
-Raleway-Medium
-Raleway-MediumItalic
-Raleway-Regular
-Raleway-SemiBold
-Raleway-SemiBoldItalic
-Raleway-Thin
-Raleway-ThinItalic
-=$/Assets/@Themes/Fonts/Righteous
-Righteous-Regular
-=$/Assets/@Themes/Fonts/Roboto
-Roboto-Black
-Roboto-BlackItalic
-Roboto-Bold
-Roboto-BoldItalic
-Roboto-Italic
-Roboto-Light
-Roboto-LightItalic
-Roboto-Medium
-Roboto-MediumItalic
-Roboto-Regular
-Roboto-Thin
-Roboto-ThinItalic
-+ Mono
-RobotoMono-Bold
-RobotoMono-BoldItalic
-RobotoMono-Italic
-RobotoMono-Light
-RobotoMono-LightItalic
-RobotoMono-Medium
-RobotoMono-MediumItalic
-RobotoMono-Regular
-RobotoMono-Thin
-RobotoMono-ThinItalic
-=$/Assets/@Themes/Fonts/SFPixelate
-SFPixelate-Bold
-SFPixelate-BoldOblique
-SFPixelate-Oblique
-SFPixelate
-SFPixelateShaded-Bold
-SFPixelateShaded-BoldObliqu
-SFPixelateShaded-Oblique
-SFPixelateShaded
-=$/Assets/@Themes/Fonts/Share
-Share-Bold
-Share-BoldItalic
-Share-Italic
-Share-Regular
-+ Tech
-ShareTech-Regular
-+ Mono
-ShareTechMono-Regular
-=$/Assets/@Themes/Fonts/Sintony
-Sintony-Bold
-Sintony-Regular
-=$/Assets/@Themes/Fonts/Source Code Pro
-SourceCodePro-Black
-SourceCodePro-Bold
-SourceCodePro-ExtraLight
-SourceCodePro-Light
-SourceCodePro-Medium
-SourceCodePro-Regular
-SourceCodePro-Semibold
-=$/Assets/@Themes/Fonts/Source Sans Pro
-SourceSansPro-Black
-SourceSansPro-BlackItalic
-SourceSansPro-Bold
-SourceSansPro-BoldItalic
-SourceSansPro-ExtraLight
-SourceSansPro-ExtraLightItalic
-SourceSansPro-Italic
-SourceSansPro-Light
-SourceSansPro-LightItalic
-SourceSansPro-Regular
-SourceSansPro-Semibold
-SourceSansPro-SemiboldItalic
-=$/Assets/@Themes/Fonts/Source Serif Pro
-SourceSerifPro-Bold
-SourceSerifPro-Regular
-SourceSerifPro-Semibold
-=$/Assets/@Themes/Fonts/Space Mono
-SpaceMono-Bold
-SpaceMono-BoldItalic
-SpaceMono-Italic
-SpaceMono-Regular
-=$/Assets/@Themes/Fonts/Tillana
-Tillana-Bold
-Tillana-ExtraBold
-Tillana-Medium
-Tillana-Regular
-Tillana-SemiBold
-=$/Assets/@Themes/Fonts/Ubuntu
-Ubuntu-Bold
-Ubuntu-BoldItalic
-Ubuntu-Italic
-Ubuntu-Light
-Ubuntu-LightItalic
-Ubuntu-Medium
-Ubuntu-MediumItalic
-Ubuntu-Regular
-=$/Assets/@Themes/Fonts/VT323
-VT323-Regular
-=$/Assets/@Themes/Fontsets
-Border
-Button
-Code
-Header
-Highlight
-Main
-Search
 (txt)
+=$/Temp/StagingArea/Data/Managed
+ICallSummary
 =$/Assets/@Themes/Fonts/8bit Operator/.Data
 OFL
 =$/Assets/@Themes/Fonts/Alegreya/.Data
@@ -520,79 +255,165 @@ TRADEMARKS
 UFL
 =$/Assets/@Themes/Fonts/VT323/.Data
 OFL
+=$/Assets/PreCalAlgebra
+README
++/5 Word Problem
+word_questions
+=$/Assets/Simple Formula Drawing/Fonts
+Readme
 =$/Assets/Sprites/GUI/Fantasy_Game_GUI
 README
-(otf)
-=$/Assets/@Themes/Fonts/Aurulent Sans Mono
-AurulentSansMono
-=$/Assets/@Themes/Fonts/Orkney
-Orkney-Bold
-Orkney-Light
-Orkney-Regular
-=$/Assets/@Themes/Fonts/Spaceport 2006
-Spaceport2006
-=$/Assets/@Themes/Fonts/Squares
-SquaresBoldFree
-(README)
-=$/Assets/@Themes/Fonts/Chub Gothic/.Data
-
-=$/Assets/@Themes/Fonts/Liberation Mono/.Data
-
-=$/Assets/@Themes/Fonts/Source Sans Pro/.Data
-
-=$/Assets/@Themes/Fonts/Source Serif Pro/.Data
-
-=$/Assets/@Themes/Fonts/Ubuntu/.Data
-
-(AUTHORS)
-=$/Assets/@Themes/Fonts/Liberation Mono/.Data
-
-(COPYING)
-
-(ChangeLog)
-
-(pdf)
-=$/Assets/@Themes/Fonts/SFPixelate/.Data
-LICENSE
-=$/Assets/@Themes/Fonts/Squares/.Data
-OFL
-(md)
-=$/Assets/@Themes/Fonts/Space Mono/.Data
-README
-(unityfontset)
-=$/Assets/@Themes/Fontsets/Basic
-Classic
-Droid
-Lato
-Liberation
-Nobile
-Open
-Orkney
-Ubuntu
-=$/Assets/@Themes/Fontsets/Pixel
-8bitOperator-Small
-8bitOperator
-Antiqua
-Operator
-SF
-=$/Assets/@Themes/Fontsets/Styled
-Elegance
-Etched
-Fine
-Iced
-Press
-Quirky
-Reformed
-Round
-Signature
-Simplicity
-Strong
-Tall
-=$/Assets/@Themes/Fontsets/Themed
-Gothic
-Space
-Terminal
+(log)
+=$/Temp/StagingArea/Data/Managed
+SweepReport
+(mdb)
+UnityEngine.AnimationModule.dll
+UnityEngine.AudioModule.dll
+UnityEngine.CoreModule.dll
+UnityEngine.IMGUIModule.dll
+UnityEngine.Physics2DModule.dll
+UnityEngine.PhysicsModule.dll
+UnityEngine.TextRenderingModule.dll
+UnityEngine.TilemapModule.dll
+UnityEngine.UIModule.dll
+UnityEngine.UnityConnectModule.dll
+UnityEngine.UnityWebRequestModule.dll
+UnityEngine.dll
+(cpp)
+UnityICallRegistration
+=$/Temp/StagingArea/Data/il2cppOutput
+Bulk_Assembly-CSharp_0
+Bulk_Generics_0
+Bulk_Generics_1
+Bulk_Generics_2
+Bulk_Generics_3
+Bulk_Generics_4
+Bulk_Generics_5
+Bulk_Generics_6
+Bulk_Generics_7
+Bulk_Mono.Security_0
+Bulk_Mono.Security_1
+Bulk_System.Core_0
+Bulk_System_0
+Bulk_System_1
+Bulk_UnityEngine.AnimationModule_0
+Bulk_UnityEngine.AudioModule_0
+Bulk_UnityEngine.CoreModule_0
+Bulk_UnityEngine.CoreModule_1
+Bulk_UnityEngine.IMGUIModule_0
+Bulk_UnityEngine.Physics2DModule_0
+Bulk_UnityEngine.PhysicsModule_0
+Bulk_UnityEngine.TextRenderingModule_0
+Bulk_UnityEngine.TilemapModule_0
+Bulk_UnityEngine.UIModule_0
+Bulk_UnityEngine.UI_0
+Bulk_UnityEngine.UI_1
+Bulk_UnityEngine.UnityConnectModule_0
+Bulk_UnityEngine.UnityWebRequestModule_0
+Bulk_UnityEngine_0
+Bulk_mscorlib_0
+Bulk_mscorlib_1
+Bulk_mscorlib_2
+Bulk_mscorlib_3
+Bulk_mscorlib_4
+Bulk_mscorlib_5
+Bulk_mscorlib_6
+Bulk_mscorlib_7
+GenericMethods0
+Il2CppAttributes
+Il2CppCodeRegistration
+Il2CppCompilerCalculateTypeValuesTable
+Il2CppCompilerCalculateTypeValues_0Table
+Il2CppCompilerCalculateTypeValues_10Table
+Il2CppCompilerCalculateTypeValues_11Table
+Il2CppCompilerCalculateTypeValues_12Table
+Il2CppCompilerCalculateTypeValues_13Table
+Il2CppCompilerCalculateTypeValues_14Table
+Il2CppCompilerCalculateTypeValues_15Table
+Il2CppCompilerCalculateTypeValues_16Table
+Il2CppCompilerCalculateTypeValues_17Table
+Il2CppCompilerCalculateTypeValues_1Table
+Il2CppCompilerCalculateTypeValues_2Table
+Il2CppCompilerCalculateTypeValues_3Table
+Il2CppCompilerCalculateTypeValues_4Table
+Il2CppCompilerCalculateTypeValues_5Table
+Il2CppCompilerCalculateTypeValues_6Table
+Il2CppCompilerCalculateTypeValues_7Table
+Il2CppCompilerCalculateTypeValues_8Table
+Il2CppCompilerCalculateTypeValues_9Table
+Il2CppGenericClassTable
+Il2CppGenericComDefinitions0
+Il2CppGenericInstDefinitions
+Il2CppGenericMethodDefinitions
+Il2CppGenericMethodPointerTable
+Il2CppGenericMethodTable
+Il2CppInteropDataTable
+Il2CppInvokerTable
+Il2CppMetadataRegistration
+Il2CppMetadataUsage
+Il2CppMethodPointerTable
+Il2CppTypeDefinitions
+UnityClassRegistration
+UnityICallRegistration
+UnresolvedVirtualCallStubs
+(bc)
+=$/Temp/StagingArea/Data/Native
+build
+(ini)
++/Data/etc/mono
+browscap
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono
+browscap
+(aspx)
+=$/Temp/StagingArea/Data/Native/Data/etc/mono/1.0
+DefaultWsdlHelpGenerator
+=$/Temp/StagingArea/Data/Native/Data/etc/mono/2.0
+DefaultWsdlHelpGenerator
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono/1.0
+DefaultWsdlHelpGenerator
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono/2.0
+DefaultWsdlHelpGenerator
+(map)
+=$/Temp/StagingArea/Data/Native/Data/etc/mono/2.0
+settings
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono/2.0
+settings
+(browser)
+=$/Temp/StagingArea/Data/Native/Data/etc/mono/2.0/Browsers
+Compat
+=$/Temp/StagingArea/Data/il2cppOutput/Data/etc/mono/2.0/Browsers
+Compat
+(html)
+=$/Temp/StagingArea/Data/Output
+index
+(js)
++/Build
+UnityLoader
+=$/Temp/StagingArea/Data/Output/TemplateData
+UnityProgress
+=$/Temp/StagingArea/Data/linkresult_asm
+build.asm
+build
+(unityweb)
+=$/Temp/StagingArea/Data/Output/Build
+inAppWebUnityTest1.asm.code
+inAppWebUnityTest1.asm.framework
+inAppWebUnityTest1.asm.memory
+inAppWebUnityTest1.data
+(json)
+inAppWebUnityTest1
+(ico)
+=$/Temp/StagingArea/Data/Output/TemplateData
+favicon
 (png)
+fullscreen
+progressEmpty.Dark
+progressEmpty.Light
+progressFull.Dark
+progressFull.Light
+progressLogo.Dark
+progressLogo.Light
+webgl-logo
 =$/Assets/@Themes/Iconsets/Default
 AS Badge Delete
 AS Badge Move
@@ -1136,6 +957,181 @@ Warning
 #Warning
 =$/Assets/Images
 346
+math1
+=$/Assets/PreCalAlgebra
+_mathIndex
+outlineOfWorkableHeaderSpaceInGame
++/1 Operations with Real Numbers
+Screen Shot 2017-11-07 at 3.52.59 AM
+Screen Shot 2017-11-07 at 3.53.20 AM
+Screen Shot 2017-11-07 at 3.53.32 AM
+Screen Shot 2017-11-07 at 3.53.39 AM
+=$/Assets/PreCalAlgebra/10 Equations of Lines
+Screen Shot 2017-11-07 at 4.06.20 AM
+Screen Shot 2017-11-07 at 4.06.30 AM
+Screen Shot 2017-11-07 at 4.06.38 AM
+Screen Shot 2017-11-07 at 4.06.47 AM
+Screen Shot 2017-11-07 at 4.06.57 AM
+Screen Shot 2017-11-07 at 4.07.03 AM
+Screen Shot 2017-11-07 at 4.07.09 AM
+TEST1
+=$/Assets/PreCalAlgebra/11 Exponents
+Screen Shot 2017-11-07 at 4.19.25 AM
+Screen Shot 2017-11-07 at 4.19.34 AM
+Screen Shot 2017-11-07 at 4.19.46 AM
+Screen Shot 2017-11-07 at 4.19.59 AM
+Screen Shot 2017-11-07 at 4.20.20 AM
+Screen Shot 2017-11-07 at 4.20.30 AM
+=$/Assets/PreCalAlgebra/13 Multiplying Polynomials
+Screen Shot 2017-11-07 at 4.21.11 AM
+Screen Shot 2017-11-07 at 4.21.51 AM
+Screen Shot 2017-11-07 at 4.22.20 AM
+Screen Shot 2017-11-07 at 4.22.26 AM
+Screen Shot 2017-11-07 at 4.22.40 AM
+Screen Shot 2017-11-07 at 4.22.45 AM
+Screen Shot 2017-11-07 at 4.22.53 AM
+Screen Shot 2017-11-07 at 4.23.00 AM
+Screen Shot 2017-11-07 at 4.23.11 AM
+=$/Assets/PreCalAlgebra/14 Synthetic Division
+Screen Shot 2017-11-07 at 4.23.36 AM
+Screen Shot 2017-11-07 at 4.23.45 AM
+Screen Shot 2017-11-07 at 4.24.13 AM
+Screen Shot 2017-11-07 at 4.24.28 AM
+=$/Assets/PreCalAlgebra/15 Dividing Polynomials
+Screen Shot 2017-11-07 at 4.24.56 AM
+Screen Shot 2017-11-07 at 4.25.04 AM
+Screen Shot 2017-11-07 at 4.25.11 AM
+Screen Shot 2017-11-07 at 4.25.20 AM
+Screen Shot 2017-11-07 at 4.25.45 AM
+=$/Assets/PreCalAlgebra/17 Factoring
+Screen Shot 2017-11-07 at 4.26.59 AM
+Screen Shot 2017-11-07 at 4.27.06 AM
+Screen Shot 2017-11-07 at 4.27.15 AM
+Screen Shot 2017-11-07 at 4.27.25 AM
+Screen Shot 2017-11-07 at 4.27.31 AM
+=$/Assets/PreCalAlgebra/18 More Factoring
+Screen Shot 2017-11-07 at 4.27.55 AM
+Screen Shot 2017-11-07 at 4.28.04 AM
+Screen Shot 2017-11-07 at 4.28.20 AM
+Screen Shot 2017-11-07 at 4.28.25 AM
+Screen Shot 2017-11-07 at 4.28.34 AM
+Screen Shot 2017-11-07 at 4.28.41 AM
+Screen Shot 2017-11-07 at 4.28.48 AM
+=$/Assets/PreCalAlgebra/19 Still More Factoring
+Screen Shot 2017-11-07 at 4.29.07 AM
+Screen Shot 2017-11-07 at 4.29.22 AM
+=$/Assets/PreCalAlgebra/2 Order of Operations
+Screen Shot 2017-11-07 at 3.54.09 AM
+Screen Shot 2017-11-07 at 3.54.18 AM
+Screen Shot 2017-11-07 at 3.54.27 AM
+Screen Shot 2017-11-07 at 3.54.50 AM
+Screen Shot 2017-11-07 at 3.54.58 AM
+=$/Assets/PreCalAlgebra/20 Solving Equations by Factoring
+Screen Shot 2017-11-07 at 4.29.51 AM
+Screen Shot 2017-11-07 at 4.29.57 AM
+Screen Shot 2017-11-07 at 4.30.02 AM
+Screen Shot 2017-11-07 at 4.30.08 AM
+Screen Shot 2017-11-07 at 4.30.13 AM
+Screen Shot 2017-11-07 at 4.30.18 AM
+=$/Assets/PreCalAlgebra/21 Yet More Factoring lol
+Screen Shot 2017-11-07 at 4.30.41 AM
+Screen Shot 2017-11-07 at 4.30.46 AM
+=$/Assets/PreCalAlgebra/22 Simplifying Rational Expressions
+Screen Shot 2017-11-07 at 4.31.02 AM
+Screen Shot 2017-11-07 at 4.31.07 AM
+Screen Shot 2017-11-07 at 4.31.12 AM
+Screen Shot 2017-11-07 at 4.31.17 AM
+=$/Assets/PreCalAlgebra/23 Solving Rational Equations
+Screen Shot 2017-11-07 at 4.34.03 AM
+Screen Shot 2017-11-07 at 4.34.07 AM
+Screen Shot 2017-11-07 at 4.34.13 AM
+Screen Shot 2017-11-07 at 4.34.19 AM
+=$/Assets/PreCalAlgebra/24 Roots and Radicals
+Screen Shot 2017-11-07 at 4.34.45 AM
+Screen Shot 2017-11-07 at 4.34.51 AM
+Screen Shot 2017-11-07 at 4.34.56 AM
+Screen Shot 2017-11-07 at 4.35.00 AM
+Screen Shot 2017-11-07 at 4.35.05 AM
+=$/Assets/PreCalAlgebra/25 Rational Exponents
+Screen Shot 2017-11-07 at 4.35.22 AM
+Screen Shot 2017-11-07 at 4.35.29 AM
+Screen Shot 2017-11-07 at 4.36.00 AM
+Screen Shot 2017-11-07 at 4.36.05 AM
+Screen Shot 2017-11-07 at 4.36.09 AM
+=$/Assets/PreCalAlgebra/26 SimplifyingOrMultiplying Radicals
+Screen Shot 2017-11-07 at 4.36.30 AM
+Screen Shot 2017-11-07 at 4.36.36 AM
+Screen Shot 2017-11-07 at 4.36.43 AM
+Screen Shot 2017-11-07 at 4.36.48 AM
+Screen Shot 2017-11-07 at 4.36.54 AM
+Screen Shot 2017-11-07 at 4.36.59 AM
+=$/Assets/PreCalAlgebra/28 Systems of Equations
+Screen Shot 2017-11-07 at 4.39.03 AM
+Screen Shot 2017-11-07 at 4.39.10 AM
+Screen Shot 2017-11-07 at 4.39.17 AM
+Screen Shot 2017-11-07 at 4.39.23 AM
+Screen Shot 2017-11-07 at 4.39.30 AM
+Screen Shot 2017-11-07 at 4.39.37 AM
+=$/Assets/PreCalAlgebra/29 More Systems of Equations
+Screen Shot 2017-11-07 at 4.39.56 AM
+Screen Shot 2017-11-07 at 4.40.02 AM
+Screen Shot 2017-11-07 at 4.40.08 AM
+=$/Assets/PreCalAlgebra/3 Solving Linear Equations
+Screen Shot 2017-11-07 at 3.55.18 AM
+Screen Shot 2017-11-07 at 3.55.25 AM
+Screen Shot 2017-11-07 at 3.55.32 AM
+Screen Shot 2017-11-07 at 3.55.44 AM
+Screen Shot 2017-11-07 at 3.55.59 AM
+=$/Assets/PreCalAlgebra/30 Quadratic Formula
+Screen Shot 2017-11-07 at 4.40.45 AM
+Screen Shot 2017-11-07 at 4.40.51 AM
+Screen Shot 2017-11-07 at 4.40.57 AM
+Screen Shot 2017-11-07 at 4.41.02 AM
+Screen Shot 2017-11-07 at 4.41.10 AM
+=$/Assets/PreCalAlgebra/31 More Quadratic Formula
+Screen Shot 2017-11-07 at 4.41.34 AM
+Screen Shot 2017-11-07 at 4.41.39 AM
+Screen Shot 2017-11-07 at 4.41.46 AM
+Screen Shot 2017-11-07 at 4.41.54 AM
+=$/Assets/PreCalAlgebra/32 MultiplyingOrDividing Complex Numbers
+Screen Shot 2017-11-07 at 4.42.41 AM
+Screen Shot 2017-11-07 at 4.42.46 AM
+Screen Shot 2017-11-07 at 4.42.52 AM
+Screen Shot 2017-11-07 at 4.42.57 AM
+Screen Shot 2017-11-07 at 4.43.03 AM
+Screen Shot 2017-11-07 at 4.43.11 AM
+Screen Shot 2017-11-07 at 4.43.18 AM
+=$/Assets/PreCalAlgebra/4 Solving for a Variable
+Screen Shot 2017-11-07 at 3.56.28 AM
+Screen Shot 2017-11-07 at 3.56.36 AM
+Screen Shot 2017-11-07 at 3.56.42 AM
+Screen Shot 2017-11-07 at 3.56.48 AM
+Screen Shot 2017-11-07 at 3.56.54 AM
+Screen Shot 2017-11-07 at 3.57.05 AM
+Screen Shot 2017-11-07 at 3.57.14 AM
+=$/Assets/PreCalAlgebra/5 Word Problem
+Screen Shot 2017-11-07 at 3.57.35 AM
+Screen Shot 2017-11-07 at 3.57.47 AM
+Screen Shot 2017-11-07 at 3.58.09 AM
+=$/Assets/PreCalAlgebra/6 Solving Absolute Value Equations
+Screen Shot 2017-11-07 at 4.01.01 AM
+Screen Shot 2017-11-07 at 4.01.38 AM
+Screen Shot 2017-11-07 at 4.01.46 AM
+Screen Shot 2017-11-07 at 4.02.02 AM
+=$/Assets/PreCalAlgebra/7 Solving Inequalities
+Screen Shot 2017-11-07 at 4.03.25 AM
+Screen Shot 2017-11-07 at 4.03.35 AM
+Screen Shot 2017-11-07 at 4.03.42 AM
+Screen Shot 2017-11-07 at 4.03.52 AM
+Screen Shot 2017-11-07 at 4.04.00 AM
+=$/Assets/PreCalAlgebra/8 DistanceOrMidpoint Between Points
+Screen Shot 2017-11-07 at 4.04.21 AM
+Screen Shot 2017-11-07 at 4.04.27 AM
+Screen Shot 2017-11-07 at 4.04.35 AM
+Screen Shot 2017-11-07 at 4.04.40 AM
+Screen Shot 2017-11-07 at 4.04.46 AM
+=$/Assets/Simple Formula Drawing/Textures
+blackboard
 =$/Assets/Sprites
 platform_template1
 platform_template2
@@ -1661,6 +1657,414 @@ cartoonMountains
 countryRoadPlatform
 grain
 mountainsVintageBW
+(css)
+=$/Temp/StagingArea/Data/Output/TemplateData
+style
+(unity_default_resources)
+=$/Temp/StagingArea/Data/Resources
+
+(h)
+=$/Temp/StagingArea/Data/il2cppOutput
+GeneratedCodeGen
+GeneratedGenericInterfaceInvokers
+GeneratedGenericVirtualInvokers
+GeneratedInterfaceInvokers
+GeneratedVirtualInvokers
+=$/Assets/Plugins/iOS
+InAppBrowserViewController
+OrientationNavigationViewController
+(mem)
+=$/Temp/StagingArea/Data/linkresult_asm
+build.js
+(symbols)
+build.js
+(stripped)
+build.js.symbols
+(backup)
+=$/Temp/__Backupscenes
+0
+(physicsMaterial2D)
+=$/Assets
+PlayerPhysMat2D
+(unitytheme)
++/@Themes
+Classy
+Default
+Simplicity
+(asset)
+Undo
+(ttf)
++/Fonts/8bit Operator
+8bitOperatorPlus-Bold
+8bitOperatorPlus-Regular
+8bitOperatorPlus8-Bold
+8bitOperatorPlus8-Regular
+8bitOperatorPlusSC-Bold
+8bitOperatorPlusSC-Regular
+=$/Assets/@Themes/Fonts/Alegreya
+Alegreya-Black
+Alegreya-BlackItalic
+Alegreya-Bold
+Alegreya-BoldItalic
+Alegreya-Italic
+Alegreya-Regular
+=$/Assets/@Themes/Fonts/Arvo
+Arvo-Bold
+Arvo-BoldItalic
+Arvo-Italic
+Arvo-Regular
+=$/Assets/@Themes/Fonts/Aubrey
+Aubrey-Regular
+=$/Assets/@Themes/Fonts/Chela One
+ChelaOne-Regular
+=$/Assets/@Themes/Fonts/Chub Gothic
+ChubGothic
+=$/Assets/@Themes/Fonts/Comfortaa
+Comfortaa-Bold
+Comfortaa-Light
+Comfortaa-Regular
+=$/Assets/@Themes/Fonts/Crushed
+Crushed
+=$/Assets/@Themes/Fonts/Delius
+Delius-Regular
++ Swash Caps
+DeliusSwashCaps-Regular
+=$/Assets/@Themes/Fonts/Delius Unicase
+DeliusUnicase-Bold
+DeliusUnicase-Regular
+=$/Assets/@Themes/Fonts/Droid Sans
+DroidSans-Bold
+DroidSans-Normal
+=$/Assets/@Themes/Fonts/Economica
+Economica-Bold
+Economica-BoldItalic
+Economica-Italic
+Economica-Regular
+=$/Assets/@Themes/Fonts/Greco Roman Lubed Wrestling
+GrecoRomanLubedWrestling
+=$/Assets/@Themes/Fonts/Homenaje
+Homenaje-Regular
+=$/Assets/@Themes/Fonts/Iceberg
+Iceberg-Regular
+=$/Assets/@Themes/Fonts/Iceland
+Iceland-Regular
+=$/Assets/@Themes/Fonts/Josefin Sans
+JosefinSans-Bold
+JosefinSans-BoldItalic
+JosefinSans-Italic
+JosefinSans-Light
+JosefinSans-LightItalic
+JosefinSans-Regular
+JosefinSans-SemiBold
+JosefinSans-SemiBoldItalic
+JosefinSans-Thin
+JosefinSans-ThinItalic
+=$/Assets/@Themes/Fonts/Laila
+Laila-Bold
+Laila-Light
+Laila-Medium
+Laila-Regular
+Laila-Semibold
+=$/Assets/@Themes/Fonts/Lato
+Lato-Black
+Lato-BlackItalic
+Lato-Bold
+Lato-BoldItalic
+Lato-Hairline
+Lato-HairlineItalic
+Lato-Italic
+Lato-Light
+Lato-LightItalic
+Lato-Regular
+=$/Assets/@Themes/Fonts/Liberation Mono
+LiberationMono-Bold
+LiberationMono-BoldItalic
+LiberationMono-Italic
+LiberationMono-Regular
+=$/Assets/@Themes/Fonts/Liberation Sans
+LiberationSans-Bold
+LiberationSans-BoldItalic
+LiberationSans-Italic
+LiberationSans-Regular
+=$/Assets/@Themes/Fonts/Merienda
+Merienda-Bold
+Merienda-Regular
++ One
+MeriendaOne-Regular
+=$/Assets/@Themes/Fonts/Merriweather
+Merriweather-Black
+Merriweather-BlackItalic
+Merriweather-Bold
+Merriweather-BoldItalic
+Merriweather-Italic
+Merriweather-Light
+Merriweather-LightItalic
+Merriweather-Regular
+=$/Assets/@Themes/Fonts/Nobile
+Nobile-Bold
+Nobile-BoldItalic
+Nobile-Italic
+Nobile-Medium
+Nobile-MediumItalic
+Nobile-Regular
+=$/Assets/@Themes/Fonts/Nova
+NovaCut
+NovaFlat
+NovaMono
+NovaOval
+NovaRound
+NovaScript
+NovaSlim
+NovaSquare
+=$/Assets/@Themes/Fonts/Open Sans
+OpenSans-Bold
+OpenSans-BoldItalic
+OpenSans-ExtraBold
+OpenSans-ExtraBoldItalic
+OpenSans-Italic
+OpenSans-Light
+OpenSans-LightItalic
+OpenSans-Regular
+OpenSans-Semibold
+OpenSans-SemiboldItalic
+=$/Assets/@Themes/Fonts/Orbitron
+Orbitron-Black
+Orbitron-Bold
+Orbitron-Medium
+Orbitron-Regular
+=$/Assets/@Themes/Fonts/Orkney
+Orkney-Medium
+=$/Assets/@Themes/Fonts/Oswald
+Oswald-Bold
+Oswald-Light
+Oswald-Regular
+=$/Assets/@Themes/Fonts/PTSans
+PTSans-Web-Bold
+PTSans-Web-BoldItalic
+PTSans-Web-Italic
+PTSans-Web-Regular
+=$/Assets/@Themes/Fonts/Paprika
+Paprika-Regular
+=$/Assets/@Themes/Fonts/Passion One
+PassionOne-Black
+PassionOne-Bold
+PassionOne-Regular
+=$/Assets/@Themes/Fonts/PixAntiqua
+PixAntiqua
+=$/Assets/@Themes/Fonts/Pixel Operator
+PixelOperator-Bold
+PixelOperator
+PixelOperator8-Bold
+PixelOperator8
+PixelOperatorHB
+PixelOperatorHB8
+PixelOperatorHBSC
+PixelOperatorMono-Bold
+PixelOperatorMono
+PixelOperatorMono8-Bold
+PixelOperatorMono8
+PixelOperatorMonoHB
+PixelOperatorMonoHB8
+PixelOperatorSC-Bold
+PixelOperatorSC
+=$/Assets/@Themes/Fonts/Pointfree
+Pointfree
+=$/Assets/@Themes/Fonts/Raleway
+Raleway-Black
+Raleway-BlackItalic
+Raleway-Bold
+Raleway-BoldItalic
+Raleway-ExtraBold
+Raleway-ExtraBoldItalic
+Raleway-ExtraLight
+Raleway-ExtraLightItalic
+Raleway-Italic
+Raleway-Light
+Raleway-LightItalic
+Raleway-Medium
+Raleway-MediumItalic
+Raleway-Regular
+Raleway-SemiBold
+Raleway-SemiBoldItalic
+Raleway-Thin
+Raleway-ThinItalic
+=$/Assets/@Themes/Fonts/Righteous
+Righteous-Regular
+=$/Assets/@Themes/Fonts/Roboto
+Roboto-Black
+Roboto-BlackItalic
+Roboto-Bold
+Roboto-BoldItalic
+Roboto-Italic
+Roboto-Light
+Roboto-LightItalic
+Roboto-Medium
+Roboto-MediumItalic
+Roboto-Regular
+Roboto-Thin
+Roboto-ThinItalic
++ Mono
+RobotoMono-Bold
+RobotoMono-BoldItalic
+RobotoMono-Italic
+RobotoMono-Light
+RobotoMono-LightItalic
+RobotoMono-Medium
+RobotoMono-MediumItalic
+RobotoMono-Regular
+RobotoMono-Thin
+RobotoMono-ThinItalic
+=$/Assets/@Themes/Fonts/SFPixelate
+SFPixelate-Bold
+SFPixelate-BoldOblique
+SFPixelate-Oblique
+SFPixelate
+SFPixelateShaded-Bold
+SFPixelateShaded-BoldObliqu
+SFPixelateShaded-Oblique
+SFPixelateShaded
+=$/Assets/@Themes/Fonts/Share
+Share-Bold
+Share-BoldItalic
+Share-Italic
+Share-Regular
++ Tech
+ShareTech-Regular
++ Mono
+ShareTechMono-Regular
+=$/Assets/@Themes/Fonts/Sintony
+Sintony-Bold
+Sintony-Regular
+=$/Assets/@Themes/Fonts/Source Code Pro
+SourceCodePro-Black
+SourceCodePro-Bold
+SourceCodePro-ExtraLight
+SourceCodePro-Light
+SourceCodePro-Medium
+SourceCodePro-Regular
+SourceCodePro-Semibold
+=$/Assets/@Themes/Fonts/Source Sans Pro
+SourceSansPro-Black
+SourceSansPro-BlackItalic
+SourceSansPro-Bold
+SourceSansPro-BoldItalic
+SourceSansPro-ExtraLight
+SourceSansPro-ExtraLightItalic
+SourceSansPro-Italic
+SourceSansPro-Light
+SourceSansPro-LightItalic
+SourceSansPro-Regular
+SourceSansPro-Semibold
+SourceSansPro-SemiboldItalic
+=$/Assets/@Themes/Fonts/Source Serif Pro
+SourceSerifPro-Bold
+SourceSerifPro-Regular
+SourceSerifPro-Semibold
+=$/Assets/@Themes/Fonts/Space Mono
+SpaceMono-Bold
+SpaceMono-BoldItalic
+SpaceMono-Italic
+SpaceMono-Regular
+=$/Assets/@Themes/Fonts/Tillana
+Tillana-Bold
+Tillana-ExtraBold
+Tillana-Medium
+Tillana-Regular
+Tillana-SemiBold
+=$/Assets/@Themes/Fonts/Ubuntu
+Ubuntu-Bold
+Ubuntu-BoldItalic
+Ubuntu-Italic
+Ubuntu-Light
+Ubuntu-LightItalic
+Ubuntu-Medium
+Ubuntu-MediumItalic
+Ubuntu-Regular
+=$/Assets/@Themes/Fonts/VT323
+VT323-Regular
+=$/Assets/@Themes/Fontsets
+Border
+Button
+Code
+Header
+Highlight
+Main
+Search
+=$/Assets/Simple Formula Drawing/Fonts
+EraserDust
+EraserRegular
+(otf)
+=$/Assets/@Themes/Fonts/Aurulent Sans Mono
+AurulentSansMono
+=$/Assets/@Themes/Fonts/Orkney
+Orkney-Bold
+Orkney-Light
+Orkney-Regular
+=$/Assets/@Themes/Fonts/Spaceport 2006
+Spaceport2006
+=$/Assets/@Themes/Fonts/Squares
+SquaresBoldFree
+(README)
+=$/Assets/@Themes/Fonts/Chub Gothic/.Data
+
+=$/Assets/@Themes/Fonts/Liberation Mono/.Data
+
+=$/Assets/@Themes/Fonts/Source Sans Pro/.Data
+
+=$/Assets/@Themes/Fonts/Source Serif Pro/.Data
+
+=$/Assets/@Themes/Fonts/Ubuntu/.Data
+
+(AUTHORS)
+=$/Assets/@Themes/Fonts/Liberation Mono/.Data
+
+(COPYING)
+
+(ChangeLog)
+
+(pdf)
+=$/Assets/@Themes/Fonts/SFPixelate/.Data
+LICENSE
+=$/Assets/@Themes/Fonts/Squares/.Data
+OFL
+=$/Assets/Simple Formula Drawing
+README_DOCUMENTATION
+(md)
+=$/Assets/@Themes/Fonts/Space Mono/.Data
+README
+(unityfontset)
+=$/Assets/@Themes/Fontsets/Basic
+Classic
+Droid
+Lato
+Liberation
+Nobile
+Open
+Orkney
+Ubuntu
+=$/Assets/@Themes/Fontsets/Pixel
+8bitOperator-Small
+8bitOperator
+Antiqua
+Operator
+SF
+=$/Assets/@Themes/Fontsets/Styled
+Elegance
+Etched
+Fine
+Iced
+Press
+Quirky
+Reformed
+Round
+Signature
+Simplicity
+Strong
+Tall
+=$/Assets/@Themes/Fontsets/Themed
+Gothic
+Space
+Terminal
 (guicontent)
 =$/Assets/@Themes/Iconsets/Simplicity
 UnityEditor.BuildPlayerWindow.styles
@@ -1788,11 +2192,27 @@ star coin 2
 Sour Sweet Filmy edited
 (wav)
 coins
+(jar)
+=$/Assets/Plugins/Android
+InAppBrowser
+(mm)
+=$/Assets/Plugins/iOS
+InAppBrowserViewController
+iOSInAppBrowser
+(m)
+OrientationNavigationViewController
 (prefab)
 =$/Assets/Prefabs
+Background_Image
 Coins
 RightCoin
 WrongCoin
+=$/Assets/Simple Formula Drawing/Prefab
+Text
+formulaTEST
+fraction
+lim
+power
 (unity)
 =$/Assets/Scenes
 Instruction
@@ -1801,12 +2221,15 @@ Settings
 firstScene
 secondScene
 thirdScene
+=$/Assets/Simple Formula Drawing/Scenes
+simpleScene
 (cs)
 =$/Assets/Scripts
 Coin
 CoinText
 DontDestroy
 Parallaxing
+QuestionAndAnswerKey
 RightCoin
 Score
 SimpleCamera2DFollow
@@ -1814,5 +2237,6 @@ Tiling
 WrongCoin
 playerController
 sceneManager
-(js)
-MainMenu
+=$/Assets/Simple Formula Drawing/Scripts
+SimpleFormula
+SimpleFormulaEditor
