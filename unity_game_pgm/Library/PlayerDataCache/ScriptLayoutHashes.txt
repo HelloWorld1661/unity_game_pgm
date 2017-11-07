@@ -115,10 +115,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.SimpleCamera2DFollow
 32ea73a1c3f6bc0e08ab0d4f7ebda4ea Assembly-CSharp.dll:.CoinText
-3eb8babe71fd3f707179a0e30da812dc Assembly-CSharp.dll:.LocalFileOpener
-855a48ce4e4f8850d67b55f0cf120e28 Assembly-CSharp.dll:.InAppBrowserBridge
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
-5813eae2f41c1fb2b0100c8109592a50 Assembly-CSharp.dll:.BrowserOpener
 891d11641fc22d33d0f81c69ab34f9b1 Assembly-CSharp.dll:.Tiling
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -142,7 +139,6 @@ eb08fa9ccfe5cc868f5e40be29a2fa04 Assembly-CSharp.dll:.RightCoin
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
-31fd7a736c6f3250e5b419664c98fb8e Assembly-CSharp.dll:.JSExecute
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -267,3 +263,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+d37b7651cda8a4de6eb3021421d8ef80 Assembly-CSharp.dll:.ImageGallery
+ffca5b35bdbb3394b7494cbeeab3b598 Assembly-CSharp.dll:.JumpBetter
+8ec8b86f43938103d7a07414cfd143c1 Assembly-CSharp.dll:.pauseResume
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.tutorialManager

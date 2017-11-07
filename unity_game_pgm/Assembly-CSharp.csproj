@@ -67,9 +67,6 @@
      <Compile Include="Assets\Scripts\Tiling.cs" />
      <Compile Include="Assets\Scripts\tutorialManager.cs" />
      <Compile Include="Assets\Scripts\WrongCoin.cs" />
-     <Compile Include="Assets\Simple Formula Drawing\Scripts\SimpleFormula.cs" />
-     <Compile Include="Assets\Simple Formula Drawing\Scripts\SimpleFormulaEditor.cs" />
-     <None Include="Assets\Simple Formula Drawing\Fonts\Readme.txt" />
      <None Include="Assets\Sprites\GUI\Fantasy_Game_GUI\README.txt" />
      <None Include="Assets\PreCalAlgebra\README.txt" />
      <None Include="Assets\PreCalAlgebra\5 Word Problem\word_questions.txt" />

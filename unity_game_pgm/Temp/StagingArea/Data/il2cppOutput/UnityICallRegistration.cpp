@@ -638,6 +638,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GameObject_Internal_AddComponentWithType();
 		Register_UnityEngine_GameObject_Internal_AddComponentWithType();
 
+		//UnityEngine.GameObject UnityEngine.GameObject::Find(System.String)
+		void Register_UnityEngine_GameObject_Find();
+		Register_UnityEngine_GameObject_Find();
+
 		//UnityEngine.GameObject UnityEngine.GameObject::FindGameObjectWithTag(System.String)
 		void Register_UnityEngine_GameObject_FindGameObjectWithTag();
 		Register_UnityEngine_GameObject_FindGameObjectWithTag();
@@ -986,10 +990,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Object_Internal_CloneSingle();
 		Register_UnityEngine_Object_Internal_CloneSingle();
 
-		//UnityEngine.Object[] UnityEngine.Object::FindObjectsOfType(System.Type)
-		void Register_UnityEngine_Object_FindObjectsOfType();
-		Register_UnityEngine_Object_FindObjectsOfType();
-
 	//End Registrations for type : UnityEngine.Object
 
 	//Start Registrations for type : UnityEngine.Physics2D
@@ -1326,6 +1326,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.SpriteRenderer
 
+		//System.Void UnityEngine.SpriteRenderer::SetSprite_INTERNAL(UnityEngine.Sprite)
+		void Register_UnityEngine_SpriteRenderer_SetSprite_INTERNAL();
+		Register_UnityEngine_SpriteRenderer_SetSprite_INTERNAL();
+
 		//UnityEngine.Sprite UnityEngine.SpriteRenderer::GetSprite_INTERNAL()
 		void Register_UnityEngine_SpriteRenderer_GetSprite_INTERNAL();
 		Register_UnityEngine_SpriteRenderer_GetSprite_INTERNAL();
@@ -1449,6 +1453,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Single UnityEngine.Time::get_unscaledTime()
 		void Register_UnityEngine_Time_get_unscaledTime();
 		Register_UnityEngine_Time_get_unscaledTime();
+
+		//System.Void UnityEngine.Time::set_timeScale(System.Single)
+		void Register_UnityEngine_Time_set_timeScale();
+		Register_UnityEngine_Time_set_timeScale();
 
 	//End Registrations for type : UnityEngine.Time
 

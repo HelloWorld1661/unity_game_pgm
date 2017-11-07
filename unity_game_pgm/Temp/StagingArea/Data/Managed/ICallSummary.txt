@@ -135,6 +135,7 @@ UnityEngine.GameObject::GetComponent
 UnityEngine.GameObject::GetComponentInChildren
 UnityEngine.GameObject::GetComponentInParent
 UnityEngine.GameObject::Internal_AddComponentWithType
+UnityEngine.GameObject::Find
 UnityEngine.GameObject::FindGameObjectWithTag
 UnityEngine.GameObject::FindGameObjectsWithTag
 UnityEngine.GameObject::get_transform
@@ -210,7 +211,6 @@ UnityEngine.Object::set_hideFlags
 UnityEngine.Object::set_name
 UnityEngine.Object::INTERNAL_CALL_Internal_InstantiateSingle
 UnityEngine.Object::Internal_CloneSingle
-UnityEngine.Object::FindObjectsOfType
 UnityEngine.Physics2D::get_queriesHitTriggers
 UnityEngine.Physics2D::INTERNAL_CALL_Internal_RaycastNonAlloc
 UnityEngine.Physics2D::INTERNAL_CALL_Internal_Raycast
@@ -276,6 +276,7 @@ UnityEngine.Sprite::INTERNAL_get_rect
 UnityEngine.Sprite::INTERNAL_get_textureRect
 UnityEngine.Sprite::get_associatedAlphaSplitTexture
 UnityEngine.Sprite::get_texture
+UnityEngine.SpriteRenderer::SetSprite_INTERNAL
 UnityEngine.SpriteRenderer::GetSprite_INTERNAL
 UnityEngine.Sprites.DataUtility::INTERNAL_CALL_GetInnerUV
 UnityEngine.Sprites.DataUtility::INTERNAL_CALL_GetOuterUV
@@ -301,6 +302,7 @@ UnityEngine.Time::get_deltaTime
 UnityEngine.Time::get_realtimeSinceStartup
 UnityEngine.Time::get_unscaledDeltaTime
 UnityEngine.Time::get_unscaledTime
+UnityEngine.Time::set_timeScale
 UnityEngine.Transform::IsChildOf
 UnityEngine.Transform::get_childCount
 UnityEngine.Transform::INTERNAL_CALL_InverseTransformPoint

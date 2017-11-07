@@ -63,6 +63,9 @@ web
 (unity3d)
 =$/Temp/StagingArea/Data
 data
+(resource)
+sharedassets0
+sharedassets3
 (dat)
 +/Il2CppData/Metadata
 global-metadata
@@ -283,8 +286,6 @@ OFL
 README
 +/5 Word Problem
 word_questions
-=$/Assets/Simple Formula Drawing/Fonts
-Readme
 =$/Assets/Sprites/GUI/Fantasy_Game_GUI
 README
 (log)
@@ -414,22 +415,21 @@ Compat
 (html)
 =$/Temp/StagingArea/Data/Output
 index
-(js)
+(unityweb)
 +/Build
+MathPlatformer2D_build_1.asm.code
+MathPlatformer2D_build_1.asm.framework
+MathPlatformer2D_build_1.asm.memory
+MathPlatformer2D_build_1.data
+(json)
+MathPlatformer2D_build_1
+(js)
 UnityLoader
 =$/Temp/StagingArea/Data/Output/TemplateData
 UnityProgress
 =$/Temp/StagingArea/Data/linkresult_asm
 build.asm
 build
-(unityweb)
-=$/Temp/StagingArea/Data/Output/Build
-inAppWebUnityTest1.asm.code
-inAppWebUnityTest1.asm.framework
-inAppWebUnityTest1.asm.memory
-inAppWebUnityTest1.data
-(json)
-inAppWebUnityTest1
 (ico)
 =$/Temp/StagingArea/Data/Output/TemplateData
 favicon
@@ -1162,8 +1162,6 @@ Screen Shot 2017-11-07 at 4.06.57 AM
 Screen Shot 2017-11-07 at 4.07.03 AM
 Screen Shot 2017-11-07 at 4.07.09 AM
 TEST1
-=$/Assets/Simple Formula Drawing/Textures
-blackboard
 =$/Assets/Sprites
 platform_template1
 platform_template2
@@ -2022,9 +2020,6 @@ Header
 Highlight
 Main
 Search
-=$/Assets/Simple Formula Drawing/Fonts
-EraserDust
-EraserRegular
 (otf)
 =$/Assets/@Themes/Fonts/Aurulent Sans Mono
 AurulentSansMono
@@ -2059,8 +2054,6 @@ SquaresBoldFree
 LICENSE
 =$/Assets/@Themes/Fonts/Squares/.Data
 OFL
-=$/Assets/Simple Formula Drawing
-README_DOCUMENTATION
 (md)
 =$/Assets/@Themes/Fonts/Space Mono/.Data
 README
@@ -2240,12 +2233,6 @@ Coins
 RightCoin
 TopicDropdown
 WrongCoin
-=$/Assets/Simple Formula Drawing/Prefab
-Text
-formulaTEST
-fraction
-lim
-power
 (unity)
 =$/Assets/Scenes
 Instructions
@@ -2283,8 +2270,6 @@ tut_6
 tut_7
 tut_8
 tut_9
-=$/Assets/Simple Formula Drawing/Scenes
-simpleScene
 (cs)
 =$/Assets/Scripts
 Coin
@@ -2303,6 +2288,3 @@ pauseResume
 playerController
 sceneManager
 tutorialManager
-=$/Assets/Simple Formula Drawing/Scripts
-SimpleFormula
-SimpleFormulaEditor

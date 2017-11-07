@@ -11,7 +11,7 @@ Summary:
     Generic Abstract Classes = 3
     Attributes = 179
   Total Field Removals = 780
-  Total Method Removals = 11301
+  Total Method Removals = 11303
 ---------------------------------------------------
 ---------------------------------------------------
 Assembly: Mono.Security
@@ -10617,7 +10617,7 @@ Summary:
     Generic Abstract Classes = 0
     Attributes = 49
   Total Field Removals = 32
-  Total Method Removals = 2366
+  Total Method Removals = 2368
   References Removed = 0
 ---------------------------------------------------
     AOT.MonoPInvokeCallbackAttribute
@@ -11333,6 +11333,7 @@ Summary:
         GetDiagnosticSwitch(System.String)
         GetDiagnosticSwitches(System.Collections.Generic.List`1<UnityEngine.DiagnosticSwitch>)
         INTERNAL_CALL_DrawLine(UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.Color&,System.Single,System.Boolean)
+        Log(System.Object)
         Log(System.Object,UnityEngine.Object)
         LogAssertion(System.Object)
         LogAssertion(System.Object,UnityEngine.Object)
@@ -11388,6 +11389,7 @@ Summary:
     UnityEngine.Events.InvokableCall`2
         .ctor(UnityEngine.Events.UnityAction`2<T1,T2>)
         add_Delegate(UnityEngine.Events.UnityAction`2<T1,T2>)
+        Invoke(T1,T2)
         remove_Delegate(UnityEngine.Events.UnityAction`2<T1,T2>)
     UnityEngine.Events.InvokableCall`3
         .ctor(UnityEngine.Events.UnityAction`3<T1,T2,T3>)
@@ -11430,6 +11432,7 @@ Summary:
     UnityEngine.Events.UnityEvent`2
         AddListener(UnityEngine.Events.UnityAction`2<T0,T1>)
         GetDelegate(UnityEngine.Events.UnityAction`2<T0,T1>)
+        Invoke(T0,T1)
         RemoveListener(UnityEngine.Events.UnityAction`2<T0,T1>)
     UnityEngine.Events.UnityEvent`3
         AddListener(UnityEngine.Events.UnityAction`3<T0,T1,T2>)
@@ -11520,7 +11523,6 @@ Summary:
         BroadcastMessage(System.String,UnityEngine.SendMessageOptions)
         CompareTag(System.String)
         CreatePrimitive(UnityEngine.PrimitiveType)
-        Find(System.String)
         get_active()
         get_gameObject()
         get_isStatic()
@@ -12144,6 +12146,9 @@ Summary:
         DestroyObject(UnityEngine.Object,System.Single)
         DoesObjectWithInstanceIDExist(System.Int32)
         EnsureRunningOnMainThread()
+        FindObjectOfType(System.Type)
+        FindObjectOfType<T>()
+        FindObjectsOfType(System.Type)
         FindObjectsOfType<T>()
         FindObjectsOfTypeIncludingAssets(System.Type)
         FindSceneObjectsOfType(System.Type)
@@ -13098,9 +13103,7 @@ Summary:
         set_flipY(System.Boolean)
         set_maskInteraction(UnityEngine.SpriteMaskInteraction)
         set_size(UnityEngine.Vector2)
-        set_sprite(UnityEngine.Sprite)
         set_tileMode(UnityEngine.SpriteTileMode)
-        SetSprite_INTERNAL(UnityEngine.Sprite)
     UnityEngine.Sprites.DataUtility
         .ctor()
     UnityEngine.SpriteTileMode
@@ -13275,7 +13278,6 @@ Summary:
         set_fixedDeltaTime(System.Single)
         set_maximumDeltaTime(System.Single)
         set_maximumParticleDeltaTime(System.Single)
-        set_timeScale(System.Single)
     UnityEngine.Touch
         get_altitudeAngle()
         get_azimuthAngle()

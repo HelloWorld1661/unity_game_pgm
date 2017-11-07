@@ -1,13 +1,12 @@
 <linker>
 <assembly fullname="Assembly-CSharp">
-<type fullname="BrowserOpener" preserve="all"/>
-<type fullname="JSExecute" preserve="all"/>
-<type fullname="LocalFileOpener" preserve="all"/>
-<type fullname="InAppBrowserBridge" preserve="all"/>
 <type fullname="Coin" preserve="all"/>
 <type fullname="CoinText" preserve="all"/>
 <type fullname="DontDestroy" preserve="all"/>
+<type fullname="ImageGallery" preserve="all"/>
+<type fullname="JumpBetter" preserve="all"/>
 <type fullname="Parallaxing" preserve="all"/>
+<type fullname="pauseResume" preserve="all"/>
 <type fullname="playerController" preserve="all"/>
 <type fullname="QuestionAndAnswerKey" preserve="all"/>
 <type fullname="RightCoin" preserve="all"/>
@@ -15,6 +14,7 @@
 <type fullname="Score" preserve="all"/>
 <type fullname="SimpleCamera2DFollow" preserve="all"/>
 <type fullname="Tiling" preserve="all"/>
+<type fullname="tutorialManager" preserve="all"/>
 <type fullname="WrongCoin" preserve="all"/>
 </assembly>
 <assembly fullname="UnityEngine.UI">
