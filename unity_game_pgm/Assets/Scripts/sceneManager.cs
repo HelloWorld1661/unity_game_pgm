@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class sceneManager : MonoBehaviour {
 	private int currentSceneIndex = 0;
+	//TODO display only if scene is "Settings" ? (RP)
 	public Slider volSlider;
 
 	void Awake() {
@@ -30,8 +31,12 @@ public class sceneManager : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 	}
 
+	public void goToTutorials(){
+		SceneManager.LoadScene ("Tutorials");
+	}
+
 	public void goToInstruction(){
-		SceneManager.LoadScene ("Instruction");
+		SceneManager.LoadScene ("Instructions");
 	}
 
 	public void goToSettings(){

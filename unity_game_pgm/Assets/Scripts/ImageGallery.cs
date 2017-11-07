@@ -9,9 +9,7 @@ public class ImageGallery : MonoBehaviour {
 
 	// apply this script on a sprite object (RP)
 	public Sprite[] gallery; 
-	public Button nextImg;
-	public Button prevImg;
-	public int i = 0;
+	private int i = 0;
 
 	void Awake () {
 		// init
@@ -22,14 +20,13 @@ public class ImageGallery : MonoBehaviour {
 		if(i + 1 < gallery.Length){
 			i++;
 		}
+		this.GetComponent<SpriteRenderer>().sprite = gallery[i];
 	}
 
 	public void BtnPrev () {
-		if (i - 1 > 0){
+		if (i > 0){
 			i --;
 		}
-	}
-	void Update () {
 		this.GetComponent<SpriteRenderer>().sprite = gallery[i];
 	}
 }
