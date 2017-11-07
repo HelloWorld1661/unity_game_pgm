@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\SimpleCamera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Tiling.cs" />
+     <Compile Include="Assets\Scripts\tutorialManager.cs" />
      <Compile Include="Assets\Scripts\WrongCoin.cs" />
      <Compile Include="Assets\Simple Formula Drawing\Scripts\SimpleFormula.cs" />
      <Compile Include="Assets\Simple Formula Drawing\Scripts\SimpleFormulaEditor.cs" />

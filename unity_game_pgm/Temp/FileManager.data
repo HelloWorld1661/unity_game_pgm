@@ -2238,6 +2238,7 @@ OrientationNavigationViewController
 Background_Image
 Coins
 RightCoin
+TopicDropdown
 WrongCoin
 =$/Assets/Simple Formula Drawing/Prefab
 Text
@@ -2301,6 +2302,7 @@ WrongCoin
 pauseResume
 playerController
 sceneManager
+tutorialManager
 =$/Assets/Simple Formula Drawing/Scripts
 SimpleFormula
 SimpleFormulaEditor
