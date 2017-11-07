@@ -64,7 +64,7 @@
      <Compile Include="Assets\Scripts\WrongCoin.cs" />
      <None Include="Assets\Sprites\GUI\Fantasy_Game_GUI\README.txt" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -85,13 +85,13 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="ZiosThemes">
- <HintPath>/Users/Jon/Desktop/GitHub/unity_game_pgm/unity_game_pgm/Assets/@Themes/ZiosThemes.dll</HintPath>
+ <HintPath>/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Assets/@Themes/ZiosThemes.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>/Users/Jon/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>/Users/Ruslan/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>/Users/Jon/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>/Users/Ruslan/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
