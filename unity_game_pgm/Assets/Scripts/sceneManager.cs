@@ -9,7 +9,8 @@ public class sceneManager : MonoBehaviour {
 	public Slider volSlider;
 
 	void Awake() {
-		volSlider.value = AudioListener.volume;
+		if (volSlider != null)
+			volSlider.value = AudioListener.volume;
 	}
 
 	public void setCurrentScenceIndex(int index){

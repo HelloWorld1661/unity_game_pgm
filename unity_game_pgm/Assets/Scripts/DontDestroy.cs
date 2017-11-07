@@ -9,7 +9,6 @@ public class DontDestroy : MonoBehaviour {
 			Destroy (this.gameObject);    //then destroy the Objects are tagged with same "BackgroundMusic".
 		} else { // if only one on current scene.
 			DontDestroyOnLoad(this.gameObject); // then tell this object to stay alive all the time.
-			// we really only need this one line above (RP)
 		}
 	}
 }
