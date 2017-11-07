@@ -960,6 +960,7 @@ Warning
 math1
 =$/Assets/PreCalAlgebra
 _mathIndex
+addingMoreSymbols
 outlineOfWorkableHeaderSpaceInGame
 +/1 Operations with Real Numbers
 Screen Shot 2017-11-07 at 3.52.59 AM
@@ -2215,7 +2216,7 @@ lim
 power
 (unity)
 =$/Assets/Scenes
-Instruction
+Help
 Menu
 Settings
 firstScene
@@ -2228,6 +2229,7 @@ simpleScene
 Coin
 CoinText
 DontDestroy
+ImageGallery
 Parallaxing
 QuestionAndAnswerKey
 RightCoin
