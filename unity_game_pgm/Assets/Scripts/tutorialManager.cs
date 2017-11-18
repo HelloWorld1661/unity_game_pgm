@@ -18,7 +18,7 @@ public class tutorialManager : MonoBehaviour {
 
 	// (RP)
 	public void ChooseTutorial() {
-		int chosenInt = GameObject.Find ("TopicDropdown").GetComponent<Dropdown>().value;
+		int chosenInt = GameObject.Find ("TutorialDropdownUpper").GetComponent<Dropdown>().value;
 		string dest = "tut_" + chosenInt;
 		SceneManager.LoadScene(dest);
 	}
