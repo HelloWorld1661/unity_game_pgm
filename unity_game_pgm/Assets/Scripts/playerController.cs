@@ -6,6 +6,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class playerController : MonoBehaviour {
@@ -73,6 +74,10 @@ public class playerController : MonoBehaviour {
 		}
 		anim.SetFloat ("Speed", Mathf.Abs (movement));
 		anim.SetFloat("vSpeed", rigid.velocity.y);
+
+		if (gameObject.transform.position.y < -12.0) {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
 	}
 
 	void Jump(){

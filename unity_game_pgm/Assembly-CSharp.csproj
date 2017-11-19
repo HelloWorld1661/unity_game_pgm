@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\ImageGallery.cs" />
      <Compile Include="Assets\Scripts\JumpBetter.cs" />
+     <Compile Include="Assets\Scripts\Mute.cs" />
      <Compile Include="Assets\Scripts\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\pauseResume.cs" />
      <Compile Include="Assets\Scripts\playerController.cs" />
