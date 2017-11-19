@@ -51,6 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\_notInUse_advancedPlayerController\Controller2D.cs" />
+     <Compile Include="Assets\Scripts\_notInUse_advancedPlayerController\Player.cs" />
+     <Compile Include="Assets\Scripts\_notInUse_advancedPlayerController\RaycastController.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\CoinText.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />

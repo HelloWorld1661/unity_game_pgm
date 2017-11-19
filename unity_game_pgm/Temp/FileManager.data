@@ -2057,3 +2057,7 @@ pauseResume
 playerController
 sceneManager
 tutorialManager
++/_notInUse_advancedPlayerController
+Controller2D
+Player
+RaycastController
