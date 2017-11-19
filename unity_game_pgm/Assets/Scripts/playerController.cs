@@ -22,7 +22,7 @@ public class playerController : MonoBehaviour {
 	public bool grounded = false; 
 
 	public bool jumpPressed = false;
-	public float jumpForce = 500.0f;
+	private float jumpForce = 500.0f;
 	Animator anim;
 
 	private float jumpDuration = 0f;
