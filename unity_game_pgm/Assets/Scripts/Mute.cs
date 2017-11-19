@@ -8,13 +8,16 @@ public class Mute : MonoBehaviour {
 	public static Toggle tog;
 
 	void Awake () {
-		tog = GetComponentInChildren<Toggle>();
+		if (tog == null) {
+			tog = GetComponentInChildren<Toggle> ();
+		}
 	}
 
 	void Update() {
 		if (AudioListener.volume == 0f) {
 			tog.isOn = true;
-		} else {
+		} 
+		else {
 			tog.isOn = false;
 		}
 	}

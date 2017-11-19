@@ -1,8 +1,7 @@
 # (RP) 20171107
 
-Creators:
-	CJ Kentler
-	VS Manoranjan
+Creator:
+CJ Kentler
 © Washington State University 
 Department of Mathematics 
 Pullman, Wa. 99164-3113 

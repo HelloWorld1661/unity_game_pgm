@@ -10,17 +10,8 @@ public class sceneManager : MonoBehaviour {
 	public static float volumeLevel;
 
 	void Awake() {
-		if (!Mute.tog.isOn) {
+		if (AudioListener.volume != 0f) {
 			volumeLevel = AudioListener.volume;
-			if (volSlider != null) {
-				volSlider.value = volumeLevel;
-			}
-		}
-	}
-
-	void Update() {
-		if (volSlider != null && Mute.tog.isOn) {
-			volSlider.value = 0f;
 		}
 	}
 
@@ -57,6 +48,7 @@ public class sceneManager : MonoBehaviour {
 	public void OnVolChanged() {
 		AudioListener.volume = volSlider.value;
 		volumeLevel = volSlider.value;
+		Mute.tog.isOn = false;
 	}
 
 	public void restartCurrentScene(){
