@@ -6,15 +6,15 @@ using UnityEngine;
 public class Mute : MonoBehaviour {
 
 	private Toggle tog;
-	private float prevVol;
+//	private float prevVol;
 
 	void Awake () {
 		tog = GetComponentInChildren<Toggle>();
 		if (AudioListener.volume == 0f) {
 			tog.isOn = true;
-			prevVol = 0.7f;
+//			prevVol = 0.7f;
 		} else {
-			prevVol = AudioListener.volume;
+//			prevVol = AudioListener.volume;
 		}
 	}
 
@@ -22,7 +22,8 @@ public class Mute : MonoBehaviour {
 		if (tog.isOn) {
 			AudioListener.volume = 0f;
 		} else {
-			AudioListener.volume = prevVol;
+//			AudioListener.volume = prevVol;
+			AudioListener.volume = sceneManager.volumeLevel;
 		}
 	}
 }

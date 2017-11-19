@@ -8,10 +8,13 @@ public class sceneManager : MonoBehaviour {
 	private int currentSceneIndex = 0;
 	//TODO display only if scene is "Settings" ? (RP)
 	public Slider volSlider;
+	public static float volumeLevel;
 
 	void Awake() {
-		if (volSlider != null)
+		if (volSlider != null) {
 			volSlider.value = AudioListener.volume;
+		}
+		volumeLevel = AudioListener.volume;
 	}
 
 	public void setCurrentScenceIndex(int index){
@@ -46,6 +49,7 @@ public class sceneManager : MonoBehaviour {
 
 	public void OnVolChanged() {
 		AudioListener.volume = volSlider.value;
+		volumeLevel = AudioListener.volume;
 	}
 
 	public void restartCurrentScene(){
