@@ -10,7 +10,12 @@ public class Mute : MonoBehaviour {
 
 	void Awake () {
 		tog = GetComponentInChildren<Toggle>();
-		prevVol = AudioListener.volume;
+		if (AudioListener.volume == 0f) {
+			tog.isOn = true;
+			prevVol = 0.7f;
+		} else {
+			prevVol = AudioListener.volume;
+		}
 	}
 
 	public void onMute() {

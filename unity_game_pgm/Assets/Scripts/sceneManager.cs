@@ -29,6 +29,7 @@ public class sceneManager : MonoBehaviour {
 
 	public void goToMenu(){
 		SceneManager.LoadScene ("Menu");
+		Time.timeScale = 1.0f;
 	}
 
 	public void goToTutorials(){
