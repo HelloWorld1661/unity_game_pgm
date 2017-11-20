@@ -19,7 +19,7 @@ public class SimpleFormula : MonoBehaviour {
 	// this is the equation in a text format
 	public string equation;
 	//this is the the public variable that is going to set the distances between equations:
-	public int letterDistance=10;
+	public int letterDistance;
 	//offset to place X and Y text in percentage
 	public float offsetX, offsetY;
 	// size of the fonts:
@@ -29,8 +29,7 @@ public class SimpleFormula : MonoBehaviour {
 	GameObject fraction, text, power, limit;
 
 	void Start () 
-	{	
-		
+	{
 
 	}
 
