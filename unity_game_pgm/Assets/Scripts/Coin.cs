@@ -28,7 +28,7 @@ public class Coin : MonoBehaviour {
 	//Sent when an incoming collider makes contact with this object's collider
 	void OnTriggerEnter2D()
 	{
-		GameController.GetComponent<Score>().IncreaseScore ();
+		GameController.GetComponent<ScoreVer2>().IncreaseScore ();
 		coinAudio.Play (); // play the audio 
 
 		GetComponent<SpriteRenderer> ().enabled = false; //make the sprite unvisible.

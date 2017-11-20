@@ -51,7 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AnswerCoin.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
+     <Compile Include="Assets\Scripts\CoinB.cs" />
+     <Compile Include="Assets\Scripts\CoinC.cs" />
+     <Compile Include="Assets\Scripts\CoinD.cs" />
      <Compile Include="Assets\Scripts\CoinText.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\ImageGallery.cs" />
@@ -65,6 +69,7 @@
      <Compile Include="Assets\Scripts\RightCoin.cs" />
      <Compile Include="Assets\Scripts\sceneManager.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ScoreVer2.cs" />
      <Compile Include="Assets\Scripts\SimpleCamera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Tiling.cs" />
      <Compile Include="Assets\Scripts\tutorialManager.cs" />

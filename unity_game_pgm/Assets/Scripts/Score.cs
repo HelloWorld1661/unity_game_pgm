@@ -8,6 +8,8 @@ using UnityEngine.UI;
  Author: Jun
 */
 
+// RP 2017-11-20 thanks Jun, this is great, I will reuse this to make a new Score script titled ScoreVer2.cs
+
 public class Score : MonoBehaviour {
 	private int score = 0;
 	private int getRight = 0;

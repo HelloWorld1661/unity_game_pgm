@@ -3,9 +3,17 @@
 
 +/Assets
 
-+/PreCalAlgebra
++/Animations
+
++/Jump
+
+=$/Assets/Audios
+
+=$/Assets/PreCalAlgebra
 
 +/1 Operations with Real Numbers
+
+=$/Assets/Prefabs
 
 =$/Assets/Sprites
 
@@ -16,6 +24,10 @@
 =$/Assets/Sprites/Coin/starCoinRotate
 
 =$/Assets/Sprites/Coin/starCoinShine
+
+=$/Assets/Sprites/GUI
+
+=$/Assets/Sprites/Scenes
 
 (csproj)
 =$
@@ -29,50 +41,15 @@ unity_game_pgm
 (data)
 +/Temp
 FileManager
-(backup)
-+/__Backupscenes
-0
-(dll)
-=$/Temp/bin/Debug
-Assembly-CSharp
-ExCSS.Unity
-Facebook.Unity.Settings
-Unity.Cecil.Mdb
-Unity.Cecil.Pdb
-Unity.Cecil
-Unity.CecilTools
-Unity.DataContract
-Unity.Legacy.NRefactory
-Unity.SerializationLogic
-Unity.UNetWeaver
-UnityEditor
-UnityEngine.Analytics
-UnityEngine.HoloLens
-UnityEngine.Networking
-UnityEngine.Purchasing
-UnityEngine.TestRunner
-UnityEngine.Timeline
-UnityEngine.UI
-UnityEngine
-Vuforia.UnityExtensions
-ZiosThemes
-nunit.framework
-=$/Assets/@Themes
-ZiosThemes
-(mdb)
-=$/Temp/bin/Debug
-Assembly-CSharp.dll
-Unity.UNetWeaver.dll
-(physicsMaterial2D)
-=$/Assets
-PlayerPhysMat2D
 (unitytheme)
-+/@Themes
+=$/Assets/@Themes
 Classy
 Default
 Simplicity
 (asset)
 Undo
+(dll)
+ZiosThemes
 (ttf)
 +/Fonts/8bit Operator
 8bitOperatorPlus-Bold
@@ -2001,6 +1978,10 @@ iOSInAppBrowser
 OrientationNavigationViewController
 (prefab)
 =$/Assets/Prefabs
+AnswerCoinA
+AnswerCoinB
+AnswerCoinC
+AnswerCoinD
 Background_Image
 Coins
 MenuButton
@@ -2061,7 +2042,11 @@ tut_9
 simpleScene
 (cs)
 =$/Assets/Scripts
+AnswerCoin
 Coin
+CoinB
+CoinC
+CoinD
 CoinText
 DontDestroy
 ImageGallery
@@ -2072,6 +2057,7 @@ Parallaxing
 QuestionAndAnswerKey
 RightCoin
 Score
+ScoreVer2
 SimpleCamera2DFollow
 Tiling
 WrongCoin
