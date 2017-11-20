@@ -57,7 +57,9 @@
      <Compile Include="Assets\Scripts\CoinC.cs" />
      <Compile Include="Assets\Scripts\CoinD.cs" />
      <Compile Include="Assets\Scripts\CoinText.cs" />
+     <Compile Include="Assets\Scripts\DataAccess.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ImageGallery.cs" />
      <Compile Include="Assets\Scripts\JumpBetter.cs" />
      <Compile Include="Assets\Scripts\MathQuestions.cs" />

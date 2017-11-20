@@ -2002,6 +2002,9 @@ coins
 (jar)
 =$/Assets/Plugins/Android
 InAppBrowser
+(jslib)
+=$/Assets/Plugins/WebGL
+HandleIO
 (h)
 =$/Assets/Plugins/iOS
 InAppBrowserViewController
@@ -2083,7 +2086,9 @@ CoinB
 CoinC
 CoinD
 CoinText
+DataAccess
 DontDestroy
+GameManager
 ImageGallery
 JumpBetter
 MathQuestions
