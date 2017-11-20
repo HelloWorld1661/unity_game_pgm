@@ -51,12 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MathQuestions.cs" />
      <Compile Include="Assets\Scripts\Coin.cs" />
      <Compile Include="Assets\Scripts\CoinText.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\ImageGallery.cs" />
      <Compile Include="Assets\Scripts\JumpBetter.cs" />
+     <Compile Include="Assets\Scripts\MathQuestions.cs" />
      <Compile Include="Assets\Scripts\Mute.cs" />
      <Compile Include="Assets\Scripts\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\pauseResume.cs" />
