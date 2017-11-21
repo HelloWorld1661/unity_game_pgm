@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Modified Data: 2017/11/13
+BY: Jun
+*/
+
 public class AnswerCoin : MonoBehaviour {
 
 	public AudioSource coinAudio;	//audio object 
@@ -32,9 +37,9 @@ public class AnswerCoin : MonoBehaviour {
 	void OnTriggerEnter2D()
 	{
 		if (isCorrect) {
-			GameController.GetComponent<ScoreVer2> ().DoubleScore();
+			GameController.GetComponent<Score> ().DoubleScore();
 		} else {
-			GameController.GetComponent<ScoreVer2> ().LoseScore();
+			GameController.GetComponent<Score> ().LoseScore();
 		}
 		coinAudio.Play (); // play the audio 
 

@@ -6,6 +6,11 @@ using UnityEngine;
  Author: Jun
 */
 
+/*
+Modified Data: 2017/11/13
+BY: Jun
+*/
+
 public class Coin : MonoBehaviour {
 	public AudioSource coinAudio;	//audio object 
 	public GameObject GameController;  //GameController object 
@@ -28,7 +33,7 @@ public class Coin : MonoBehaviour {
 	//Sent when an incoming collider makes contact with this object's collider
 	void OnTriggerEnter2D()
 	{
-		GameController.GetComponent<ScoreVer2>().IncreaseScore ();
+		GameController.GetComponent<Score>().IncreaseScore ();
 		coinAudio.Play (); // play the audio 
 
 		GetComponent<SpriteRenderer> ().enabled = false; //make the sprite unvisible.
