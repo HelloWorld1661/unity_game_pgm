@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+/*
+Data: 2017/11/13
+Author: Jun
+*/
 public class sceneManager : MonoBehaviour {
 	private int currentSceneIndex = 0;
 	public Slider volSlider;
@@ -66,6 +69,16 @@ public class sceneManager : MonoBehaviour {
 	public void goToFirstScene(){
 		SceneManager.LoadScene ("firstScene");
 	}
+
+	public void startGameTimer(){
+		GameManagerJW.Instance.startTimer ();
+	}
+
+	public void ResetData(){
+		GameManagerJW.Instance.ResetData ();
+		PlayerPrefs.DeleteAll();
+	}
+
 	public void quitGame(){
 		Application.Quit ();
 	}

@@ -13,14 +13,14 @@ public class MathQuestions : MonoBehaviour {
 	public Text mathQuestion;
 	public GameObject[] AnswerCoins;
 
-	private int op1;
-	private int op2;
+	private float op1;
+	private float op2;
 	private const int OPER_SIZE = 5;
 	private char[] operators = new char[OPER_SIZE];
 	private int operIndex;
 	// create array to store A,B,C,D answer key
 	private const int SIZE = 4;
-	private int[] answers = new int[SIZE];
+	private float[] answers = new float[SIZE];
 
 	private int correctIndex;
 
@@ -59,8 +59,8 @@ public class MathQuestions : MonoBehaviour {
 		AnswerCoins [correctIndex].GetComponent<AnswerCoin> ().isCorrect = true;
 	}
 
-	private int PerformOp(int a, int b) {
-		int temp = 0;
+	private float PerformOp(float a, float b) {
+		float temp = 0;
 		switch (operIndex) {
 			case 0:
 				temp = a + b;

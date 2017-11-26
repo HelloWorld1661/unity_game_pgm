@@ -20,7 +20,6 @@ public class Score : MonoBehaviour {
 	public Text RightAnswerText;
 	public Text WrongAnswerText;
 
-
 	void Start(){
 		scoreText.text = "Score : " + GameManagerJW.Instance.getScore();
 		RightAnswerText.text = "Correct : " + GameManagerJW.Instance.getRightAns();
