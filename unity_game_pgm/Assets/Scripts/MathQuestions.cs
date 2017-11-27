@@ -35,6 +35,21 @@ public class MathQuestions : MonoBehaviour {
 		operIndex = Random.Range(0, OPER_SIZE);
 	}
 
+	// TODO We should call this upon every time the player is finished with the question
+	// 		maybe have a bool listener in update
+	void Start () {
+		GenerateMath();
+		PrintMath ();
+	}
+
+	// Update is called once per frame
+	void Update () {
+		// put if statement with listener to trigger question refresh
+		// TODO should we refresh in a different way instead of reloading scene? (so player doesn't keep starting from beginning)
+		if (AnswerCoins[correctIndex] == null) {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		}
+	}
 
 	public void GenerateMath()
 	{
@@ -82,25 +97,108 @@ public class MathQuestions : MonoBehaviour {
 	}
 
 	private void PrintMath() {
-		mathQuestion.text = "Evaluate: " + op1 + " " + operators[operIndex] + " " + op2 + " = ? \n\n" + 
-			"(A) " + answers[0] + 
-			" (B) " + answers[1] +
-			" (C) " + answers[2] +
-			" (D) " + answers[3];
+		mathQuestion.text = "Evaluate: " + op1 + " " + operators [operIndex] + " " + op2 + " = ? \n\n" +
+		"(A) ";
+		// RP 2017-11-27
+		// checking decimal, then use Fraction struct to convert to traditional fraction
+		if (answers [0] % 1 != 0) {
+			Fraction newFraction = Fraction.Parse ((double)answers [0]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+		} else {
+			mathQuestion.text += answers [0];
+		}
+		mathQuestion.text += " (B) ";
+		if (answers [1] % 1 != 0) {
+			Fraction newFraction = Fraction.Parse ((double)answers [1]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+		} else {
+			mathQuestion.text += answers [1];
+		}
+		mathQuestion.text += " (C) ";
+		if (answers [2] % 1 != 0) {
+			Fraction newFraction = Fraction.Parse ((double)answers [2]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+		} else {
+			mathQuestion.text += answers [2];
+		}
+		mathQuestion.text += " (D) ";
+		if (answers [3] % 1 != 0) {
+			Fraction newFraction = Fraction.Parse ((double)answers [3]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+		} else {
+			mathQuestion.text += answers [3];
+		}
 	}
 
-	// TODO We should call this upon every time the player is finished with the question
-	// 		maybe have a bool listener in update
-	void Start () {
-		GenerateMath();
-		PrintMath ();
-	}
+	/// <summary>
+	/// Represents a rational number
+	/// </summary>
+	public struct Fraction
+	{
+		public int Numerator;
+		public int Denominator;
 
-	// Update is called once per frame
-	void Update () {
-		// put if statement with bool listener to trigger question refresh
-		if (AnswerCoins[correctIndex] == null) {
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Fraction(int numerator, int denominator)
+		{
+			this.Numerator = numerator;
+			this.Denominator = denominator;
+		}
+
+		/// <summary>
+		/// Approximates a fraction from the provided double
+		/// </summary>
+		public static Fraction Parse(double d)
+		{
+			return ApproximateFraction(d);
+		}
+
+		/// <summary>
+		/// Returns this fraction expressed as a double, rounded to the specified number of decimal places.
+		/// Returns double.NaN if denominator is zero
+		/// </summary>
+		public double ToDouble(int decimalPlaces)
+		{
+			if (this.Denominator == 0)
+				return double.NaN;
+
+			return System.Math.Round(
+				Numerator / (double)Denominator,
+				decimalPlaces
+			);
+		}
+
+
+		/// <summary>
+		/// Approximates the provided value to a fraction.
+		/// http://stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions
+		/// </summary>
+		private static Fraction ApproximateFraction(double value)
+		{
+			const double EPSILON = .000001d;
+
+			int n = 1;  // numerator
+			int d = 1;  // denominator
+			double fraction = n / d;
+
+			while (System.Math.Abs(fraction - value) > EPSILON)
+			{
+				if (fraction < value)
+				{
+					n++;
+				}
+				else
+				{
+					d++;
+					n = (int)System.Math.Round(value * d);
+				}
+
+				fraction = n / (double)d;
+			}
+
+			return new Fraction(n, d);
 		}
 	}
 }
