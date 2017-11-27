@@ -13,7 +13,7 @@ public class GameManagerJW : MonoBehaviour {
 	private int score = 0;
 	private int getRight = 0;
 	private int getWrong = 0;
-	private float timeTarget = 300.0f; //Default time: 10mins = 600s
+	private float timeTarget = 50.0f;//original is 300, changing for testing 300.0f; //Default time: 10mins = 600s
 	private bool isTimer = false; // Is it to start the timer? (YES -> true; NO -> false.) default value: false
 	private bool isGameStart = false;
 	private bool isTimerEnd =false;
@@ -166,12 +166,12 @@ public class GameManagerJW : MonoBehaviour {
 
 	public void DoubleScore(){
 		this.score *= 2;
-		this.getRight += 1;
+//		this.getRight += 1; //DOUBLED in other method
 	}
 
 	public void LoseScore(){
 		this.score -= 2;
-		this.getWrong += 1;
+//		this.getWrong += 1;
 	}
 
 }
