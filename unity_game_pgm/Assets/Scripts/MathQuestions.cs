@@ -12,6 +12,7 @@ public class MathQuestions : MonoBehaviour {
 
 	public Text mathQuestion;
 	public GameObject[] AnswerCoins;
+	public Text hintText;
 
 	private float op1;
 	private float op2;

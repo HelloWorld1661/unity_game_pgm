@@ -38,6 +38,9 @@ public class AnswerCoin : MonoBehaviour {
 	{
 		if (isCorrect) {
 			GameController.GetComponent<Score> ().DoubleScore();
+			// RP 2017-11-27
+			// if correct answer, boost up time by 15 sec
+			GameManagerJW.Instance.increaseTime (15f);
 		} else {
 			GameController.GetComponent<Score> ().LoseScore();
 		}

@@ -20,6 +20,8 @@ Assembly-CSharp
 Assembly-UnityScript
 (sln)
 unity_game_pgm
+(userprefs)
+unity_game_pgm
 (data)
 +/Temp
 FileManager
@@ -2085,6 +2087,7 @@ RightCoin
 SaveHighScore
 Score
 ScoreVer2
+ShowHideHint
 SimpleCamera2DFollow
 Tiling
 Timer

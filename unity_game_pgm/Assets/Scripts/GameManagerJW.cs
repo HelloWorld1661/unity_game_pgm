@@ -13,7 +13,7 @@ public class GameManagerJW : MonoBehaviour {
 	private int score = 0;
 	private int getRight = 0;
 	private int getWrong = 0;
-	private float timeTarget = 50.0f;//original is 300, changing for testing 300.0f; //Default time: 10mins = 600s
+	private float timeTarget = 60.0f;// RP changing for faster game play (IMPORTANT: make sure to chnage value under resetAllData() as well) //Default time: 10mins = 600s
 	private bool isTimer = false; // Is it to start the timer? (YES -> true; NO -> false.) default value: false
 	private bool isGameStart = false;
 	private bool isTimerEnd =false;
@@ -58,6 +58,10 @@ public class GameManagerJW : MonoBehaviour {
 		return this.isResetData;
 	}
 
+	// RP 2017-11-27
+	public void increaseTime(float t) {
+		timeTarget += t;
+	}
 		
 	public bool getIsTimerEnd(){
 		if(timeTarget == 0 || timeTarget < 0){
@@ -67,7 +71,7 @@ public class GameManagerJW : MonoBehaviour {
 	}
 	public void resetAllData(){
 		score = 0;
-		timeTarget = 300.0f;
+		timeTarget = 60.0f;
 		isTimer = false;
 		isGameStart = false;
 		isTimerEnd = false;
@@ -166,12 +170,11 @@ public class GameManagerJW : MonoBehaviour {
 
 	public void DoubleScore(){
 		this.score *= 2;
-//		this.getRight += 1; //DOUBLED in other method
+//		this.getRight += 1; // RP called by other method
 	}
 
 	public void LoseScore(){
 		this.score -= 2;
-//		this.getWrong += 1;
+//		this.getWrong += 1; // RP called by other method
 	}
-
 }
