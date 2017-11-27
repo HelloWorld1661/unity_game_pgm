@@ -36,6 +36,10 @@ public class sceneManager : MonoBehaviour {
 		Time.timeScale = 1.0f;
 	}
 
+	public void goToHighScores(){
+		SceneManager.LoadScene ("GameEnd");
+	}
+
 	public void goToTutorials(){
 		SceneManager.LoadScene ("Tutorials");
 	}
