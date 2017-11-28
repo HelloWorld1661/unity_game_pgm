@@ -217,23 +217,34 @@ public class MathQuestions : MonoBehaviour {
 				"Now simply subtract what you rounded off. 650 – 644 = 6 and 240 – 238 = 2\n" +
 				"6 + 2 = 8. 890 – 8 = 882\n\nThere's your answer!\n" +
 				"644 +238 = 882";
+
 			break;
 		case 1:
 			temp = "If number you're subtracting from is smaller (say 2 - 10), simply make the answer -10 and add back 2... 2 - 10 = -8! FLIP and add!\n\n" +
-			"When subtracting from 1,000...\nHere’s a basic rule to subtract a large number from 1,000: Subtract every number except the last from 9 and subtract the final number from 10\n\nFor example:\n1,000 – 556\n\n" +
-			"Step 1: Subtract 5 from 9 = 4\n\nStep 2: Subtract 5 from 9 = 4\n\nStep 3: Subtract 6 from 10 = 4\n\nThe answer is 444.";
+				"When subtracting from 1,000...\nHere’s a basic rule to subtract a large number from 1,000: Subtract every number except the last from 9 and subtract the final number from 10\n\nFor example:\n1,000 – 556\n\n" +
+				"Step 1: Subtract 5 from 9 = 4\n\nStep 2: Subtract 5 from 9 = 4\n\nStep 3: Subtract 6 from 10 = 4\n\nThe answer is 444.";
+
 			break;
 		case 2:
 			temp = "Division tricks\n\nHere’s a quick way to know when a number can be evenly divided by these certain numbers:\n\n" +
-			"10 if the number ends in 0\n9 when the digits are added together and the total is evenly divisible by 9\n8 if the last three digits are evenly divisible by 8 or are 000\n" +
-			"6 if it is an even number and when the digits are added together the answer is evenly divisible by 3\n5 if it ends in a 0 or 5\n4 if it ends in 00 or a two digit number that" +
-			"is evenly divisible by 4\n3 when the digits are added together and the result is evenly divisible by the number 3\n2 if it ends in 0, 2, 4, 6, or 8";
+				"10 if the number ends in 0\n9 when the digits are added together and the total is evenly divisible by 9\n8 if the last three digits are evenly divisible by 8 or are 000\n" +
+				"6 if it is an even number and when the digits are added together the answer is evenly divisible by 3\n5 if it ends in a 0 or 5\n4 if it ends in 00 or a two digit number that" +
+				"is evenly divisible by 4\n3 when the digits are added together and the result is evenly divisible by the number 3\n2 if it ends in 0, 2, 4, 6, or 8";
+
 			break;
 		case 3:
 			temp = "Every multiplication has a twin, which may be easier to remember.\nFor example if you forget 8×2, you might remember 2×8=16. This way, you only have to remember half the table!\n\n\n" +
+				"Another trick is to use base 10, base 20 or base 50.\n" +
+				"Base 10 Example: 15 * 13    So, 15 is 5 above 10 and 13 is 3 above 10.\n" +
+				"+5     +3\n" +
+				"15  *  13\n" +
+				"Now, cross add the numbers, like this (either way works) 5 + 13 = 18 OR 3 + 15 = 18. Both equal 18, so let's hold on to that number and make it 180 since we're working with base 10: 180\n" +
+				"Next step is to multiply the top two delta values 5 * 3 which equals 15 and add it to 180!\n" +
+				"180 + 15 = 195!\n\n\n" +
 				"2\nadd the number to itself (in other words, double it) \nExample 2×9 = 9+9 = 18\n\n" +
 				"4\ndouble, then double again \nExample 4×9: double 9 is 18, double 18 is 36\n\n" +
-				"5\nCut in half, then times 10\nExample: 5x6: Cut 6 in half to get 3, then times 10 for 30\nOr times 10 then cut in half\nExample: 5x9: 9 times 10 is 90, then cut in half for 45\nAlso the last digit goes 5, 0, 5, 0, ... like this: 5, 10, 15, 20, ...\n\n" +
+				"5\nCut in half, then times 10\nExample: 5x6: Cut 6 in half to get 3, then times 10 for 30\nOr times 10 then cut in half\nExample: 5x9: 9 times 10 is 90, " +
+				"then cut in half for 45\nAlso the last digit goes 5, 0, 5, 0, ... like this: 5, 10, 15, 20, ...\n\n" +
 				"6\nwhen you multiply 6 by an even number, they both end in the same digit. \nExamples: 6×2=12, 6×4=24, 6×6=36, etc\n\n" +
 				"7x8\nThink '5,6,7,8': 56=7×8!\n\n" +
 				"8\nDouble, double, double!\nExample: 8×6: double 6 is 12, double 12 is 24, double 24 is 48\n\n" +
@@ -242,7 +253,8 @@ public class MathQuestions : MonoBehaviour {
 				"Example: 9×5: tens digit is 4, 4 and 5 make 9, so 45\nExample: 9×8: tens digit is 7, 7 and 2 make 9, so 72\nfingers multiply 9\n" +
 				"your hands can help! Example: to multiply 9 by 8, hold your 8th finger down, and count '7' and '2', the answer is 72\n\n" +
 				"10\nput a zero after it \nExample: 10×2 = 20\n\n" +
-				"11\nup to 11x9: just repeat the digit. Example: 11x4 = 44\nfor 11×10 to 11×18: write the sum of the digits between the digits \nExample: 11×15 = 1(1+5)5 = 165\nNote: this works for any two-digit number, but when the sum of the digits is more than 9, we need to'carry the one'. Example: 11×75 = 7(7+5)5 = 7(12)5 = 825.\n\n" +
+				"11\nup to 11x9: just repeat the digit. Example: 11x4 = 44\nfor 11×10 to 11×18: write the sum of the digits between the digits \nExample: 11×15 = 1(1+5)5 = 165\n" +
+				"Note: this works for any two-digit number, but when the sum of the digits is more than 9, we need to'carry the one'. Example: 11×75 = 7(7+5)5 = 7(12)5 = 825.\n\n" +
 				"12\nis 10× plus 2×\nExample: 12×4 = 40+8 = 48\n\n" +
 				"15\nmultiply by 10, then add half again\nExample: 15×4 = 40+20 = 60\nExample: 15×9 = 90+45 = 135\n\n" +
 				"20\nmultiply by 10, then double\nExample: 20×4 = 40+40 = 80\nExample: 20×7 = 70+70 = 140\n\n\n";
@@ -250,7 +262,8 @@ public class MathQuestions : MonoBehaviour {
 			break;
 		case 4:
 			temp = "What is the % symbol? It's modulus! Divide first and any remainder is your answer!\n\n" +
-			"In computing, the modulo operation finds the remainder after division of one number by another (sometimes called modulus). Given two positive numbers, a (the dividend) and n (the divisor), a modulo n (abbreviated as a mod n) is the remainder of the Euclidean division of a by n.\n\n";
+				"In computing, the modulo operation finds the remainder after division of one number by another (sometimes called modulus). Given two positive numbers, a (the dividend) and n (the divisor), " +
+				"a modulo n (abbreviated as a mod n) is the remainder of the Euclidean division of a by n.\n\n";
 				
 			break;
 		}
