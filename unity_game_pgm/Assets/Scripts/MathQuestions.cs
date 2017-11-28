@@ -40,7 +40,8 @@ public class MathQuestions : MonoBehaviour {
 	// 		maybe have a bool listener in update
 	void Start () {
 		GenerateMath();
-		PrintMath ();
+		PrintMath();
+		UpdateHint();
 	}
 
 	// Update is called once per frame
@@ -201,5 +202,28 @@ public class MathQuestions : MonoBehaviour {
 
 			return new Fraction(n, d);
 		}
+	}
+
+	public void UpdateHint()
+	{
+		string temp = "";
+		switch (operIndex) {
+		case 0:
+			temp = "Use your addition powers!";
+			break;
+		case 1:
+			temp = "FLIP and add!";
+			break;
+		case 2:
+			temp = "Let's Divide together!";
+			break;
+		case 3:
+			temp = "Here comes multiplication!";
+			break;
+		case 4:
+			temp = "What is the % symbol? It's modulus! Divide first and any remainder is your answer!";
+			break;
+		}
+		hintText.text = temp;
 	}
 }
