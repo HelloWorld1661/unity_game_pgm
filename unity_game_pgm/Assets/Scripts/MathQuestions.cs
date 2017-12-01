@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
-//using System; 	// using Unity's Random instead
+//using System; 	// using Unity's Random instead--if not specified, compiler panics
 using Random=UnityEngine.Random;
 
 public class MathQuestions : MonoBehaviour {
@@ -24,6 +24,11 @@ public class MathQuestions : MonoBehaviour {
 	private float[] answers = new float[SIZE];
 
 	private int correctIndex;
+
+
+	// TODO concat series of smaller math questions (chunks) and store in List.
+	//		Then, tackle each chunk one at a time by order or PEMDAS whilst displaying larger equation on the side? 
+	private List<string> mathChunks = new List<string>();
 
 
 	void Awake() {
@@ -58,8 +63,8 @@ public class MathQuestions : MonoBehaviour {
 	{
 		// generate random values for operands
 		// TODO replace 1 and 101 vals with variables dependent on difficulty!
-		op1 = Random.Range(1, 101);
-		op2 = Random.Range(1, 101);
+		op1 = Random.Range(-100, 101);
+		op2 = Random.Range(-100, 101);
 
 		float answer = PerformOp (op1, op2);
 
@@ -106,11 +111,12 @@ public class MathQuestions : MonoBehaviour {
 				temp = a * b;
 				break;
 			case 4:
-				temp = a % b;
+			// performing modulus (and square root) on negative numbers is wonky, so using abs val
+				temp = Mathf.Abs(a) % Mathf.Abs(b);
 				break;
 			case 5:
 				// for square roots, only op b (op2) will be processed
-				temp = Mathf.Sqrt (b);
+			temp = Mathf.Sqrt (Mathf.Abs(b));
 				break;
 		}
 		return temp;
