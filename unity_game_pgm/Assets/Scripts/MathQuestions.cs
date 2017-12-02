@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine;
 //using System; 	// using Unity's Random instead--if not specified, compiler panics
 using Random=UnityEngine.Random;
+using UnityEditor;
 
 public class MathQuestions : MonoBehaviour {
 
@@ -29,6 +30,36 @@ public class MathQuestions : MonoBehaviour {
 	// TODO concat series of smaller math questions (chunks) and store in List.
 	//		Then, tackle each chunk one at a time by order or PEMDAS whilst displaying larger equation on the side? 
 	private List<string> mathChunks = new List<string>();
+
+	private string fullProblem = "((5 - (3 - 7 * (6 - 3) + 5)) % 4)";
+	private List<string> breakProblem(string problem) {
+		List<string> s = new List<string>();
+		List<string> t = new List<string>();
+
+		for(int i = 0; i < problem.Length; i++) {
+			char c = problem [i];
+			if (c == '(')
+				s.Add ("");
+			for (int j = 0; j < s.Count; j++)
+				s [j] += c;
+			if (c == ')') {
+				string text = s [s.Count-1];
+				s.RemoveAt (s.Count - 1);
+				t.Add (text);
+			}
+		}
+		return t;
+	}
+
+	private void getMath() {
+		//mathQuestion.text = fullProblem;
+		List<string> t = breakProblem (fullProblem);
+		for (int i = 0; i < t.Count; i++) {
+			string expression = t[i];
+			float result = ExpressionEvaluator.Evaluate<float>(expression);
+			//mathQuestion.text += "\n" + expression + " = " + result;
+		}
+	}
 
 
 	void Awake() {

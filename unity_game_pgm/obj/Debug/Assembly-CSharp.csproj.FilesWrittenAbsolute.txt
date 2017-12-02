@@ -115,3 +115,5 @@
 /Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Unity.Cecil.Mdb.dll
 /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
 /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
