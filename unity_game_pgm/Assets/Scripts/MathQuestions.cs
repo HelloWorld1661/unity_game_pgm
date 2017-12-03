@@ -119,6 +119,7 @@ public class MathQuestions : MonoBehaviour {
 		// needed for breakProblem() to work
 		GameManagerJW.Instance.fullProblem += " ";
 
+		// % or Sqrt -----------------------------------------------------------------------------------
 		op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 		op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 		int probOfSqrtOrMod = Random.Range (0, 5);
@@ -133,9 +134,10 @@ public class MathQuestions : MonoBehaviour {
 				GameManagerJW.Instance.fullProblem += Mathf.Abs (op1) + " " + operators [operIndex] + " " + Mathf.Abs (op2);
 			}
 			GameManagerJW.Instance.fullProblem += " ";
-			Debug.Log (GameManagerJW.Instance.fullProblem);
+			Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 			return;
 		}
+		// ---------------------------------------------------------------------------------------------
 
 		int x = Random.Range(1, 3);
 		for (int i = 0; i < x; i++)
@@ -150,7 +152,11 @@ public class MathQuestions : MonoBehaviour {
 				op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				operIndex = Random.Range (0, 4);
-				GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
+				if (y != 1) {
+					GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
+				} else {
+					GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2;
+				}
 
 				// here I'm concatenating between paranthesis at random (range index 0, 1, 2, or 3 for + - / *)... we don't want radical or % here :slightly_smiling_face:
 				if (j != y - 1 && y != 0) {
@@ -166,7 +172,7 @@ public class MathQuestions : MonoBehaviour {
 			}
 		}
 		GameManagerJW.Instance.fullProblem += " ";
-		Debug.Log (GameManagerJW.Instance.fullProblem);
+		Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 	}
 
 	private void ReadParsedProblem(List<string> p)
