@@ -7,7 +7,8 @@ using UnityEngine.UI;
 using UnityEngine;
 //using System; 	// using Unity's Random instead--if not specified, compiler panics
 using Random=UnityEngine.Random;
-using UnityEditor;
+//using UnityEditor; // for ExpressionEval, but must go in an Editor folder which won't be included in game's build
+using B83.ExpressionParser;
 
 public class MathQuestions : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class MathQuestions : MonoBehaviour {
 	private int correctIndex;
 	private float answer;
 
+	private ExpressionParser parser = new ExpressionParser();
 
 	/* STEPS: Christian & RP
 	CHECK!	1) run GenerateMath() several times and concat / store in string fullProblem
@@ -195,17 +197,22 @@ public class MathQuestions : MonoBehaviour {
 		}
 
 		// Important: checking for out of range index
-		if (i == GameManagerJW.Instance.parsedProblem.Count) {
+		if (i == GameManagerJW.Instance.parsedProblem.Count) { // same as i == p.Count
 			GameManagerJW.Instance.isQuestionStarted = false;
 			// reloading scene to respawn coins and call Refresh() in Start()
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+			// basically calling return;
 		} else {
 			// Display chunk of index i
-			if (p [i] != null) { // or Assert.IsNotNull(var x) (checking again)
-				mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
-				PopulateAnswers (p [i]);
-				PrintAnswerKey (p [i]);
-			}
+			mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
+			PopulateAnswers (p [i]);
+			PrintAnswerKey (p [i]);
+
+//			if (i != 0) {
+//				// so it's chunk1_answer + chunk2... not chunk1+chunk2+...
+				// still not working
+//				GameManagerJW.Instance.parsedProblem [i] = answer.ToString ();
+//			}
 		}
 
 		//_____For Debugging_____
@@ -219,7 +226,12 @@ public class MathQuestions : MonoBehaviour {
 	{
 		UpdateHint (expression);
 
-		answer = ExpressionEvaluator.Evaluate<float>(expression);
+		// RP fix
+		Expression exp = parser.EvaluateExpression(expression);
+		answer = (float)exp.Value;
+
+		// will not run in build, uses UnityEditor
+//		answer = ExpressionEvaluator.Evaluate<float>(expression);
 
 		// checking for Square root, since ExpressionEvaluator does not handle it
 		int isSqrt = expression.IndexOf((char)0x221A);
