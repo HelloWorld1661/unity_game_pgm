@@ -26,23 +26,25 @@ public class MathQuestions : MonoBehaviour {
 
 	private int correctIndex;
 
+	private List<string> parsedProblem;
+
 
 	// TODO concat series of smaller math questions (chunks) and store in List.
 	//		Then, tackle each chunk one at a time by order or PEMDAS whilst displaying larger equation on the side? 
-	private List<string> mathChunks = new List<string>();
+	// private List<string> mathChunks = new List<string>();
 
-	private string fullProblem = "((5 - (3 - 7 * (6 - 3) + 5)) % 4)";
+//	private string fullProblem = "((5 - (3 - 7 * (6 - 3) + 5)) % 4)";
 	private List<string> breakProblem(string problem) {
 		List<string> s = new List<string>();
 		List<string> t = new List<string>();
 
-		for(int i = 0; i < problem.Length; i++) {
+		for (int i = 0; i < problem.Length; i++) {
 			char c = problem [i];
-			if (c == '(')
+			if (c == '(' || i == 0)
 				s.Add ("");
 			for (int j = 0; j < s.Count; j++)
 				s [j] += c;
-			if (c == ')') {
+			if (c == ')' || i == problem.Length-1) {
 				string text = s [s.Count-1];
 				s.RemoveAt (s.Count - 1);
 				t.Add (text);
@@ -52,8 +54,8 @@ public class MathQuestions : MonoBehaviour {
 	}
 
 	/* STEPS:
-	1) run GenerateMath() several times and concat / store in string fullProblem
-	2) parse fullProblem with breakProblem(fullProblem) and store the return type List<string> in say parsedProblem
+	CHECK!	1) run GenerateMath() several times and concat / store in string fullProblem
+	CHECK!	2) parse fullProblem with breakProblem(fullProblem) and store the return type List<string> in say parsedProblem
 	3) create function to go through parsedProblem and display chunk 1
 	4) pass chunk 1 into math func to get answer
 	5a) if player gets it wrong or dies, problem persists (this is important b/c we must make this data persistent, i.e; put in GameManagerJW.cs)
@@ -64,15 +66,16 @@ public class MathQuestions : MonoBehaviour {
 	(maybe create a "next" button to goto step 1 and gen new fullProblem)
 	*/
 
-	private void getMath() {
-		//mathQuestion.text = fullProblem;
-		List<string> t = breakProblem (fullProblem);
-		for (int i = 0; i < t.Count; i++) {
-			string expression = t[i];
-			float result = ExpressionEvaluator.Evaluate<float>(expression);
-			//mathQuestion.text += "\n" + expression + " = " + result;
-		}
-	}
+	// FOR TESTING
+//	private void getMath() {
+//		//mathQuestion.text = fullProblem;
+//		List<string> t = breakProblem (fullProblem);
+//		for (int i = 0; i < t.Count; i++) {
+//			string expression = t[i];
+//			float result = ExpressionEvaluator.Evaluate<float>(expression);
+//			//mathQuestion.text += "\n" + expression + " = " + result;
+//		}
+//	}
 
 
 	void Awake() {
@@ -92,6 +95,11 @@ public class MathQuestions : MonoBehaviour {
 		GenerateMath();
 		PrintMath();
 		UpdateHint();
+
+		// NEW!
+		GenFullProblem ();
+		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
+		ReadParsedProblem (GameManagerJW.Instance.parsedProblem);
 	}
 
 	// Update is called once per frame
@@ -103,10 +111,75 @@ public class MathQuestions : MonoBehaviour {
 		}
 	}
 
+	// Christian's TRIM VERSION (based on RP original)
+	private void GenFullProblem()
+	{
+		// Reset fullProblem
+		GameManagerJW.Instance.fullProblem = "";
+		// needed for breakProblem() to work
+		GameManagerJW.Instance.fullProblem += " ";
+
+		op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+		op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+		int probOfSqrtOrMod = Random.Range (0, 5);
+		int operIndex = Random.Range (0, OPER_SIZE);
+		if ( (operIndex == 4 || operIndex == 5) && probOfSqrtOrMod == 1) {
+			// Square roots
+			if (operIndex == 5) {
+				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + Mathf.Abs (op2);
+			}
+			// Modulus
+			else {
+				GameManagerJW.Instance.fullProblem += Mathf.Abs (op1) + " " + operators [operIndex] + " " + Mathf.Abs (op2);
+			}
+			GameManagerJW.Instance.fullProblem += " ";
+			Debug.Log (GameManagerJW.Instance.fullProblem);
+			return;
+		}
+
+		int x = Random.Range(1, 3);
+		for (int i = 0; i < x; i++)
+		{
+			int y = Random.Range(1, 4);
+			if (y != 1)
+				GameManagerJW.Instance.fullProblem += "(";
+
+			for (int j = 0; j < y; j++)
+			{
+				// generate random values for operands
+				op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+				op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+				operIndex = Random.Range (0, 4);
+				GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
+
+				// here I'm concatenating between paranthesis at random (range index 0, 1, 2, or 3 for + - / *)... we don't want radical or % here :slightly_smiling_face:
+				if (j != y - 1 && y != 0) {
+					operIndex = Random.Range (0, 4);
+					GameManagerJW.Instance.fullProblem += " " + operators [operIndex] + " ";
+				}
+			}
+			if (y != 1)
+				GameManagerJW.Instance.fullProblem += ")";
+			if (i != x - 1 && x != 0) {
+				operIndex = Random.Range (0, 4);
+				GameManagerJW.Instance.fullProblem += " " + operators [operIndex] + " ";
+			}
+		}
+		GameManagerJW.Instance.fullProblem += " ";
+		Debug.Log (GameManagerJW.Instance.fullProblem);
+	}
+
+	private void ReadParsedProblem(List<string> p)
+	{
+		foreach (string i in p) {
+			Debug.Log (i + "\n");
+		}
+	}
+
+	// LEGACY FUNCTION; not in use
 	public void GenerateMath()
 	{
 		// generate random values for operands
-		// TODO replace 1 and 101 vals with variables dependent on difficulty!
 		op1 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
 		op2 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
 
@@ -170,8 +243,11 @@ public class MathQuestions : MonoBehaviour {
 		// RP 2017-12-1
 		// if square root, then diplay only op2
 		if (operIndex == 5) {
-			mathQuestion.text = "Evaluate: " + operators [operIndex] + op2 + " = ? \n\n" +
+			mathQuestion.text = "Evaluate: " + operators [operIndex] + Mathf.Abs (op2) + " = ? \n\n" +
 			"(A) ";
+		} else if (operIndex == 4) {
+			mathQuestion.text = "Evaluate: " + Mathf.Abs(op1) + " " + operators [operIndex] + " " + Mathf.Abs(op2) + " = ? \n\n" +
+					"(A) ";
 		} else {
 			mathQuestion.text = "Evaluate: " + op1 + " " + operators [operIndex] + " " + op2 + " = ? \n\n" +
 			"(A) ";
@@ -347,3 +423,94 @@ public class MathQuestions : MonoBehaviour {
 		hintText.text = temp;
 	}
 }
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+
+// BLOATED VERSION
+//	public void GenFullProblem()
+//	{
+//		// TODO add chunks diff selector in Settings
+//
+//		// Reset fullProblem
+//		GameManagerJW.Instance.fullProblem = "";
+//		// needed for breakProblem() to work
+//		GameManagerJW.Instance.fullProblem += " ";
+//
+//		// bug fix: performing these rand operations inside of if statement froze untiy
+//		op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+//		op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+//		int probOfSqrtOrMod = Random.Range (0, 5);
+//		operIndex = Random.Range (0, OPER_SIZE);
+//		if ( (operIndex == 4 || operIndex == 5) && probOfSqrtOrMod == 1) {
+//			// Square roots
+//			if (operIndex == 5) {
+//				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + Mathf.Abs (op2);
+//			}
+//			// Modulus
+//			else {
+//				GameManagerJW.Instance.fullProblem += Mathf.Abs (op1) + " " + operators [operIndex] + " " + Mathf.Abs (op2);
+//			}
+//			GameManagerJW.Instance.fullProblem += " ";
+//			Debug.Log (GameManagerJW.Instance.fullProblem);
+//			return;
+//		}
+//
+//		// bug fix: setting min val to 1 otherwise sometimes turns up empty string
+//		int howManyChunks = Random.Range(1, 3);
+//		bool isOpenParan = false;
+//
+//		for (int i = 0; i < howManyChunks; i++)
+//		{
+//			int addParan = Random.Range (0, 11);
+//			if (addParan > 2 && isOpenParan == false && howManyChunks > 1) {
+//				GameManagerJW.Instance.fullProblem += "( ";
+//				isOpenParan = true;
+//			}
+//
+//			int moreChunks = Random.Range (1, 4);
+//			for (int j = 0; j < moreChunks; j++)
+//			{
+//				addParan = Random.Range (0, 11);
+//				if (addParan < 2 && isOpenParan == false && moreChunks > 1) {
+//					GameManagerJW.Instance.fullProblem += "( ";
+//					isOpenParan = true;
+//				}
+//				// generate random values for operands
+//				op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+//				op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
+//
+//				// range index 0, 1, 2, or 3 for + - / * NO % or radicals... too hard
+//				operIndex = Random.Range (0, 4);
+//				GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2 + " ";
+//
+//				int innerCloseParan = Random.Range (0, 11);
+//				if ((j == moreChunks - 1 || moreChunks == 0) && isOpenParan == true) {
+//					GameManagerJW.Instance.fullProblem += ")";
+//					isOpenParan = false;
+//				} else if (innerCloseParan < 2 && isOpenParan == true) {
+//					GameManagerJW.Instance.fullProblem += ")";
+//					isOpenParan = false;
+//				}
+//
+//				// here I'm concatenating between paranthesis at random (range index 0, 1, 2, or 3 for + - / *)... we don't want radical or % here :)
+//				// 		or if there's just two numbers next to each other
+//				int concat = Random.Range (0, 11);
+//				if ( (concat < 3 && j != moreChunks - 1 && moreChunks != 0) || (isOpenParan == false && j != moreChunks - 1) ) {
+//					operIndex = Random.Range (0, 4);
+//					GameManagerJW.Instance.fullProblem += " " + operators [operIndex] + " ";
+//				}
+//			}
+//
+//			int closeParan = Random.Range (0, 11);
+//			if ((i == howManyChunks - 1 || howManyChunks == 0) && isOpenParan == true) {
+//				GameManagerJW.Instance.fullProblem += ")";
+//				isOpenParan = false;
+//			} else if (closeParan > 2 && isOpenParan == true) {
+//				GameManagerJW.Instance.fullProblem += ")";
+//				isOpenParan = false;
+//			}
+//		}
+//		GameManagerJW.Instance.fullProblem += " ";
+//		Debug.Log (GameManagerJW.Instance.fullProblem);
+//	}

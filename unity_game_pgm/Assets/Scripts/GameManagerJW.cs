@@ -21,6 +21,10 @@ public class GameManagerJW : MonoBehaviour {
 	private bool isInputEmpty = false;
 	private string userName;
 
+	//________MathQuestions.cs_________
+	public string fullProblem = "";
+	public List<string> parsedProblem = new List<string>();
+
 	// for assigning op1 and op2 in GenerateMath() in MathQuestions.cs
 	private int minRand = -20;
 	private int maxRand = 21;
