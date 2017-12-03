@@ -49,7 +49,7 @@ public class Difficulty : MonoBehaviour {
 			DiffTitle.color = Color.red;
 			DiffTitle.text = "Difficulty";
 		} else if (GameManagerJW.Instance.getMinRand () <= -100 || GameManagerJW.Instance.getMaxRand () > 101) {
-			DiffTitle.color = Color.magenta;
+			DiffTitle.color = Color.yellow;
 			DiffTitle.text = "Difficulty";
 		} else if (GameManagerJW.Instance.getMinRand () <= -50 || GameManagerJW.Instance.getMaxRand () > 51) {
 			DiffTitle.color = Color.yellow;
@@ -58,7 +58,7 @@ public class Difficulty : MonoBehaviour {
 			DiffTitle.color = Color.green;
 			DiffTitle.text = "Difficulty";
 		} else {
-			DiffTitle.color = Color.blue;
+			DiffTitle.color = Color.yellow;
 			DiffTitle.text = "Difficulty";
 		}
 	}

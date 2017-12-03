@@ -17,7 +17,7 @@ public class MathQuestions : MonoBehaviour {
 
 	private float op1;
 	private float op2;
-	private const int OPER_SIZE = 6;
+	private const int OPER_SIZE = 7;
 	private char[] operators = new char[OPER_SIZE];
 	private int operIndex;
 	// create array to store A,B,C,D answer key
@@ -56,7 +56,7 @@ public class MathQuestions : MonoBehaviour {
 	/* STEPS:
 	CHECK!	1) run GenerateMath() several times and concat / store in string fullProblem
 	CHECK!	2) parse fullProblem with breakProblem(fullProblem) and store the return type List<string> in say parsedProblem
-	3) create function to go through parsedProblem and display chunk 1
+		3) create function to go through parsedProblem and display chunk 1
 	4) pass chunk 1 into math func to get answer
 	5a) if player gets it wrong or dies, problem persists (this is important b/c we must make this data persistent, i.e; put in GameManagerJW.cs)
 	(side note TODO, when assigning rand vals to op1 and op2 in GenerateMath(), let's let user define the number range i.e; difficulty in settings... again, this would simply go in GameManagerJW.cs)
@@ -84,17 +84,20 @@ public class MathQuestions : MonoBehaviour {
 		operators [1] = '-';
 		operators [2] = '/';
 		operators [3] = '*';
-		operators [4] = '%';
+		operators [4] = '^';
 		operators [5] = (char)0x221A; 	// sqaure root / radical symbol
-		operIndex = Random.Range(0, OPER_SIZE);
+		operators [6] = '%';
+
+
+//		operIndex = Random.Range(0, OPER_SIZE);
 	}
 
 	// TODO We should call this upon every time the player is finished with the question
 	// 		maybe have a bool listener in update
 	void Start () {
-		GenerateMath();
-		PrintMath();
-		UpdateHint();
+//		GenerateMath();
+//		PrintMath();
+//		UpdateHint();
 
 		// NEW!
 		GenFullProblem ();
@@ -124,14 +127,19 @@ public class MathQuestions : MonoBehaviour {
 		op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 		int probOfSqrtOrMod = Random.Range (0, 5);
 		int operIndex = Random.Range (0, OPER_SIZE);
-		if ( (operIndex == 4 || operIndex == 5) && probOfSqrtOrMod == 1) {
+		if ( (operIndex == 6 || operIndex == 5) && probOfSqrtOrMod == 1) {
 			// Square roots
 			if (operIndex == 5) {
-				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + Mathf.Abs (op2);
+				// we don't want negative vals here
+				op2 = Mathf.Abs (op2);
+				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + op2;
 			}
 			// Modulus
 			else {
-				GameManagerJW.Instance.fullProblem += Mathf.Abs (op1) + " " + operators [operIndex] + " " + Mathf.Abs (op2);
+				// we don't want negative vals here
+				op1 = Mathf.Abs (op1);
+				op2 = Mathf.Abs (op2);
+				GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2;
 			}
 			GameManagerJW.Instance.fullProblem += " ";
 			Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
@@ -142,16 +150,16 @@ public class MathQuestions : MonoBehaviour {
 		int x = Random.Range(1, 3);
 		for (int i = 0; i < x; i++)
 		{
-			int y = Random.Range(1, 4);
-			if (y != 1)
+			if (x != 1)
 				GameManagerJW.Instance.fullProblem += "(";
 
+			int y = Random.Range(1, 4);
 			for (int j = 0; j < y; j++)
 			{
 				// generate random values for operands
 				op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
-				operIndex = Random.Range (0, 4);
+				operIndex = Random.Range (0, 5); // includes ^
 				if (y != 1) {
 					GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
 				} else {
@@ -164,7 +172,7 @@ public class MathQuestions : MonoBehaviour {
 					GameManagerJW.Instance.fullProblem += " " + operators [operIndex] + " ";
 				}
 			}
-			if (y != 1)
+			if (x != 1)
 				GameManagerJW.Instance.fullProblem += ")";
 			if (i != x - 1 && x != 0) {
 				operIndex = Random.Range (0, 4);
@@ -177,9 +185,67 @@ public class MathQuestions : MonoBehaviour {
 
 	private void ReadParsedProblem(List<string> p)
 	{
-		foreach (string i in p) {
-			Debug.Log (i + "\n");
+		// Reset math text
+		mathQuestion.text = "";
+		mathQuestion.text += "Full Problem: ";
+
+		// Display entire problem in full above (last index in p)
+		if (p != null) {
+			mathQuestion.text += p [p.Count - 1];
 		}
+
+		// Display chunk 1
+		int i = 0;
+		if (p[i] != null) {
+			mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
+			populateAnswers (p[i]);
+		}
+
+		// use coRoutine here ?
+
+		foreach (string j in p) {
+			Debug.Log (j + "\n");
+		}
+	}
+
+	private void populateAnswers (string expression)
+	{
+		float answer = ExpressionEvaluator.Evaluate<float>(expression);
+
+		// checking for Square root, since ExpressionEvaluator does not handle it
+		int isSqrt = expression.IndexOf((char)0x221A);
+		if (isSqrt != -1) {
+			string temp = expression;
+			temp = temp.Remove(isSqrt, 1);
+			answer = Mathf.Sqrt (int.Parse(temp));
+		}
+
+		mathQuestion.text += "Answer: " + answer;
+
+		// populate answer key with junk, incorrect answer
+		for (int i=0; i<SIZE; ++i)
+		{
+			// gen rand values within a range of 10 of the answer
+			if (answer % 1 == 0) { // cast rand vals to int to match real answer
+				answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
+			} else { // leave as float
+				answers [i] = Random.Range (answer - 10, answer + 10);
+			}
+			// we are checking that we don't accidentally / magically
+			//		generate the right answer! Will likely never enter this while loop, but it's here to be safe
+			while (answers[i] == answer) {
+				if (answer % 1 == 0) {
+					answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
+				} else {
+					answers [i] = Random.Range (answer - 10, answer + 10);
+				}
+			}
+		}
+		// populate rand arr index with Correct answer
+		// 		note: Random.Range(Inclusive val, Exclusive val)
+		correctIndex = Random.Range(0, SIZE);
+		answers[correctIndex] = answer;
+		AnswerCoins [correctIndex].GetComponent<AnswerCoin> ().isCorrect = true;
 	}
 
 	// LEGACY FUNCTION; not in use
@@ -234,17 +300,21 @@ public class MathQuestions : MonoBehaviour {
 				temp = a * b;
 				break;
 			case 4:
-			// performing modulus (and square root) on negative numbers is wonky, so using abs val
+				// EXPONENTS ^
+				break;
+			case 6:
+				// performing modulus (and square root) on negative numbers is wonky, so using abs val
 				temp = Mathf.Abs(a) % Mathf.Abs(b);
 				break;
 			case 5:
 				// for square roots, only op b (op2) will be processed
-			temp = Mathf.Sqrt (Mathf.Abs(b));
+				temp = Mathf.Sqrt (Mathf.Abs(b));
 				break;
 		}
 		return temp;
 	}
 
+	// LEGACY not in use
 	private void PrintMath() {
 		// RP 2017-12-1
 		// if square root, then diplay only op2
@@ -413,7 +483,7 @@ public class MathQuestions : MonoBehaviour {
 				"20\nmultiply by 10, then double\nExample: 20×4 = 40+40 = 80\nExample: 20×7 = 70+70 = 140\n\n\n";
 
 			break;
-		case 4:	// %
+		case 6:	// %
 			temp = "What is the % symbol? It's modulus! Divide first and any remainder is your answer!\n\n" +
 				"In computing, the modulo operation finds the remainder after division of one number by another (sometimes called modulus). Given two positive numbers, a (the dividend) and n (the divisor), " +
 				"a modulo n (abbreviated as a mod n) is the remainder of the Euclidean division of a by n.\n\n";
@@ -433,7 +503,7 @@ public class MathQuestions : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------
 
-// BLOATED VERSION
+// BLOATED VERSION (broken b/c operIndex 4 now equals ^ and 6 equals %)
 //	public void GenFullProblem()
 //	{
 //		// TODO add chunks diff selector in Settings
