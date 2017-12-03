@@ -54,3 +54,6 @@
 /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
 /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
 /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/Vuforia.UnityExtensions.dll
+/Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/UnityEngine.UIAutomation.dll
+/Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
+/Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
