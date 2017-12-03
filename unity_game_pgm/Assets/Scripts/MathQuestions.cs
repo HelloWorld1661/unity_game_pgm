@@ -103,6 +103,7 @@ public class MathQuestions : MonoBehaviour {
 		GenFullProblem ();
 		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
 		ReadParsedProblem (GameManagerJW.Instance.parsedProblem);
+		PrintAnswerKey ();
 	}
 
 	// Update is called once per frame
@@ -198,7 +199,7 @@ public class MathQuestions : MonoBehaviour {
 		int i = 0;
 		if (p[i] != null) {
 			mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
-			populateAnswers (p[i]);
+			PopulateAnswers (p[i]);
 		}
 
 		// use coRoutine here ?
@@ -208,8 +209,10 @@ public class MathQuestions : MonoBehaviour {
 		}
 	}
 
-	private void populateAnswers (string expression)
+	private void PopulateAnswers (string expression)
 	{
+		UpdateHint (expression);
+
 		float answer = ExpressionEvaluator.Evaluate<float>(expression);
 
 		// checking for Square root, since ExpressionEvaluator does not handle it
@@ -220,6 +223,7 @@ public class MathQuestions : MonoBehaviour {
 			answer = Mathf.Sqrt (int.Parse(temp));
 		}
 
+		// for debugging
 		mathQuestion.text += "Answer: " + answer;
 
 		// populate answer key with junk, incorrect answer
@@ -246,6 +250,26 @@ public class MathQuestions : MonoBehaviour {
 		correctIndex = Random.Range(0, SIZE);
 		answers[correctIndex] = answer;
 		AnswerCoins [correctIndex].GetComponent<AnswerCoin> ().isCorrect = true;
+	}
+
+	private void PrintAnswerKey() {
+		mathQuestion.text += "\n (A) ";
+//		if (operIndex == 2) { // if performing division, convert to fraction
+//			Fraction newFraction = Fraction.Parse ((double)answers [1]);
+//			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+//		} else {
+//			mathQuestion.text += answers [1];
+//		}
+		mathQuestion.text += answers [0];
+
+		mathQuestion.text += " (B) ";
+		mathQuestion.text += answers [1];
+
+		mathQuestion.text += " (C) ";
+		mathQuestion.text += answers [2];
+
+		mathQuestion.text += " (D) ";
+		mathQuestion.text += answers [3];
 	}
 
 	// LEGACY FUNCTION; not in use
@@ -426,12 +450,12 @@ public class MathQuestions : MonoBehaviour {
 		}
 	}
 
-	public void UpdateHint()
+	public void UpdateHint(string expression)
 	{
 		string temp = "";
-		switch (operIndex)
-		{
-		case 0:	// +
+
+		int isAdd = expression.IndexOf('+');
+		if (isAdd != -1) {
 			temp = "Use your addition powers! \n\n Try adding the largest left-most values first. \n 910 + 300... do 900 + 300 first, which equals 1200 then add remaining 10!\n\n" +
 				"910 + 300 = 1220\n\n" +
 				"Another method uses rounding: \n" +
@@ -440,22 +464,22 @@ public class MathQuestions : MonoBehaviour {
 				"Now simply subtract what you rounded off. 650 – 644 = 6 and 240 – 238 = 2\n" +
 				"6 + 2 = 8. 890 – 8 = 882\n\nThere's your answer!\n" +
 				"644 +238 = 882";
+			hintText.text = temp;
+			return;
+		}
 
-			break;
-		case 1:	// -
-			temp = "If number you're subtracting from is smaller (say 2 - 10), simply make the answer -10 and add back 2... 2 - 10 = -8! FLIP and add!\n\n" +
-				"When subtracting from 1,000...\nHere’s a basic rule to subtract a large number from 1,000: Subtract every number except the last from 9 and subtract the final number from 10\n\nFor example:\n1,000 – 556\n\n" +
-				"Step 1: Subtract 5 from 9 = 4\n\nStep 2: Subtract 5 from 9 = 4\n\nStep 3: Subtract 6 from 10 = 4\n\nThe answer is 444.";
-
-			break;
-		case 2:	// /
+		int isDiv = expression.IndexOf('/');
+		if (isDiv != -1) {
 			temp = "Division tricks\n\nHere’s a quick way to know when a number can be evenly divided by these certain numbers:\n\n" +
 				"10 if the number ends in 0\n9 when the digits are added together and the total is evenly divisible by 9\n8 if the last three digits are evenly divisible by 8 or are 000\n" +
 				"6 if it is an even number and when the digits are added together the answer is evenly divisible by 3\n5 if it ends in a 0 or 5\n4 if it ends in 00 or a two digit number that" +
 				"is evenly divisible by 4\n3 when the digits are added together and the result is evenly divisible by the number 3\n2 if it ends in 0, 2, 4, 6, or 8";
+				hintText.text = temp;
+			return;
+		}
 
-			break;
-		case 3:	// *
+		int isMult = expression.IndexOf('*');
+		if (isMult != -1) {
 			temp = "Every multiplication has a twin, which may be easier to remember.\nFor example if you forget 8×2, you might remember 2×8=16. This way, you only have to remember half the table!\n\n\n" +
 				"Another trick is to use base 10, base 20 or base 50.\n" +
 				"Base 10 Example: 15 * 13    So, 15 is 5 above 10 and 13 is 3 above 10.\n" +
@@ -481,22 +505,56 @@ public class MathQuestions : MonoBehaviour {
 				"12\nis 10× plus 2×\nExample: 12×4 = 40+8 = 48\n\n" +
 				"15\nmultiply by 10, then add half again\nExample: 15×4 = 40+20 = 60\nExample: 15×9 = 90+45 = 135\n\n" +
 				"20\nmultiply by 10, then double\nExample: 20×4 = 40+40 = 80\nExample: 20×7 = 70+70 = 140\n\n\n";
+				hintText.text = temp;
+			return;
+		}
 
-			break;
-		case 6:	// %
-			temp = "What is the % symbol? It's modulus! Divide first and any remainder is your answer!\n\n" +
-				"In computing, the modulo operation finds the remainder after division of one number by another (sometimes called modulus). Given two positive numbers, a (the dividend) and n (the divisor), " +
-				"a modulo n (abbreviated as a mod n) is the remainder of the Euclidean division of a by n.\n\n";
-				
-			break;
-		case 5:	// sqaure root / radical symbol
+		int isExp = expression.IndexOf('^');
+		if (isExp != -1) {
+			temp = "As with most problems in basic algebra, solving large exponents requires factoring. If you factor the exponent down until all the factors are prime numbers--a process called 'prime factorization'" +
+				"-- you can then apply the power rule of exponents to solve the problem. Additionally, you can break the exponent down by addition rather than multiplication and apply the product rule " +
+				"for exponents to solve the problem. A little practice will help you predict which method will be easiest for the problem you are faced with. \n\n" +
+				"Power Rule\nFind the prime factors of the exponent.\n\nExample: 6^24\n\n24 = 2 * 12 24 = 2 * 2 * 6 24 = 2 * 2 * 2 * 3\n\nUse the power rule for exponents to set up the problem. " +
+				"The power rule states: (x^a)^b = x^(a*b)\n\n6^24 = 6^(2 * 2 * 2 * 3) = ((((6^2)^2)^2)^3)\n\nSolve the problem from the inside out.\n\n" +
+				"((((6^2)^2)^2)^3) = (((36^2)^2)^3) = ((1296^2)^3) = (1679616^3) = 4.738e18\n\nProduct Rule\nBreak the exponent down into a sum. Make sure the components are small enough " +
+				"to work with as exponents and do not include 1 or 0.\n\nExample: 6^24\n\n24 = 12 + 12 24 = 6 + 6 + 6 + 6 24 = 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3\n\nUse the product rule of " +
+				"exponents to set up the problem. The product rule states: x^a * x^b = x(a^b)\n\n6^24 = 6^(3 + 3 + 3 + 3 + 3 + 3 + 3 + 3) 6^24 = 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3\n\nS" +
+				"olve the problem.\n\n6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 = 216 * 216 * 216 * 216 * 216 * 216 * 216 * 216 = 46656 * 46656 * 46656 * 46656 = 4.738e18\n\nTip\nFor some problems, " +
+				"a combination of both techniques may make the problem easier. For example: x^21 = (x^7)^3 (power rule), and x^7 = x^3 * x^2 * x^2 (product rule). Combining the two, " +
+				"you get: x^21 = (x^3 * x^2 * x^2)^3";
+				hintText.text = temp;
+			return;
+		}
+
+		int isSqrt = expression.IndexOf((char)0x221A); // Square root
+		if (isSqrt != -1) {
 			temp = "In mathematics, a square root of a number a is a number y such that y² = a, in other words, a number y whose square (the result of multiplying the number by itself, or y * y) is a. \n\n " +
 				"For example, 4 and -4 are square roots of 16 because 4² = (-4)² = 16.Every non-negative real number a has a unique non-negative square root, called the principal square root, which is denoted by √a, where √ is called the radical sign or radix. \n\n" +
 				" For example, the principal square root of 9 is 3, denoted √9 = 3, because 32 = 3 ^ 3 = 9 and 3 is non-negative. The term whose root is being considered is known as the radicand. The radicand is the number or expression underneath the radical sign, " +
-				"in this example 9.The justification for taking out the square root of any number is this theorem to help simplify √a*b = √a * √b. The square root of a number is equal to the number of the square roots of each factor.";
-			break;
+				"in this example 9.The justification for taking out the square root of any number is this theorem to help simplify √a*b = √a * √b. " +
+				"The square root of a number is equal to the number of the square roots of each factor.";
+				hintText.text = temp;
+			return;
 		}
-		hintText.text = temp;
+
+		int isMod = expression.IndexOf('%');
+		if (isMod != -1) {
+			temp = "What is the % symbol? It's modulus! Divide first and any remainder is your answer!\n\n" +
+				"In computing, the modulo operation finds the remainder after division of one number by another (sometimes called modulus). Given two positive numbers, a (the dividend) and n (the divisor), " +
+				"a modulo n (abbreviated as a mod n) is the remainder of the Euclidean division of a by n.\n\n";
+				hintText.text = temp;
+			return;
+		}
+			
+		// bug fix: this must go last, b/c otherwise expression might contain '-' to mean a negative number, not minus operation
+		int isMinus = expression.IndexOf('-');
+		if (isMinus != -1) {
+			temp = "If number you're subtracting from is smaller (say 2 - 10), simply make the answer -10 and add back 2... 2 - 10 = -8! FLIP and add!\n\n" +
+				"When subtracting from 1,000...\nHere’s a basic rule to subtract a large number from 1,000: Subtract every number except the last from 9 and subtract the final number from 10\n\nFor example:\n1,000 – 556\n\n" +
+				"Step 1: Subtract 5 from 9 = 4\n\nStep 2: Subtract 5 from 9 = 4\n\nStep 3: Subtract 6 from 10 = 4\n\nThe answer is 444.";
+			hintText.text = temp;
+			return;
+		}
 	}
 }
 
