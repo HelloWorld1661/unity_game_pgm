@@ -466,7 +466,9 @@ public class MathQuestions : MonoBehaviour {
 				"For example, 4 and -4 are square roots of 16 because 4² = (-4)² = 16.Every non-negative real number a has a unique non-negative square root, called the principal square root, which is denoted by √a, where √ is called the radical sign or radix. \n\n" +
 				" For example, the principal square root of 9 is 3, denoted √9 = 3, because 32 = 3 ^ 3 = 9 and 3 is non-negative. The term whose root is being considered is known as the radicand. The radicand is the number or expression underneath the radical sign, " +
 				"in this example 9.The justification for taking out the square root of any number is this theorem to help simplify √a*b = √a * √b. " +
-				"The square root of a number is equal to the number of the square roots of each factor.";
+				"The square root of a number is equal to the number of the square roots of each factor.\n\n" +
+				"The imaginary number \"i\" is the square root of negative one. An imaginary number possesses the unique property that when squared, the result is negative. " +
+				"Consider: The process of simplifying a radical containing a negative factor is the same as normal radical simplification.";
 				hintText.text = temp;
 			return;
 		}
