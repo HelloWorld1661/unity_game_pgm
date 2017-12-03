@@ -20,6 +20,11 @@ public class GameManagerJW : MonoBehaviour {
 	private bool isResetData = false;
 	private bool isInputEmpty = false;
 	private string userName;
+
+	// for assigning op1 and op2 in GenerateMath() in MathQuestions.cs
+	private int minRand = -20;
+	private int maxRand = 21;
+
 	public static GameManagerJW Instance = null; //Static instance of sceneManager which allows it to be accessed by any other script.
 
 	public void Awake(){
@@ -61,6 +66,27 @@ public class GameManagerJW : MonoBehaviour {
 	// RP 2017-11-27
 	public void increaseTime(float t) {
 		timeTarget += t;
+	}
+
+	public void setMinRand(int n) {
+		this.minRand = n;
+	}
+
+	public void setRandDefault() {
+		this.minRand = -20;
+		this.maxRand = 21;
+	}
+
+	public void setMaxRand(int n) {
+		this.maxRand = n + 1;
+	}
+
+	public int getMinRand() {
+		return minRand;
+	}
+
+	public int getMaxRand() {
+		return maxRand;
 	}
 		
 	public bool getIsTimerEnd(){

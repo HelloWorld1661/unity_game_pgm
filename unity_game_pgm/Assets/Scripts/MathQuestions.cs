@@ -51,6 +51,19 @@ public class MathQuestions : MonoBehaviour {
 		return t;
 	}
 
+	/* STEPS:
+	1) run GenerateMath() several times and concat / store in string fullProblem
+	2) parse fullProblem with breakProblem(fullProblem) and store the return type List<string> in say parsedProblem
+	3) create function to go through parsedProblem and display chunk 1
+	4) pass chunk 1 into math func to get answer
+	5a) if player gets it wrong or dies, problem persists (this is important b/c we must make this data persistent, i.e; put in GameManagerJW.cs)
+	(side note TODO, when assigning rand vals to op1 and op2 in GenerateMath(), let's let user define the number range i.e; difficulty in settings... again, this would simply go in GameManagerJW.cs)
+	5b) If player gets chunk 1 right, display answer_of_chunk_1 + chunk 2
+	6) upon completion of fullProblem, goto step 1
+
+	(maybe create a "next" button to goto step 1 and gen new fullProblem)
+	*/
+
 	private void getMath() {
 		//mathQuestion.text = fullProblem;
 		List<string> t = breakProblem (fullProblem);
@@ -94,8 +107,8 @@ public class MathQuestions : MonoBehaviour {
 	{
 		// generate random values for operands
 		// TODO replace 1 and 101 vals with variables dependent on difficulty!
-		op1 = Random.Range(-100, 101);
-		op2 = Random.Range(-100, 101);
+		op1 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
+		op2 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
 
 		float answer = PerformOp (op1, op2);
 

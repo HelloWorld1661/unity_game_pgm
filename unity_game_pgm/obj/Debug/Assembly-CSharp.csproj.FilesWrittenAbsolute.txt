@@ -117,3 +117,6 @@
 /Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
 /Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
 /Users/christianbutron/unity_game_pgm/unity_game_pgm/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/UnityEngine.UIAutomation.dll
+/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
+/Users/Shared/Unity/OFFICIAL_GROUP_PROJECT/unity_game_pgm/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
