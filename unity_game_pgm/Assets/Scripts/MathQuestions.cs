@@ -28,7 +28,7 @@ public class MathQuestions : MonoBehaviour {
 	private int correctIndex;
 	private float answer;
 
-	private ExpressionParser parser = new ExpressionParser();
+//	private ExpressionParser parser = new ExpressionParser();
 
 	/* STEPS: Christian & RP
 	CHECK!	1) run GenerateMath() several times and concat / store in string fullProblem
@@ -139,6 +139,7 @@ public class MathQuestions : MonoBehaviour {
 				op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				operIndex = Random.Range (0, 5); // includes ^
+				op2 = Mathf.Abs(op2);
 				if (y != 1) {
 					GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
 				} else {
@@ -227,8 +228,10 @@ public class MathQuestions : MonoBehaviour {
 		UpdateHint (expression);
 
 		// RP fix
-		Expression exp = parser.EvaluateExpression(expression);
-		answer = (float)exp.Value;
+//		Expression exp = parser.EvaluateExpression(expression);
+//		answer = (float)exp.Value;
+		answer = (float) ExpressionParser.Eval(expression);
+		Debug.Log (answer);
 
 		// will not run in build, uses UnityEditor
 //		answer = ExpressionEvaluator.Evaluate<float>(expression);
@@ -291,9 +294,9 @@ public class MathQuestions : MonoBehaviour {
 			mathQuestion.text += " (D) ";
 			newFraction = Fraction.Parse ((double)answers [3]);
 			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
-		} else
-		{
-			mathQuestion.text += "\n (A) ";
+			return;
+		}
+			mathQuestion.text += " (A) ";
 			mathQuestion.text += answers [0];
 
 			mathQuestion.text += " (B) ";
@@ -304,7 +307,6 @@ public class MathQuestions : MonoBehaviour {
 
 			mathQuestion.text += " (D) ";
 			mathQuestion.text += answers [3];
-		}
 	}
 
 	/// see <http://stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions>
