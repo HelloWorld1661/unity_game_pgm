@@ -29,6 +29,11 @@ public class GameManagerJW : MonoBehaviour {
 	private int minRand = -20;
 	private int maxRand = 21;
 
+	public bool isQuestionStarted = false;
+	public int chunkIndex;
+
+	//_________________________________
+
 	public static GameManagerJW Instance = null; //Static instance of sceneManager which allows it to be accessed by any other script.
 
 	public void Awake(){

@@ -31,9 +31,9 @@ public class MathQuestions : MonoBehaviour {
 	CHECK!	2) parse fullProblem with breakProblem(fullProblem) and store the return type List<string> in say parsedProblem
 	CHECK!	3) create function to go through parsedProblem and display chunk 1
 	CHECK!	4) pass chunk 1 into math func to get answer & populate answerCoins / preserve coin logic
-	5a) if player gets it wrong or dies, problem persists (this is important b/c we must make this data persistent, i.e; put in GameManagerJW.cs)
-	(side note TODO, when assigning rand vals to op1 and op2 in GenerateMath(), let's let user define the number range i.e; difficulty in settings... again, this would simply go in GameManagerJW.cs)
-	5b) If player gets chunk 1 right, display answer_of_chunk_1 + chunk 2
+	CHECK!	5a) if player gets it wrong or dies, problem persists (this is important b/c we must make this data persistent, i.e; put in GameManagerJW.cs)
+	CHECK!	(side note TODO, when assigning rand vals to op1 and op2 in GenerateMath(), let's let user define the number range i.e; difficulty in settings... again, this would simply go in GameManagerJW.cs)
+		5b) If player gets chunk 1 right, display answer_of_chunk_1 + chunk 2
 	6) upon completion of fullProblem, goto step 1
 
 	(maybe create a "next" button to goto step 1 and gen new fullProblem)
@@ -54,18 +54,37 @@ public class MathQuestions : MonoBehaviour {
 
 	void Start ()
 	{
-		GenFullProblem ();
-		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
-		ReadParsedProblem (GameManagerJW.Instance.parsedProblem);
+		if (GameManagerJW.Instance.isQuestionStarted == false) {
+			Refresh ();
+		} else {
+			ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
+		}
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
 		if (AnswerCoins[correctIndex] == null) {
-			// TODO update to next math chunk in expression
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			// update chunkIndex for next call
+			GameManagerJW.Instance.chunkIndex++;
+			// calling in Start()
+//			ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
+			// reloading scene to respawn coins
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}
+	}
+
+	public void Refresh() {
+		GameManagerJW.Instance.chunkIndex = 0;
+		GenFullProblem ();
+		GameManagerJW.Instance.isQuestionStarted = true;
+		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
+		// ReadParsedProblem(string, int) calls PopulateAnswers (string expression]) and PrintAnswerKey (string expression) internally
+		ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
+	}
+
+	public void RefreshScene() {
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 	}
 
 	// Christian's TRIM VERSION (based on RP original)
@@ -158,7 +177,7 @@ public class MathQuestions : MonoBehaviour {
 	}
 
 	// RP
-	private void ReadParsedProblem(List<string> p)
+	private void ReadParsedProblem(List<string> p, int i)
 	{
 		// Reset math text
 		mathQuestion.text = "";
@@ -167,18 +186,25 @@ public class MathQuestions : MonoBehaviour {
 		// Display entire problem in full above (last index in p)
 		if (p != null) {
 			mathQuestion.text += p [p.Count - 1];
+		} else {
+			return;
 		}
 
-		// Display chunk 1
-		int i = 0;
-		if (p[i] != null) {
-			mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
-			PopulateAnswers (p[i]);
-			PrintAnswerKey (p[i]);
+		// Important: checking for out of range index
+		if (i == GameManagerJW.Instance.parsedProblem.Count) {
+			GameManagerJW.Instance.isQuestionStarted = false;
+			// reloading scene to respawn coins and call Refresh() in Start()
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		} else {
+			// Display chunk of index i
+			if (p [i] != null) { // or Assert.IsNotNull(var x) (checking again)
+				mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
+				PopulateAnswers (p [i]);
+				PrintAnswerKey (p [i]);
+			}
 		}
 
-		// use coRoutine here ?
-
+		//_____For Debugging_____
 		foreach (string j in p) {
 			Debug.Log (j + "\n");
 		}
