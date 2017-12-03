@@ -14,6 +14,7 @@ public class MathQuestions : MonoBehaviour {
 	public Text mathQuestion;
 	public GameObject[] AnswerCoins;
 	public Text hintText;
+	public Text answerText;
 
 	private float op1;
 	private float op2;
@@ -24,6 +25,7 @@ public class MathQuestions : MonoBehaviour {
 	private const int SIZE = 4;
 	private float[] answers = new float[SIZE];
 	private int correctIndex;
+	private float answer;
 
 
 	/* STEPS: Christian & RP
@@ -50,6 +52,8 @@ public class MathQuestions : MonoBehaviour {
 		operators [4] = '^';
 		operators [5] = (char)0x221A; 	// sqaure root / radical symbol
 		operators [6] = '%';
+
+		answerText.gameObject.SetActive (false);
 	}
 
 	void Start ()
@@ -215,7 +219,7 @@ public class MathQuestions : MonoBehaviour {
 	{
 		UpdateHint (expression);
 
-		float answer = ExpressionEvaluator.Evaluate<float>(expression);
+		answer = ExpressionEvaluator.Evaluate<float>(expression);
 
 		// checking for Square root, since ExpressionEvaluator does not handle it
 		int isSqrt = expression.IndexOf((char)0x221A);
@@ -225,8 +229,8 @@ public class MathQuestions : MonoBehaviour {
 			answer = Mathf.Sqrt (int.Parse(temp));
 		}
 
-		// for debugging
-		mathQuestion.text += "Answer: " + answer;
+		// for debugging, but now there is a dedicated answer button in hints
+//		mathQuestion.text += "Answer: " + answer;
 
 		// populate answer key with junk, incorrect answer
 		for (int i=0; i<SIZE; ++i)
@@ -260,7 +264,7 @@ public class MathQuestions : MonoBehaviour {
 		int isDiv = expression.IndexOf('/');
 		if (isDiv != -1)
 		{
-			mathQuestion.text += "\n (A) ";
+			mathQuestion.text += " (A) ";
 			Fraction newFraction = Fraction.Parse ((double)answers [0]);
 			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
 
@@ -355,8 +359,18 @@ public class MathQuestions : MonoBehaviour {
 		}
 	}
 
+	public void DisplayAnswer()
+	{
+		answerText.text = answer.ToString();
+		if (!answerText.gameObject.activeSelf) {
+			answerText.gameObject.SetActive (true);
+		} else {
+			answerText.gameObject.SetActive (false);
+		}
+	}
+
 	// RP
-	public void UpdateHint(string expression)
+	private void UpdateHint(string expression)
 	{
 		string temp = "";
 
