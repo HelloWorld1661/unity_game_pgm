@@ -23,41 +23,14 @@ public class MathQuestions : MonoBehaviour {
 	// create array to store A,B,C,D answer key
 	private const int SIZE = 4;
 	private float[] answers = new float[SIZE];
-
 	private int correctIndex;
 
-	private List<string> parsedProblem;
 
-
-	// TODO concat series of smaller math questions (chunks) and store in List.
-	//		Then, tackle each chunk one at a time by order or PEMDAS whilst displaying larger equation on the side? 
-	// private List<string> mathChunks = new List<string>();
-
-//	private string fullProblem = "((5 - (3 - 7 * (6 - 3) + 5)) % 4)";
-	private List<string> breakProblem(string problem) {
-		List<string> s = new List<string>();
-		List<string> t = new List<string>();
-
-		for (int i = 0; i < problem.Length; i++) {
-			char c = problem [i];
-			if (c == '(' || i == 0)
-				s.Add ("");
-			for (int j = 0; j < s.Count; j++)
-				s [j] += c;
-			if (c == ')' || i == problem.Length-1) {
-				string text = s [s.Count-1];
-				s.RemoveAt (s.Count - 1);
-				t.Add (text);
-			}
-		}
-		return t;
-	}
-
-	/* STEPS:
+	/* STEPS: Christian & RP
 	CHECK!	1) run GenerateMath() several times and concat / store in string fullProblem
 	CHECK!	2) parse fullProblem with breakProblem(fullProblem) and store the return type List<string> in say parsedProblem
-		3) create function to go through parsedProblem and display chunk 1
-	4) pass chunk 1 into math func to get answer
+	CHECK!	3) create function to go through parsedProblem and display chunk 1
+	CHECK!	4) pass chunk 1 into math func to get answer & populate answerCoins / preserve coin logic
 	5a) if player gets it wrong or dies, problem persists (this is important b/c we must make this data persistent, i.e; put in GameManagerJW.cs)
 	(side note TODO, when assigning rand vals to op1 and op2 in GenerateMath(), let's let user define the number range i.e; difficulty in settings... again, this would simply go in GameManagerJW.cs)
 	5b) If player gets chunk 1 right, display answer_of_chunk_1 + chunk 2
@@ -66,19 +39,9 @@ public class MathQuestions : MonoBehaviour {
 	(maybe create a "next" button to goto step 1 and gen new fullProblem)
 	*/
 
-	// FOR TESTING
-//	private void getMath() {
-//		//mathQuestion.text = fullProblem;
-//		List<string> t = breakProblem (fullProblem);
-//		for (int i = 0; i < t.Count; i++) {
-//			string expression = t[i];
-//			float result = ExpressionEvaluator.Evaluate<float>(expression);
-//			//mathQuestion.text += "\n" + expression + " = " + result;
-//		}
-//	}
 
-
-	void Awake() {
+	void Awake()
+	{
 		// create/init array of math operators? [+, -, /, *]
 		operators [0] = '+';
 		operators [1] = '-';
@@ -87,30 +50,20 @@ public class MathQuestions : MonoBehaviour {
 		operators [4] = '^';
 		operators [5] = (char)0x221A; 	// sqaure root / radical symbol
 		operators [6] = '%';
-
-
-//		operIndex = Random.Range(0, OPER_SIZE);
 	}
 
-	// TODO We should call this upon every time the player is finished with the question
-	// 		maybe have a bool listener in update
-	void Start () {
-//		GenerateMath();
-//		PrintMath();
-//		UpdateHint();
-
-		// NEW!
+	void Start ()
+	{
 		GenFullProblem ();
 		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
 		ReadParsedProblem (GameManagerJW.Instance.parsedProblem);
-		PrintAnswerKey ();
 	}
 
 	// Update is called once per frame
-	void Update () {
-		// put if statement with listener to trigger question refresh
-		// TODO should we refresh in a different way instead of reloading scene? (so player doesn't keep starting from beginning)
+	void Update ()
+	{
 		if (AnswerCoins[correctIndex] == null) {
+			// TODO update to next math chunk in expression
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 	}
@@ -184,6 +137,27 @@ public class MathQuestions : MonoBehaviour {
 		Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 	}
 
+	// Christian
+	private List<string> breakProblem(string problem) {
+		List<string> s = new List<string>();
+		List<string> t = new List<string>();
+
+		for (int i = 0; i < problem.Length; i++) {
+			char c = problem [i];
+			if (c == '(' || i == 0)
+				s.Add ("");
+			for (int j = 0; j < s.Count; j++)
+				s [j] += c;
+			if (c == ')' || i == problem.Length-1) {
+				string text = s [s.Count-1];
+				s.RemoveAt (s.Count - 1);
+				t.Add (text);
+			}
+		}
+		return t;
+	}
+
+	// RP
 	private void ReadParsedProblem(List<string> p)
 	{
 		// Reset math text
@@ -200,6 +174,7 @@ public class MathQuestions : MonoBehaviour {
 		if (p[i] != null) {
 			mathQuestion.text += "\n\nEvaluate: " + p [i] + " = ?\n\n";
 			PopulateAnswers (p[i]);
+			PrintAnswerKey (p[i]);
 		}
 
 		// use coRoutine here ?
@@ -209,6 +184,7 @@ public class MathQuestions : MonoBehaviour {
 		}
 	}
 
+	// RP
 	private void PopulateAnswers (string expression)
 	{
 		UpdateHint (expression);
@@ -252,139 +228,44 @@ public class MathQuestions : MonoBehaviour {
 		AnswerCoins [correctIndex].GetComponent<AnswerCoin> ().isCorrect = true;
 	}
 
-	private void PrintAnswerKey() {
-		mathQuestion.text += "\n (A) ";
-//		if (operIndex == 2) { // if performing division, convert to fraction
-//			Fraction newFraction = Fraction.Parse ((double)answers [1]);
-//			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
-//		} else {
-//			mathQuestion.text += answers [1];
-//		}
-		mathQuestion.text += answers [0];
-
-		mathQuestion.text += " (B) ";
-		mathQuestion.text += answers [1];
-
-		mathQuestion.text += " (C) ";
-		mathQuestion.text += answers [2];
-
-		mathQuestion.text += " (D) ";
-		mathQuestion.text += answers [3];
-	}
-
-	// LEGACY FUNCTION; not in use
-	public void GenerateMath()
+	// RP
+	private void PrintAnswerKey(string expression)
 	{
-		// generate random values for operands
-		op1 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
-		op2 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
-
-		float answer = PerformOp (op1, op2);
-
-		// populate answer key with junk, incorrect answer
-		for (int i=0; i<SIZE; ++i)
+		int isDiv = expression.IndexOf('/');
+		if (isDiv != -1)
 		{
-			// gen rand values within a range of 10 of the answer
-			if (answer % 1 == 0) { // cast rand vals to int to match real answer
-				answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
-			} else { // leave as float
-				answers [i] = Random.Range (answer - 10, answer + 10);
-			}
-			// we are checking that we don't accidentally / magically
-			//		generate the right answer! Will likely never enter this while loop, but it's here to be safe
-			while (answers[i] == answer) {
-				if (answer % 1 == 0) {
-					answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
-				} else {
-					answers [i] = Random.Range (answer - 10, answer + 10);
-				}
-			}
-		}
-		// populate rand arr index with Correct answer
-		// 		note: Random.Range(Inclusive val, Exclusive val)
-		correctIndex = Random.Range(0, SIZE);
-		answers[correctIndex] = answer;
-		AnswerCoins [correctIndex].GetComponent<AnswerCoin> ().isCorrect = true;
-	}
-
-	private float PerformOp(float a, float b) {
-		float temp = 0;
-		switch (operIndex)
-		{
-			case 0:
-				temp = a + b;
-				break;
-			case 1:
-				temp = a - b;
-				break;
-			case 2:
-				temp = a / b;
-				break;
-			case 3:
-				temp = a * b;
-				break;
-			case 4:
-				// EXPONENTS ^
-				break;
-			case 6:
-				// performing modulus (and square root) on negative numbers is wonky, so using abs val
-				temp = Mathf.Abs(a) % Mathf.Abs(b);
-				break;
-			case 5:
-				// for square roots, only op b (op2) will be processed
-				temp = Mathf.Sqrt (Mathf.Abs(b));
-				break;
-		}
-		return temp;
-	}
-
-	// LEGACY not in use
-	private void PrintMath() {
-		// RP 2017-12-1
-		// if square root, then diplay only op2
-		if (operIndex == 5) {
-			mathQuestion.text = "Evaluate: " + operators [operIndex] + Mathf.Abs (op2) + " = ? \n\n" +
-			"(A) ";
-		} else if (operIndex == 4) {
-			mathQuestion.text = "Evaluate: " + Mathf.Abs(op1) + " " + operators [operIndex] + " " + Mathf.Abs(op2) + " = ? \n\n" +
-					"(A) ";
-		} else {
-			mathQuestion.text = "Evaluate: " + op1 + " " + operators [operIndex] + " " + op2 + " = ? \n\n" +
-			"(A) ";
-		}
-
-		if (operIndex == 2) { // if performing division, convert to fraction
+			mathQuestion.text += "\n (A) ";
 			Fraction newFraction = Fraction.Parse ((double)answers [0]);
 			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
-		} else {
+
+			mathQuestion.text += " (B) ";
+			newFraction = Fraction.Parse ((double)answers [1]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+
+			mathQuestion.text += " (C) ";
+			newFraction = Fraction.Parse ((double)answers [2]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+
+			mathQuestion.text += " (D) ";
+			newFraction = Fraction.Parse ((double)answers [3]);
+			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+		} else
+		{
+			mathQuestion.text += "\n (A) ";
 			mathQuestion.text += answers [0];
-		}
 
-		mathQuestion.text += " (B) ";
-		if (operIndex == 2) { // if performing division, convert to fraction
-			Fraction newFraction = Fraction.Parse ((double)answers [1]);
-			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
-		} else {
+			mathQuestion.text += " (B) ";
 			mathQuestion.text += answers [1];
-		}
 
-		mathQuestion.text += " (C) ";
-		if (operIndex == 2) { // if performing division, convert to fraction
-			Fraction newFraction = Fraction.Parse ((double)answers [2]);
-			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
-		} else {
+			mathQuestion.text += " (C) ";
 			mathQuestion.text += answers [2];
-		}
 
-		mathQuestion.text += " (D) ";
-		if (operIndex == 2) { // if performing division, convert to fraction
-			Fraction newFraction = Fraction.Parse ((double)answers [3]);
-			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
-		} else {
+			mathQuestion.text += " (D) ";
 			mathQuestion.text += answers [3];
 		}
 	}
 
+	/// see <http://stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions>
 	/// <summary>
 	/// Represents a rational number
 	/// </summary>
@@ -421,11 +302,9 @@ public class MathQuestions : MonoBehaviour {
 				decimalPlaces
 			);
 		}
-
-
+			
 		/// <summary>
 		/// Approximates the provided value to a fraction.
-		/// http://stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions
 		/// </summary>
 		private static Fraction ApproximateFraction(double value)
 		{
@@ -450,6 +329,7 @@ public class MathQuestions : MonoBehaviour {
 		}
 	}
 
+	// RP
 	public void UpdateHint(string expression)
 	{
 		string temp = "";
@@ -561,6 +441,18 @@ public class MathQuestions : MonoBehaviour {
 
 //--------------------------------------------------------------------------------------------------------------------------
 
+// FOR TESTING (Christian)
+//	private string fullProblem = "((5 - (3 - 7 * (6 - 3) + 5)) % 4)";
+//	private void getMath() {
+//		//mathQuestion.text = fullProblem;
+//		List<string> t = breakProblem (fullProblem);
+//		for (int i = 0; i < t.Count; i++) {
+//			string expression = t[i];
+//			float result = ExpressionEvaluator.Evaluate<float>(expression);
+//			//mathQuestion.text += "\n" + expression + " = " + result;
+//		}
+//	}
+
 // BLOATED VERSION (broken b/c operIndex 4 now equals ^ and 6 equals %)
 //	public void GenFullProblem()
 //	{
@@ -648,3 +540,119 @@ public class MathQuestions : MonoBehaviour {
 //		GameManagerJW.Instance.fullProblem += " ";
 //		Debug.Log (GameManagerJW.Instance.fullProblem);
 //	}
+
+// LEGACY FUNCTION; not in use
+//	public void GenerateMath()
+//	{
+//		// generate random values for operands
+//		op1 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
+//		op2 = Random.Range(GameManagerJW.Instance.getMinRand(), GameManagerJW.Instance.getMaxRand());
+//
+//		float answer = PerformOp (op1, op2);
+//
+//		// populate answer key with junk, incorrect answer
+//		for (int i=0; i<SIZE; ++i)
+//		{
+//			// gen rand values within a range of 10 of the answer
+//			if (answer % 1 == 0) { // cast rand vals to int to match real answer
+//				answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
+//			} else { // leave as float
+//				answers [i] = Random.Range (answer - 10, answer + 10);
+//			}
+//			// we are checking that we don't accidentally / magically
+//			//		generate the right answer! Will likely never enter this while loop, but it's here to be safe
+//			while (answers[i] == answer) {
+//				if (answer % 1 == 0) {
+//					answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
+//				} else {
+//					answers [i] = Random.Range (answer - 10, answer + 10);
+//				}
+//			}
+//		}
+//		// populate rand arr index with Correct answer
+//		// 		note: Random.Range(Inclusive val, Exclusive val)
+//		correctIndex = Random.Range(0, SIZE);
+//		answers[correctIndex] = answer;
+//		AnswerCoins [correctIndex].GetComponent<AnswerCoin> ().isCorrect = true;
+//	}
+
+// LEGACY not in use
+//	private float PerformOp(float a, float b) {
+//		float temp = 0;
+//		switch (operIndex)
+//		{
+//			case 0:
+//				temp = a + b;
+//				break;
+//			case 1:
+//				temp = a - b;
+//				break;
+//			case 2:
+//				temp = a / b;
+//				break;
+//			case 3:
+//				temp = a * b;
+//				break;
+//			case 4:
+//				// EXPONENTS ^
+//				break;
+//			case 6:
+//				// performing modulus (and square root) on negative numbers is wonky, so using abs val
+//				temp = Mathf.Abs(a) % Mathf.Abs(b);
+//				break;
+//			case 5:
+//				// for square roots, only op b (op2) will be processed
+//				temp = Mathf.Sqrt (Mathf.Abs(b));
+//				break;
+//		}
+//		return temp;
+//	}
+
+// LEGACY not in use
+//	private void PrintMath() {
+//		// RP 2017-12-1
+//		// if square root, then diplay only op2
+//		if (operIndex == 5) {
+//			mathQuestion.text = "Evaluate: " + operators [operIndex] + Mathf.Abs (op2) + " = ? \n\n" +
+//			"(A) ";
+//		} else if (operIndex == 4) {
+//			mathQuestion.text = "Evaluate: " + Mathf.Abs(op1) + " " + operators [operIndex] + " " + Mathf.Abs(op2) + " = ? \n\n" +
+//					"(A) ";
+//		} else {
+//			mathQuestion.text = "Evaluate: " + op1 + " " + operators [operIndex] + " " + op2 + " = ? \n\n" +
+//			"(A) ";
+//		}
+//
+//		if (operIndex == 2) { // if performing division, convert to fraction
+//			Fraction newFraction = Fraction.Parse ((double)answers [0]);
+//			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+//		} else {
+//			mathQuestion.text += answers [0];
+//		}
+//
+//		mathQuestion.text += " (B) ";
+//		if (operIndex == 2) { // if performing division, convert to fraction
+//			Fraction newFraction = Fraction.Parse ((double)answers [1]);
+//			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+//		} else {
+//			mathQuestion.text += answers [1];
+//		}
+//
+//		mathQuestion.text += " (C) ";
+//		if (operIndex == 2) { // if performing division, convert to fraction
+//			Fraction newFraction = Fraction.Parse ((double)answers [2]);
+//			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+//		} else {
+//			mathQuestion.text += answers [2];
+//		}
+//
+//		mathQuestion.text += " (D) ";
+//		if (operIndex == 2) { // if performing division, convert to fraction
+//			Fraction newFraction = Fraction.Parse ((double)answers [3]);
+//			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
+//		} else {
+//			mathQuestion.text += answers [3];
+//		}
+//	}
+
+// END SCRIPT
