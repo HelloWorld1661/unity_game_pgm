@@ -153,7 +153,17 @@ public class MathQuestions : MonoBehaviour {
 				op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 				operIndex = Random.Range (0, 5); // includes ^
+
+				// Christian's suggestion to avoid simpleft form fraction from being displayed
+				if (operIndex == 2) {
+					int z = Random.Range (2, 5);
+					op1 *= z;
+					op2 *= z;
+				}
+
+				// bug fix (B83 can't handle op2 being negative)
 				op2 = Mathf.Abs(op2);
+
 				if (y != 1) {
 					GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
 				} else {
@@ -266,22 +276,42 @@ public class MathQuestions : MonoBehaviour {
 //		mathQuestion.text += "Answer: " + answer;
 
 		// populate answer key with junk, incorrect answer
-		for (int i=0; i<SIZE; ++i)
-		{
-			// gen rand values within a range of 10 of the answer
-			if (answer % 1 == 0) { // cast rand vals to int to match real answer
-				answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
-			} else { // leave as float
-				answers [i] = Random.Range (answer - 10, answer + 10);
+		int isDiv = expression.IndexOf('/');
+		if (isDiv != -1) {
+			for (int i = 0; i < SIZE; ++i) {
+				answers [i] = Random.Range ((int)answer - 3, (int)answer + 3);
+
+				if (answers [i] == answer) {
+					answers [i] = Random.Range ((int)answer - 3, (int)answer + 3);
+				}
+
+				for (int j = 0; j < i; ++j) {
+					if (answers[i] == answers[j]) {
+						answers [i] = Random.Range ((int)answer - 3, (int)answer + 3);
+
+						if (answers [i] == answer) {
+							answers [i] = Random.Range ((int)answer - 3, (int)answer + 3);
+						}
+					}
+				}
 			}
-			// we are checking that we don't accidentally / magically
-			//		generate the right answer! Will likely never enter this while loop, but it's here to be safe
-			// a while() here caused a freeze!
-			if (answers[i] == answer) {
-				if (answer % 1 == 0) {
+		} else {
+			for (int i = 0; i < SIZE; ++i) {
+				// gen rand values within a range of 10 of the answer
+				if (answer % 1 == 0) { // cast rand vals to int to match real answer
 					answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
-				} else {
+				} else { // leave as float
 					answers [i] = Random.Range (answer - 10, answer + 10);
+				}
+				// we are checking that we don't accidentally / magically
+				//		generate the right answer! Will likely never enter this while loop, but it's here to be safe
+				// a while() here caused a freeze!
+				if (answers [i] == answer) {
+					if (answer % 1 == 0) {
+						answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
+					} else {
+						answers [i] = Random.Range (answer - 10, answer + 10);
+					}
 				}
 			}
 		}
