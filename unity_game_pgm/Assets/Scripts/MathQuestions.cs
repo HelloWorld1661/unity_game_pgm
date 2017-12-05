@@ -1,5 +1,6 @@
 ﻿// RP 2017-11-20
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -26,7 +27,7 @@ public class MathQuestions : MonoBehaviour {
 	private const int SIZE = 4;
 	private float[] answers = new float[SIZE];
 	private int correctIndex;
-	private float answer;
+	private float answer = 0;
 
 //	private ExpressionParser parser = new ExpressionParser();
 
@@ -66,8 +67,7 @@ public class MathQuestions : MonoBehaviour {
 			ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
 		}
 	}
-
-	// Update is called once per frame
+		
 	void Update ()
 	{
 		if (AnswerCoins[correctIndex] == null) {
@@ -81,11 +81,10 @@ public class MathQuestions : MonoBehaviour {
 	}
 
 	public void Refresh() {
-		GameManagerJW.Instance.chunkIndex = 0;
 		GenFullProblem ();
 		GameManagerJW.Instance.isQuestionStarted = true;
 		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
-		// ReadParsedProblem(string, int) calls PopulateAnswers (string expression]) and PrintAnswerKey (string expression) internally
+//		// ReadParsedProblem(string, int) calls PopulateAnswers (string expression]) and PrintAnswerKey (string expression) internally
 		ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
 	}
 
@@ -98,6 +97,7 @@ public class MathQuestions : MonoBehaviour {
 	{
 		// Reset fullProblem
 		GameManagerJW.Instance.fullProblem = "";
+		GameManagerJW.Instance.chunkIndex = 0;
 		// needed for breakProblem() to work
 		GameManagerJW.Instance.fullProblem += " ";
 
@@ -121,7 +121,7 @@ public class MathQuestions : MonoBehaviour {
 				GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2;
 			}
 			GameManagerJW.Instance.fullProblem += " ";
-			Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
+//			Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 			return;
 		}
 		// ---------------------------------------------------------------------------------------------
@@ -160,7 +160,7 @@ public class MathQuestions : MonoBehaviour {
 			}
 		}
 		GameManagerJW.Instance.fullProblem += " ";
-		Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
+//		Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 	}
 
 	// Christian
@@ -223,6 +223,7 @@ public class MathQuestions : MonoBehaviour {
 	}
 
 	// RP
+	// CAUSING FREEZE!!! lmao
 	private void PopulateAnswers (string expression)
 	{
 		UpdateHint (expression);
@@ -230,19 +231,23 @@ public class MathQuestions : MonoBehaviour {
 		// RP fix
 //		Expression exp = parser.EvaluateExpression(expression);
 //		answer = (float)exp.Value;
-		answer = (float) ExpressionParser.Eval(expression);
-		Debug.Log (answer);
-
 		// will not run in build, uses UnityEditor
 //		answer = ExpressionEvaluator.Evaluate<float>(expression);
 
 		// checking for Square root, since ExpressionEvaluator does not handle it
 		int isSqrt = expression.IndexOf((char)0x221A);
+		int isMod = expression.IndexOf('%');
 		if (isSqrt != -1) {
 			string temp = expression;
-			temp = temp.Remove(isSqrt, 1);
-			answer = Mathf.Sqrt (int.Parse(temp));
+			temp = temp.Remove (isSqrt, 1);
+			answer = (float)Mathf.Sqrt (int.Parse (temp));
+		} else if (isMod != -1) {
+			string[] tempOps = expression.Split('%');
+			answer = (float)int.Parse ((tempOps[0])) % int.Parse ((tempOps[1]));
+		} else {
+			answer = (float) ExpressionParser.Eval(expression);
 		}
+//		Debug.Log (answer);
 
 		// for debugging, but now there is a dedicated answer button in hints
 //		mathQuestion.text += "Answer: " + answer;
@@ -258,7 +263,8 @@ public class MathQuestions : MonoBehaviour {
 			}
 			// we are checking that we don't accidentally / magically
 			//		generate the right answer! Will likely never enter this while loop, but it's here to be safe
-			while (answers[i] == answer) {
+			// a while() here caused a freeze!
+			if (answers[i] == answer) {
 				if (answer % 1 == 0) {
 					answers [i] = Random.Range ((int)answer - 10, (int)answer + 10);
 				} else {
