@@ -17,6 +17,7 @@ public class MathQuestions : MonoBehaviour {
 	public GameObject[] AnswerCoins;
 	public Text hintText;
 	public Text answerText;
+	public Button nextButton;
 
 	private float op1;
 	private float op2;
@@ -90,6 +91,19 @@ public class MathQuestions : MonoBehaviour {
 
 	public void RefreshScene() {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+	}
+
+	// RP 2017-12-4
+	public void Delay (){
+		// Disable button here
+		nextButton.gameObject.SetActive (false);
+		StartCoroutine (Reactivate());
+	}
+
+	IEnumerator Reactivate (){
+		yield return new WaitForSeconds (0.5f);
+		// Re-enable button here
+		nextButton.gameObject.SetActive (true);
 	}
 
 	// Christian's TRIM VERSION (based on RP original)
@@ -223,7 +237,6 @@ public class MathQuestions : MonoBehaviour {
 	}
 
 	// RP
-	// CAUSING FREEZE!!! lmao
 	private void PopulateAnswers (string expression)
 	{
 		UpdateHint (expression);
