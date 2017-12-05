@@ -21,7 +21,7 @@ public class MathQuestions : MonoBehaviour {
 
 	private float op1;
 	private float op2;
-	private const int OPER_SIZE = 7;
+	private const int OPER_SIZE = 10; // 7 -> 10
 	private char[] operators = new char[OPER_SIZE];
 	private int operIndex;
 	// create array to store A,B,C,D answer key
@@ -30,7 +30,7 @@ public class MathQuestions : MonoBehaviour {
 	private int correctIndex;
 	private float answer = 0;
 
-//	private ExpressionParser parser = new ExpressionParser();
+	//	private ExpressionParser parser = new ExpressionParser();
 
 	/* STEPS: Christian & RP
 	CHECK!	1) run GenerateMath() several times and concat / store in string fullProblem
@@ -57,6 +57,12 @@ public class MathQuestions : MonoBehaviour {
 		operators [5] = (char)0x221A; 	// sqaure root / radical symbol
 		operators [6] = '%';
 
+		//		operators [7] = "sin";
+		//		operators [8] = "cos";
+		//		operators [9] = "tan";
+
+
+
 		answerText.gameObject.SetActive (false);
 	}
 
@@ -68,14 +74,14 @@ public class MathQuestions : MonoBehaviour {
 			ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
 		}
 	}
-		
+
 	void Update ()
 	{
 		if (AnswerCoins[correctIndex] == null) {
 			// update chunkIndex for next call
 			GameManagerJW.Instance.chunkIndex++;
 			// calling in Start()
-//			ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
+			//			ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
 			// reloading scene to respawn coins
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}
@@ -85,7 +91,7 @@ public class MathQuestions : MonoBehaviour {
 		GenFullProblem ();
 		GameManagerJW.Instance.isQuestionStarted = true;
 		GameManagerJW.Instance.parsedProblem = breakProblem (GameManagerJW.Instance.fullProblem);
-//		// ReadParsedProblem(string, int) calls PopulateAnswers (string expression]) and PrintAnswerKey (string expression) internally
+		//		// ReadParsedProblem(string, int) calls PopulateAnswers (string expression]) and PrintAnswerKey (string expression) internally
 		ReadParsedProblem (GameManagerJW.Instance.parsedProblem, GameManagerJW.Instance.chunkIndex);
 	}
 
@@ -118,9 +124,9 @@ public class MathQuestions : MonoBehaviour {
 		// % or Sqrt -----------------------------------------------------------------------------------
 		op1 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
 		op2 = Random.Range (GameManagerJW.Instance.getMinRand (), GameManagerJW.Instance.getMaxRand ());
-		int probOfSqrtOrMod = Random.Range (0, 5);
+		int probOfSqrtOrMod = Random.Range (0, 3);
 		int operIndex = Random.Range (0, OPER_SIZE);
-		if ( (operIndex == 6 || operIndex == 5) && probOfSqrtOrMod == 1) {
+		if ( (operIndex >= 5) && probOfSqrtOrMod == 1) {
 			// Square roots
 			if (operIndex == 5) {
 				// we don't want negative vals here
@@ -128,14 +134,23 @@ public class MathQuestions : MonoBehaviour {
 				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + op2;
 			}
 			// Modulus
-			else {
+			else if (operIndex == 6) {
 				// we don't want negative vals here
 				op1 = Mathf.Abs (op1);
 				op2 = Mathf.Abs (op2);
 				GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2;
+			} else if(operIndex == 7) {
+				op2 = Random.Range (0, 361);
+				GameManagerJW.Instance.fullProblem += "sin(" + op2 + "*PI/180)";
+			} else if(operIndex == 8) {
+				op2 = Random.Range (0, 361);
+				GameManagerJW.Instance.fullProblem += "cos(" + op2 + "*PI/180)";
+			} else if(operIndex == 9) {
+				op2 = Random.Range (0, 361);
+				GameManagerJW.Instance.fullProblem += "tan(" + op2 + "*PI/180)";
 			}
 			GameManagerJW.Instance.fullProblem += " ";
-//			Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
+			//			Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 			return;
 		}
 		// ---------------------------------------------------------------------------------------------
@@ -144,7 +159,7 @@ public class MathQuestions : MonoBehaviour {
 		for (int i = 0; i < x; i++)
 		{
 			if (x != 1)
-				GameManagerJW.Instance.fullProblem += "(";
+				GameManagerJW.Instance.fullProblem += "[";
 
 			int y = Random.Range(1, 4);
 			for (int j = 0; j < y; j++)
@@ -162,12 +177,19 @@ public class MathQuestions : MonoBehaviour {
 				}
 
 				// bug fix (B83 can't handle op2 being negative)
-				op2 = Mathf.Abs(op2);
-
-				if (y != 1) {
-					GameManagerJW.Instance.fullProblem += "(" + op1 + " " + operators [operIndex] + " " + op2 + ")";
+				//				op2 = Mathf.Abs(op2);
+				if (op2 < 0) {
+					if (y != 1) {
+						GameManagerJW.Instance.fullProblem += "[" + op1 + " " + operators [operIndex] + " (" + op2 + ")]";
+					} else {
+						GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " (" + op2 + ")";
+					}
 				} else {
-					GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2;
+					if (y != 1) {
+						GameManagerJW.Instance.fullProblem += "[" + op1 + " " + operators [operIndex] + " " + op2 + "]";
+					} else {
+						GameManagerJW.Instance.fullProblem += op1 + " " + operators [operIndex] + " " + op2;
+					}
 				}
 
 				// here I'm concatenating between paranthesis at random (range index 0, 1, 2, or 3 for + - / *)... we don't want radical or % here :slightly_smiling_face:
@@ -177,14 +199,14 @@ public class MathQuestions : MonoBehaviour {
 				}
 			}
 			if (x != 1)
-				GameManagerJW.Instance.fullProblem += ")";
+				GameManagerJW.Instance.fullProblem += "]";
 			if (i != x - 1 && x != 0) {
 				operIndex = Random.Range (0, 4);
 				GameManagerJW.Instance.fullProblem += " " + operators [operIndex] + " ";
 			}
 		}
 		GameManagerJW.Instance.fullProblem += " ";
-//		Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
+		//		Debug.Log ("FULL PROB: " + GameManagerJW.Instance.fullProblem);
 	}
 
 	// Christian
@@ -194,12 +216,14 @@ public class MathQuestions : MonoBehaviour {
 
 		for (int i = 0; i < problem.Length; i++) {
 			char c = problem [i];
-			if (c == '(' || i == 0)
+			if (c == '[' || i == 0)
 				s.Add ("");
 			for (int j = 0; j < s.Count; j++)
 				s [j] += c;
-			if (c == ')' || i == problem.Length-1) {
+			if (c == ']' || i == problem.Length-1) {
 				string text = s [s.Count-1];
+				text = text.Replace ("[", "(");
+				text = text.Replace ("]", ")");
 				s.RemoveAt (s.Count - 1);
 				t.Add (text);
 			}
@@ -233,11 +257,11 @@ public class MathQuestions : MonoBehaviour {
 			PopulateAnswers (p [i]);
 			PrintAnswerKey (p [i]);
 
-//			if (i != 0) {
-//				// so it's chunk1_answer + chunk2... not chunk1+chunk2+...
-				// still not working
-//				GameManagerJW.Instance.parsedProblem [i] = answer.ToString ();
-//			}
+			//			if (i != 0) {
+			//				// so it's chunk1_answer + chunk2... not chunk1+chunk2+...
+			// still not working
+			//				GameManagerJW.Instance.parsedProblem [i] = answer.ToString ();
+			//			}
 		}
 
 		//_____For Debugging_____
@@ -252,10 +276,10 @@ public class MathQuestions : MonoBehaviour {
 		UpdateHint (expression);
 
 		// RP fix
-//		Expression exp = parser.EvaluateExpression(expression);
-//		answer = (float)exp.Value;
+		//		Expression exp = parser.EvaluateExpression(expression);
+		//		answer = (float)exp.Value;
 		// will not run in build, uses UnityEditor
-//		answer = ExpressionEvaluator.Evaluate<float>(expression);
+		//		answer = ExpressionEvaluator.Evaluate<float>(expression);
 
 		// checking for Square root, since ExpressionEvaluator does not handle it
 		int isSqrt = expression.IndexOf((char)0x221A);
@@ -270,10 +294,10 @@ public class MathQuestions : MonoBehaviour {
 		} else {
 			answer = (float) ExpressionParser.Eval(expression);
 		}
-//		Debug.Log (answer);
+		//		Debug.Log (answer);
 
 		// for debugging, but now there is a dedicated answer button in hints
-//		mathQuestion.text += "Answer: " + answer;
+		//		mathQuestion.text += "Answer: " + answer;
 
 		// populate answer key with junk, incorrect answer
 		int isDiv = expression.IndexOf('/');
@@ -345,17 +369,17 @@ public class MathQuestions : MonoBehaviour {
 			mathQuestion.text += newFraction.Numerator + "/" + newFraction.Denominator;
 			return;
 		}
-			mathQuestion.text += " (A) ";
-			mathQuestion.text += answers [0];
+		mathQuestion.text += " (A) ";
+		mathQuestion.text += answers [0];
 
-			mathQuestion.text += " (B) ";
-			mathQuestion.text += answers [1];
+		mathQuestion.text += " (B) ";
+		mathQuestion.text += answers [1];
 
-			mathQuestion.text += " (C) ";
-			mathQuestion.text += answers [2];
+		mathQuestion.text += " (C) ";
+		mathQuestion.text += answers [2];
 
-			mathQuestion.text += " (D) ";
-			mathQuestion.text += answers [3];
+		mathQuestion.text += " (D) ";
+		mathQuestion.text += answers [3];
 	}
 
 	/// see <http://stackoverflow.com/questions/95727/how-to-convert-floats-to-human-readable-fractions>
@@ -395,7 +419,7 @@ public class MathQuestions : MonoBehaviour {
 				decimalPlaces
 			);
 		}
-			
+
 		/// <summary>
 		/// Approximates the provided value to a fraction.
 		/// </summary>
@@ -457,7 +481,7 @@ public class MathQuestions : MonoBehaviour {
 				"10 if the number ends in 0\n9 when the digits are added together and the total is evenly divisible by 9\n8 if the last three digits are evenly divisible by 8 or are 000\n" +
 				"6 if it is an even number and when the digits are added together the answer is evenly divisible by 3\n5 if it ends in a 0 or 5\n4 if it ends in 00 or a two digit number that" +
 				"is evenly divisible by 4\n3 when the digits are added together and the result is evenly divisible by the number 3\n2 if it ends in 0, 2, 4, 6, or 8";
-				hintText.text = temp;
+			hintText.text = temp;
 			return;
 		}
 
@@ -488,7 +512,7 @@ public class MathQuestions : MonoBehaviour {
 				"12\nis 10× plus 2×\nExample: 12×4 = 40+8 = 48\n\n" +
 				"15\nmultiply by 10, then add half again\nExample: 15×4 = 40+20 = 60\nExample: 15×9 = 90+45 = 135\n\n" +
 				"20\nmultiply by 10, then double\nExample: 20×4 = 40+40 = 80\nExample: 20×7 = 70+70 = 140\n\n\n";
-				hintText.text = temp;
+			hintText.text = temp;
 			return;
 		}
 
@@ -505,7 +529,7 @@ public class MathQuestions : MonoBehaviour {
 				"olve the problem.\n\n6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 * 6^3 = 216 * 216 * 216 * 216 * 216 * 216 * 216 * 216 = 46656 * 46656 * 46656 * 46656 = 4.738e18\n\nTip\nFor some problems, " +
 				"a combination of both techniques may make the problem easier. For example: x^21 = (x^7)^3 (power rule), and x^7 = x^3 * x^2 * x^2 (product rule). Combining the two, " +
 				"you get: x^21 = (x^3 * x^2 * x^2)^3";
-				hintText.text = temp;
+			hintText.text = temp;
 			return;
 		}
 
@@ -518,7 +542,7 @@ public class MathQuestions : MonoBehaviour {
 				"The square root of a number is equal to the number of the square roots of each factor.\n\n" +
 				"The imaginary number \"i\" is the square root of negative one. An imaginary number possesses the unique property that when squared, the result is negative. " +
 				"Consider: The process of simplifying a radical containing a negative factor is the same as normal radical simplification.";
-				hintText.text = temp;
+			hintText.text = temp;
 			return;
 		}
 
@@ -527,10 +551,10 @@ public class MathQuestions : MonoBehaviour {
 			temp = "What is the % symbol? It's modulus! Divide first and any remainder is your answer!\n\n" +
 				"In computing, the modulo operation finds the remainder after division of one number by another (sometimes called modulus). Given two positive numbers, a (the dividend) and n (the divisor), " +
 				"a modulo n (abbreviated as a mod n) is the remainder of the Euclidean division of a by n.\n\n";
-				hintText.text = temp;
+			hintText.text = temp;
 			return;
 		}
-			
+
 		// bug fix: this must go last, b/c otherwise expression might contain '-' to mean a negative number, not minus operation
 		int isMinus = expression.IndexOf('-');
 		if (isMinus != -1) {
