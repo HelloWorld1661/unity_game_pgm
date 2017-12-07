@@ -1,0 +1,11 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "MathPlatformer2D_build_4_2.data.unityweb",
+"asmCodeUrl": "MathPlatformer2D_build_4_2.asm.code.unityweb",
+"asmMemoryUrl": "MathPlatformer2D_build_4_2.asm.memory.unityweb",
+"asmFrameworkUrl": "MathPlatformer2D_build_4_2.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000"
+}

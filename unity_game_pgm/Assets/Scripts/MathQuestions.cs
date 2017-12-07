@@ -110,6 +110,7 @@ public class MathQuestions : MonoBehaviour {
 		yield return new WaitForSeconds (0.5f);
 		// Re-enable button here
 		nextButton.gameObject.SetActive (true);
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 	}
 
 	// Christian's TRIM VERSION (based on RP original)
@@ -131,7 +132,8 @@ public class MathQuestions : MonoBehaviour {
 			if (operIndex == 5) {
 				// we don't want negative vals here
 				op2 = Mathf.Abs (op2);
-				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + op2;
+//				GameManagerJW.Instance.fullProblem += operators [operIndex] + " " + op2;
+				GameManagerJW.Instance.fullProblem += "sqrt(" + " " + op2 + " )";
 			}
 			// Modulus
 			else if (operIndex == 6) {
@@ -460,6 +462,37 @@ public class MathQuestions : MonoBehaviour {
 	private void UpdateHint(string expression)
 	{
 		string temp = "";
+
+
+		int isSin = expression.IndexOf('s');
+		if (isSin != -1) {
+			temp = "Sine, cosine, tangent — a.k.a., sin(θ), cos(θ) and tan(θ) — are functions revealing the shape of a right triangle. Looking out from a vertex with angle θ, \n\n" +
+				"sin(θ) is the ratio of the opposite side to the hypotenuse. \n\n" +
+				"cos(θ) is the ratio of the adjacent side to the hypotenuse. \n\n" +
+				"tan(θ) is the ratio of the opposite side to the adjacent.";
+			hintText.text = temp;
+			return;
+		}
+
+		int isCos = expression.IndexOf('c');
+		if (isCos != -1) {
+			temp = "Sine, cosine, tangent — a.k.a., sin(θ), cos(θ) and tan(θ) — are functions revealing the shape of a right triangle. Looking out from a vertex with angle θ, \n\n" +
+				"sin(θ) is the ratio of the opposite side to the hypotenuse. \n\n" +
+				"cos(θ) is the ratio of the adjacent side to the hypotenuse. \n\n" +
+				"tan(θ) is the ratio of the opposite side to the adjacent.";
+			hintText.text = temp;
+			return;
+		}
+
+		int isTan = expression.IndexOf('t');
+		if (isTan != -1) {
+			temp = "Sine, cosine, tangent — a.k.a., sin(θ), cos(θ) and tan(θ) — are functions revealing the shape of a right triangle. Looking out from a vertex with angle θ, \n\n" +
+				"sin(θ) is the ratio of the opposite side to the hypotenuse. \n\n" +
+				"cos(θ) is the ratio of the adjacent side to the hypotenuse. \n\n" +
+				"tan(θ) is the ratio of the opposite side to the adjacent.";
+			hintText.text = temp;
+			return;
+		}
 
 		int isAdd = expression.IndexOf('+');
 		if (isAdd != -1) {
