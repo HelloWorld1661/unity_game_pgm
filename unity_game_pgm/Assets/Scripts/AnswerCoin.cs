@@ -43,6 +43,7 @@ public class AnswerCoin : MonoBehaviour {
 			GameManagerJW.Instance.increaseTime (15f);
 		} else {
 			GameController.GetComponent<Score> ().LoseScore();
+			GameManagerJW.Instance.increaseTime (-15f);
 		}
 		coinAudio.Play (); // play the audio 
 
