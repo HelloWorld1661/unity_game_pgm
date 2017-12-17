@@ -13,10 +13,10 @@ public class Difficulty : MonoBehaviour {
 
 	void Awake ()
 	{
-		if (GameManagerJW.Instance.getMinRand () != -20) {
+		if (GameManagerJW.Instance.getMinRand () != -10) {
 			minInput.text = GameManagerJW.Instance.getMinRand ().ToString ();
 		}
-		if (GameManagerJW.Instance.getMaxRand () != 21) {
+		if (GameManagerJW.Instance.getMaxRand () != 11) {
 			// minusing 1 to compensate for Random func's exclusive property on max val
 			maxInput.text = (GameManagerJW.Instance.getMaxRand () -1 ).ToString ();
 		}
@@ -39,6 +39,8 @@ public class Difficulty : MonoBehaviour {
 		GameManagerJW.Instance.setRandDefault ();
 		minInput.text = "Enter Min Value";
 		maxInput.text = "Enter Max Value";
+		// GameManagerJW.Instance.setMinRand (-10);
+		// GameManagerJW.Instance.setMaxRand (11);
 	}
 
 	public void SetColor() {
@@ -54,7 +56,7 @@ public class Difficulty : MonoBehaviour {
 		} else if (GameManagerJW.Instance.getMinRand () <= -50 || GameManagerJW.Instance.getMaxRand () > 51) {
 			DiffTitle.color = Color.yellow;
 			DiffTitle.text = "Difficulty";
-		} else if (GameManagerJW.Instance.getMinRand () >= -20 && GameManagerJW.Instance.getMaxRand () <= 21) {
+		} else if (GameManagerJW.Instance.getMinRand () >= -15 && GameManagerJW.Instance.getMaxRand () <= 16) {
 			DiffTitle.color = Color.green;
 			DiffTitle.text = "Difficulty";
 		} else {

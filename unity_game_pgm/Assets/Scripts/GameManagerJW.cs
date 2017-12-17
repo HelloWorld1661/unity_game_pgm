@@ -13,7 +13,7 @@ public class GameManagerJW : MonoBehaviour {
 	private int score = 0;
 	private int getRight = 0;
 	private int getWrong = 0;
-	private float timeTarget = 60.0f;// RP changing for faster game play (IMPORTANT: make sure to chnage value under resetAllData() as well) //Default time: 10mins = 600s
+	private float timeTarget = 300.0f; // 300 = 5min RP changing for faster game play (IMPORTANT: make sure to chnage value under resetAllData() as well) //Default time: 10mins = 600s
 	private bool isTimer = false; // Is it to start the timer? (YES -> true; NO -> false.) default value: false
 	private bool isGameStart = false;
 	private bool isTimerEnd =false;
@@ -26,8 +26,8 @@ public class GameManagerJW : MonoBehaviour {
 	public List<string> parsedProblem = new List<string>();
 
 	// for assigning op1 and op2 in GenerateMath() in MathQuestions.cs
-	private int minRand = -20;
-	private int maxRand = 21;
+	private int minRand = -10;
+	private int maxRand = 11;
 
 	public bool isQuestionStarted = false;
 	public int chunkIndex;
@@ -82,8 +82,8 @@ public class GameManagerJW : MonoBehaviour {
 	}
 
 	public void setRandDefault() {
-		this.minRand = -20;
-		this.maxRand = 21;
+		this.minRand = -10;
+		this.maxRand = 11;
 	}
 
 	public void setMaxRand(int n) {
@@ -106,7 +106,7 @@ public class GameManagerJW : MonoBehaviour {
 	}
 	public void resetAllData(){
 		score = 0;
-		timeTarget = 60.0f;
+		timeTarget = 300.0f;
 		isTimer = false;
 		isGameStart = false;
 		isTimerEnd = false;

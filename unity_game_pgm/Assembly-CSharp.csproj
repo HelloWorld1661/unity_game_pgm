@@ -61,7 +61,7 @@
      <Compile Include="Assets\Scripts\Difficulty.cs" />
      <Compile Include="Assets\Scripts\DisplayHS.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
-     <Compile Include="Assets\Scripts\ExpressionParser.cs.cs" />
+     <Compile Include="Assets\Scripts\ExpressionParser.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameManagerJW.cs" />
      <Compile Include="Assets\Scripts\ImageGallery.cs" />
