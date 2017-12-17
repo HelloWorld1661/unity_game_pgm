@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\SaveHighScore.cs" />
      <Compile Include="Assets\Scripts\sceneManager.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ScoreType.cs" />
      <Compile Include="Assets\Scripts\ScoreVer2.cs" />
      <Compile Include="Assets\Scripts\ShowHideHint.cs" />
      <Compile Include="Assets\Scripts\SimpleCamera2DFollow.cs" />
